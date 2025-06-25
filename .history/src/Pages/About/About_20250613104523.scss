@@ -1,0 +1,229 @@
+   .aboutUsSection {
+          padding: 80px 20px;
+          background-color: #f8f9fa;
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .aboutUsSection.fadeIn {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .aboutUsContainer {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .aboutUsHeader {
+          text-align: center;
+          margin-bottom: 60px;
+        }
+
+        .aboutUsHeadline {
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: #253f57;
+          margin-bottom: 20px;
+          line-height: 1.2;
+        }
+
+        .aboutUsMissionText {
+          font-size: 1.125rem;
+          color: #52585a;
+          line-height: 1.6;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        .aboutUsContent {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+          align-items: start;
+        }
+
+        .aboutUsImageContainer {
+          order: 2;
+        }
+
+        .aboutUsImagePlaceholder {
+          width: 100%;
+          height: 400px;
+          background: linear-gradient(135deg, #253f57 0%, #52585a 100%);
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          box-shadow: 0 10px 30px rgba(37, 63, 87, 0.15);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .aboutUsImagePlaceholder:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(37, 63, 87, 0.25);
+        }
+
+        .placeholderContent {
+          text-align: center;
+          color: white;
+        }
+
+        .placeholderIcon {
+          font-size: 4rem;
+          margin-bottom: 15px;
+          display: block;
+        }
+
+        .placeholderText {
+          font-size: 1.25rem;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+        }
+
+        .aboutUsTextContainer {
+          order: 1;
+        }
+
+        .aboutUsTextContent {
+          padding-right: 20px;
+        }
+
+        .aboutUsSubheading {
+          font-size: 2rem;
+          font-weight: 600;
+          color: #253f57;
+          margin-bottom: 25px;
+          line-height: 1.3;
+        }
+
+        .aboutUsDescription {
+          font-size: 1rem;
+          color: #52585a;
+          line-height: 1.7;
+          margin-bottom: 25px;
+        }
+
+        .aboutUsValues {
+          margin-top: 40px;
+        }
+
+        .valueItem {
+          margin-bottom: 30px;
+          padding-left: 20px;
+          border-left: 4px solid #253f57;
+        }
+
+        .valueTitle {
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: #253f57;
+          margin-bottom: 8px;
+        }
+
+        .valueDescription {
+          font-size: 0.95rem;
+          color: #52585a;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        @media (max-width: 768px) {
+          .aboutUsSection {
+            padding: 60px 15px;
+          }
+
+          .aboutUsContainer {
+            max-width: 100%;
+          }
+
+          .aboutUsHeader {
+            margin-bottom: 40px;
+          }
+
+          .aboutUsHeadline {
+            font-size: 2rem;
+          }
+
+          .aboutUsMissionText {
+            font-size: 1rem;
+          }
+
+          .aboutUsContent {
+            grid-template-columns: 1fr;
+            gap: 40px;
+          }
+
+          .aboutUsImageContainer {
+            order: 1;
+          }
+
+          .aboutUsTextContainer {
+            order: 2;
+          }
+
+          .aboutUsTextContent {
+            padding-right: 0;
+          }
+
+          .aboutUsImagePlaceholder {
+            height: 300px;
+          }
+
+          .placeholderIcon {
+            font-size: 3rem;
+          }
+
+          .placeholderText {
+            font-size: 1rem;
+          }
+
+          .aboutUsSubheading {
+            font-size: 1.5rem;
+          }
+
+          .valueItem {
+            padding-left: 15px;
+            border-left-width: 3px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .aboutUsSection {
+            padding: 40px 10px;
+          }
+
+          .aboutUsHeadline {
+            font-size: 1.75rem;
+          }
+
+          .aboutUsMissionText {
+            font-size: 0.95rem;
+          }
+
+          .aboutUsContent {
+            gap: 30px;
+          }
+
+          .aboutUsImagePlaceholder {
+            height: 250px;
+          }
+
+          .aboutUsSubheading {
+            font-size: 1.375rem;
+          }
+
+          .aboutUsDescription {
+            font-size: 0.95rem;
+          }
+
+          .valueTitle {
+            font-size: 1.125rem;
+          }
+
+          .valueDescription {
+            font-size: 0.9rem;
+          }
+        }

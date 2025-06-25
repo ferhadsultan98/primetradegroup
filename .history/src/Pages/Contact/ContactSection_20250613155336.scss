@@ -1,0 +1,418 @@
+// ContactSection.scss - Premium Contact Section Design
+// Modern, fully responsive with smooth animations
+
+.contactImageContainer {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2) 0%, transparent 50%);
+    animation: backgroundShift 20s ease-in-out infinite alternate;
+  }
+
+  * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@keyframes backgroundShift {
+  0% {
+    transform: translateX(-10px) translateY(-10px) scale(1);
+  }
+  100% {
+    transform: translateX(10px) translateY(10px) scale(1.02);
+  }
+}
+
+.contactTitle {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: titleSlideIn 1s ease-out;
+  letter-spacing: -2px;
+
+  @media (max-width: 768px) {
+    letter-spacing: -1px;
+  }
+}
+
+@keyframes titleSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contactSubtitle {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin: 0 0 3rem 0;
+  font-weight: 300;
+  animation: subtitleSlideIn 1s ease-out 0.2s both;
+  letter-spacing: 0.5px;
+}
+
+@keyframes subtitleSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contactImage {
+  max-width: 100%;
+  width: clamp(300px, 60vw, 800px);
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  margin: 2rem 0 4rem 0;
+  animation: imageFloat 6s ease-in-out infinite alternate;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  
+  &:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+      0 35px 70px rgba(0, 0, 0, 0.2),
+      0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: 1rem 0 3rem 0;
+  }
+}
+
+@keyframes imageFloat {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+.contactFormContainer {
+  width: 100%;
+  max-width: 600px;
+  animation: formSlideUp 1s ease-out 0.4s both;
+}
+
+@keyframes formSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formTitle {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 2.5rem 0;
+  font-weight: 700;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contactForm {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 
+      0 30px 60px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+    border-radius: 20px;
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  box-sizing: border-box;
+  
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+  }
+  
+  &:focus {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 
+      0 10px 25px rgba(0, 0, 0, 0.1),
+      0 0 0 3px rgba(255, 255, 255, 0.1);
+  }
+  
+  &:hover:not(:focus) {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  // Smooth input animation
+  animation: inputSlideIn 0.6s ease-out;
+  
+  @media (max-width: 480px) {
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+@keyframes inputSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.formTextarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.6;
+  
+  @media (max-width: 768px) {
+    min-height: 100px;
+  }
+}
+
+.formButton {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 1.25rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+  
+  &:hover {
+    background: linear-gradient(135deg, #ff5252 0%, #e55100 100%);
+    transform: translateY(-3px);
+    box-shadow: 
+      0 15px 35px rgba(238, 90, 36, 0.4),
+      0 0 20px rgba(255, 107, 107, 0.3);
+    
+    &::before {
+      left: 100%;
+    }
+  }
+  
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 
+      0 8px 20px rgba(238, 90, 36, 0.3),
+      0 0 15px rgba(255, 107, 107, 0.2);
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 
+      0 15px 35px rgba(238, 90, 36, 0.4),
+      0 0 0 3px rgba(255, 255, 255, 0.3);
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+// Staggered animation for form elements
+.formInput:nth-child(1) { animation-delay: 0.1s; }
+.formInput:nth-child(2) { animation-delay: 0.2s; }
+.formTextarea { animation-delay: 0.3s; }
+.formButton { 
+  animation: buttonSlideIn 0.6s ease-out 0.4s both;
+}
+
+@keyframes buttonSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive breakpoints
+@media (max-width: 1200px) {
+  .contactImageContainer {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactImageContainer {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+  
+  .contactTitle {
+    margin-bottom: 0.5rem;
+  }
+  
+  .contactSubtitle {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactImageContainer {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .contactFormContainer {
+    width: 95%;
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .contactImageContainer {
+    background: linear-gradient(
+      135deg,
+      #1a1a2e 0%,
+      #16213e 50%,
+      #0f3460 100%
+    );
+  }
+  
+  .contactForm {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .contactTitle,
+  .contactSubtitle,
+  .formTitle {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  .formInput,
+  .formTextarea {
+    border-width: 3px;
+  }
+}
+
+// Reduced motion for accessibility
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .contactImage {
+    animation: none;
+  }
+  
+  .contactImageContainer::before {
+    animation: none;
+  }
+}

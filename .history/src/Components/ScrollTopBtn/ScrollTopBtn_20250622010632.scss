@@ -1,0 +1,43 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  button {
+    background: linear-gradient(135deg, #253f57 0%, #52585a 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    svg {
+      font-size: 20px; 
+    }
+
+    &:hover {
+      background-color: white;
+      transform: scale(1.1);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px white;
+    }
+  }
+}

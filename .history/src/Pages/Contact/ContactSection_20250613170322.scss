@@ -1,0 +1,195 @@
+.contactImageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  max-width: 100%;
+  overflow: hidden;
+
+  .contactTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .contactSubtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .contactImage {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    object-fit: cover;
+    max-height: 400px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-align: start !important;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 650px;
+  }
+
+  .contactFormContainer {
+    width: 100%;
+    max-width: 800px;
+    background: #f5f7f9;
+    padding: 2.5rem;
+    border-radius: 30px 0px 0px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    .formTitle {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .contactForm {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+.formGroup{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+      .formInput,
+      .formTextarea {
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+          border-color: #4a90e2;
+          box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+        }
+
+        &::placeholder {
+          color: #999;
+        }
+      }
+
+      .formTextarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .formButton {
+        background-color: #ed6c30;
+        max-width: 120px;
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &:hover {
+          background-color: darken(#4a90e2, 10%);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .contactImageContainer {
+    padding: 3rem 1.5rem;
+
+    .contactTitle {
+      font-size: 2rem;
+    }
+
+    .contactSubtitle {
+      font-size: 1rem;
+    }
+
+    .contactImage {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contactFormContainer {
+      padding: 1.5rem;
+
+      .formTitle {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .contactImageContainer {
+    padding: 2rem 1rem;
+
+    .contactTitle {
+      font-size: 1.8rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .contactFormContainer {
+      padding: 1.2rem;
+
+      .contactForm {
+        gap: 1rem;
+
+        .formButton {
+          padding: 0.8rem 1.5rem;
+        }
+      }
+    }
+  }
+}

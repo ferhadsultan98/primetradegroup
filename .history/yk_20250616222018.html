@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parfume Catalogue</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f4f5f7;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --primary-color: #c8a2c8;
+            --secondary-color: #7d5a94;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --heart-color: #e0e0e0;
+            --heart-liked-color: #ff4d6d;
+            --nav-bg: #ffffff;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e0e0e0;
+            --card-bg: #16213e;
+            --primary-color: #a37ac0;
+            --secondary-color: #e94560;
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --heart-color: #555;
+            --heart-liked-color: #e94560;
+            --nav-bg: #0f3460;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: all 0.3s; padding-bottom: 80px; }
+        .site-wrapper { display: flex; justify-content: center; padding-top: 20px; }
+        .ad-sidebar { width: 200px; flex-shrink: 0; padding: 20px; height: calc(100vh - 100px); position: sticky; top: 20px; }
+        .ad-sidebar .ad-box { background-color: var(--card-bg); border-radius: 12px; box-shadow: 0 4px 15px var(--shadow-color); height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 10px; }
+        .ad-box h3 { color: var(--secondary-color); margin-bottom: 10px; }
+        .main-content { width: 100%; max-width: 1200px; padding: 0 20px; }
+        .catalogue-header { text-align: center; margin-bottom: 30px; }
+        .catalogue-header h1 { font-size: 2.5rem; color: var(--primary-color); font-weight: 700; }
+        .controls-container { position: sticky; top: 0; z-index: 10; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px; padding: 15px; background-color: var(--card-bg); border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 15px var(--shadow-color); }
+        .search-box { display: flex; align-items: center; background-color: var(--bg-color); border-radius: 8px; padding: 5px 10px; flex-grow: 1; max-width: 400px; }
+        .search-box i { color: var(--text-color); opacity: 0.6; }
+        .search-box input { border: none; outline: none; background: none; padding: 8px; width: 100%; color: var(--text-color); }
+        .control-buttons { display: flex; gap: 10px; }
+        .control-btn { background: none; border: 1px solid var(--primary-color); color: var(--primary-color); padding: 8px 12px; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+        .control-btn:hover, .control-btn.active { background-color: var(--primary-color); color: white; }
+        .control-btn i { font-size: 1rem; }
+        #perfume-grid, #favorites-grid, #discover-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; transition: all 0.3s ease-in-out; }
+        #perfume-grid.list-view, #favorites-grid.list-view, #discover-grid.list-view { grid-template-columns: 1fr; gap: 15px; }
+        #perfume-grid.list-view .perfume-card, #favorites-grid.list-view .perfume-card, #discover-grid.list-view .perfume-card { flex-direction: row; align-items: center; padding: 15px; border-radius: 15px; background-color: var(--card-bg); box-shadow: 0 5px 20px var(--shadow-color); }
+        #perfume-grid.list-view .perfume-image-placeholder, #favorites-grid.list-view .perfume-image-placeholder, #discover-grid.list-view .perfume-image-placeholder { width: 150px; height: 150px; border-radius: 15px 0 0 15px; }
+        #perfume-grid.list-view .perfume-info, #favorites-grid.list-view .perfume-info, #discover-grid.list-view .perfume-info { padding: 0 20px; }
+        .perfume-card { background-color: var(--card-bg); border-radius: 15px; box-shadow: 0 5px 20px var(--shadow-color); overflow: hidden; display: flex; flex-direction: column; transition: all 0.3s ease; position: relative; }
+        .perfume-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px var(--shadow-color); }
+        .perfume-image-placeholder { height: 180px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center; }
+        .perfume-image-placeholder i { font-size: 4rem; color: rgba(255, 255, 255, 0.7); }
+        .perfume-info { padding: 20px; flex-grow: 1; }
+        .perfume-info h3 { font-size: 1.25rem; color: var(--primary-color); margin-bottom: 10px; }
+        .perfume-info p { font-size: 0.9rem; line-height: 1.5; margin-bottom: 15px; }
+        .perfume-notes { display: flex; flex-wrap: wrap; gap: 8px; }
+        .perfume-notes span { background-color: var(--bg-color); padding: 5px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+        .heart-btn { position: absolute; top: 15px; right: 15px; background-color: rgba(255, 255, 255, 0.8); border: none; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.2rem; color: var(--heart-color); transition: all 0.2s; }
+        .heart-btn:hover { transform: scale(1.1); }
+        .heart-btn.liked { color: var(--heart-liked-color); }
+        #perfume-grid.list-view .heart-btn, #favorites-grid.list-view .heart-btn, #discover-grid.list-view .heart-btn { top: 50%; transform: translateY(-50%); }
+        .pagination { display: flex; justify-content: center; align-items: center; padding: 30px 0; gap: 8px; }
+        .pagination-btn { padding: 10px 15px; border: 1px solid var(--primary-color); background-color: transparent; color: var(--primary-color); border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+        .pagination-btn:hover, .pagination-btn.active { background-color: var(--primary-color); color: white; }
+        .pagination-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        #page-info { padding: 0 10px; font-weight: 500; }
+        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background-color: var(--nav-bg); box-shadow: 0 -2px 10px var(--shadow-color); display: flex; justify-content: space-around; padding: 10px 0; z-index: 1000; }
+        .nav-item { display: flex; flex-direction: column; align-items: center; color: var(--text-color); text-decoration: none; opacity: 0.7; transition: opacity 0.2s; }
+        .nav-item:hover, .nav-item.active { opacity: 1; color: var(--primary-color); }
+        .nav-item i { font-size: 1.5rem; margin-bottom: 5px; }
+        .nav-item span { font-size: 0.75rem; }
+        @media (max-width: 1200px) { .ad-sidebar.left-ad { display: none; } }
+        @media (max-width: 992px) { .ad-sidebar.right-ad { display: none; } .main-content { padding: 0 15px; } }
+        @media (max-width: 768px) { .catalogue-header h1 { font-size: 2rem; } .controls-container { flex-direction: column; align-items: stretch; } .search-box { max-width: none; } }
+    </style>
+</head>
+<body>
+
+    <div class="site-wrapper">
+        <aside class="ad-sidebar left-ad">
+            <div class="ad-box">
+                <h3>Exclusive Offer!</h3>
+                <p>25% off on all floral scents. Use code: FLOWER25</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="catalogue-header">
+                <h1>Scent Haven</h1>
+                <p>Discover Your Signature Fragrance</p>
+            </header>
+
+            <div class="controls-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search for perfumes...">
+                </div>
+                <div class="control-buttons">
+                    <div id="filter-container">
+                         <select id="filterSelect" class="control-btn">
+                            <option value="all">All Notes</option>
+                            <option value="Citrus">Citrus</option>
+                            <option value="Floral">Floral</option>
+                            <option value="Woody">Woody</option>
+                            <option value="Spicy">Spicy</option>
+                         </select>
+                    </div>
+                    <div id="view-toggle">
+                        <button id="grid-view-btn" class="control-btn active" title="Grid View"><i class="fas fa-th-large"></i></button>
+                        <button id="list-view-btn" class="control-btn" title="List View"><i class="fas fa-list"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="perfume-grid"></div>
+            <div id="favorites-grid" style="display:none;"></div>
+            <div id="discover-grid" style="display:none;"></div>
+
+            <div id="pagination-container" class="pagination"></div>
+        </main>
+
+        <aside class="ad-sidebar right-ad">
+            <div class="ad-box">
+                <h3>New Arrivals</h3>
+                <p>Explore the latest scents from top brands.</p>
+            </div>
+        </aside>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active" data-section="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="nav-item" data-section="favorites">
+            <i class="fas fa-heart"></i>
+            <span>Favorites</span>
+        </a>
+        <a href="#" class="nav-item" data-section="discover">
+            <i class="fas fa-compass"></i>
+            <span>Discover</span>
+        </a>
+        <button id="theme-toggle" class="nav-item" style="background:none; border:none; cursor:pointer;">
+            <i class="fas fa-moon"></i>
+            <span>Theme</span>
+        </button>
+    </nav>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const perfumes = [
+            { id: 1, name: 'Ocean Breeze', desc: 'A fresh, aquatic fragrance that captures the essence of a seaside escape.', notes: ['Citrus', 'Sea Salt', 'Amber'], liked: false },
+            { id: 2, name: 'Midnight Bloom', desc: 'An intoxicating floral bouquet with a mysterious, musky undertone.', notes: ['Jasmine', 'Tuberose', 'Musk', 'Floral'], liked: true },
+            { id: 3, name: 'Ember Woods', desc: 'A warm and smoky scent reminiscent of a cozy campfire in a forest.', notes: ['Sandalwood', 'Vanilla', 'Spice', 'Woody'], liked: false },
+            { id: 4, name: 'Citrus Grove', desc: 'A vibrant and zesty fragrance, bursting with the energy of sun-ripened citrus fruits.', notes: ['Lemon', 'Mandarin', 'Neroli', 'Citrus'], liked: false },
+            { id: 5, name: 'Velvet Rose', desc: 'A classic and romantic scent centered around the timeless elegance of fresh roses.', notes: ['Rose', 'Oud', 'Peony', 'Floral'], liked: false },
+            { id: 6, name: 'Spiced Amber', desc: 'A rich and opulent fragrance that combines sweet amber with exotic spices.', notes: ['Amber', 'Cinnamon', 'Clove', 'Spicy'], liked: true },
+            { id: 7, name: 'Forest Floor', desc: 'An earthy and grounding scent with notes of damp soil, moss, and aged wood.', notes: ['Oakmoss', 'Patchouli', 'Vetiver', 'Woody'], liked: false },
+            { id: 8, name: 'Solar Flare', desc: 'A bright, radiant fragrance that feels like sunshine in a bottle.', notes: ['Bergamot', 'Ylang-Ylang', 'Coconut', 'Citrus'], liked: false },
+            { id: 9, name: 'Lavender Dream', desc: 'A calming and serene scent, perfect for relaxation and peaceful moments.', notes: ['Lavender', 'Chamomile', 'Vanilla', 'Floral'], liked: false },
+            { id: 10, name: 'Crimson Spice', desc: 'A bold and fiery fragrance with a dominant note of exotic saffron and pepper.', notes: ['Saffron', 'Pepper', 'Leather', 'Spicy'], liked: false },
+            { id: 11, name: 'Azure Coast', desc: 'Crisp and invigorating, like a cool breeze on a Mediterranean coastline.', notes: ['Grapefruit', 'Mint', 'Cedar', 'Citrus'], liked: false },
+            { id: 12, name: 'Golden Hour', desc: 'A warm, sweet, and slightly powdery scent that captures the magic of sunset.', notes: ['Tonka Bean', 'Almond', 'Heliotrope', 'Woody'], liked: false },
+        ];
+
+        let currentPage = 1;
+        const itemsPerPage = 6;
+        let currentFilter = 'all';
+        let currentSearch = '';
+        let currentSection = 'home';
+
+        const grid = document.getElementById('perfume-grid');
+        const favoritesGrid = document.getElementById('favorites-grid');
+        const discoverGrid = document.getElementById('discover-grid');
+        const searchInput = document.getElementById('searchInput');
+        const filterSelect = document.getElementById('filterSelect');
+        const gridViewBtn = document.getElementById('grid-view-btn');
+        const listViewBtn = document.getElementById('list-view-btn');
+        const paginationContainer = document.getElementById('pagination-container');
+        const themeToggle = document.getElementById('theme-toggle');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        const renderPerfumes = (targetGrid, perfumesToRender) => {
+            targetGrid.innerHTML = '';
+            const totalPages = Math.ceil(perfumesToRender.length / itemsPerPage);
+            if (currentPage > totalPages && totalPages > 0) currentPage = totalPages;
+            else if (totalPages === 0) currentPage = 1;
+
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const paginatedPerfumes = perfumesToRender.slice(startIndex, endIndex);
+
+            if (paginatedPerfumes.length === 0) {
+                targetGrid.innerHTML = `<p>No perfumes found.</p>`;
+            } else {
+                paginatedPerfumes.forEach(perfume => {
+                    const card = document.createElement('div');
+                    card.className = 'perfume-card';
+                    card.dataset.id = perfume.id;
+                    const likedClass = perfume.liked ? 'liked' : '';
+
+                    card.innerHTML = `
+                        <div class="perfume-image-placeholder">
+                            <i class="fas fa-spray-can-sparkles"></i>
+                        </div>
+                        <div class="perfume-info">
+                            <h3>${perfume.name}</h3>
+                            <p>${perfume.desc}</p>
+                            <div class="perfume-notes">
+                                ${perfume.notes.map(note => `<span>${note}</span>`).join('')}
+                            </div>
+                        </div>
+                        <button class="heart-btn ${likedClass}" title="Like">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    `;
+                    targetGrid.appendChild(card);
+                });
+            }
+
+            renderPagination(totalPages, perfumesToRender.length);
+        };
+
+        const renderPagination = (totalPages, totalItems) => {
+            paginationContainer.innerHTML = '';
+            if (totalPages <= 1) return;
+
+            const prevButton = document.createElement('button');
+            prevButton.className = 'pagination-btn';
+            prevButton.innerHTML = '« Prev';
+            prevButton.disabled = currentPage === 1;
+            prevButton.addEventListener('click', () => { if (currentPage > 1) { currentPage--; render(); } });
+            paginationContainer.appendChild(prevButton);
+
+            const pageInfo = document.createElement('span');
+            pageInfo.id = 'page-info';
+            pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+            paginationContainer.appendChild(pageInfo);
+
+            const nextButton = document.createElement('button');
+            nextButton.className = 'pagination-btn';
+            nextButton.innerHTML = 'Next »';
+            nextButton.disabled = currentPage === totalPages;
+            nextButton.addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; render(); } });
+            paginationContainer.appendChild(nextButton);
+        };
+
+        const render = () => {
+            grid.style.display = 'none';
+            favoritesGrid.style.display = 'none';
+            discoverGrid.style.display = 'none';
+            paginationContainer.style.display = 'none';
+
+            let perfumesToRender = [];
+            if (currentSection === 'home') {
+                grid.style.display = 'grid';
+                paginationContainer.style.display = 'flex';
+                let filteredPerfumes = perfumes;
+                if (currentFilter !== 'all') filteredPerfumes = perfumes.filter(p => p.notes.includes(currentFilter));
+                if (currentSearch) filteredPerfumes = filteredPerfumes.filter(p => p.name.toLowerCase().includes(currentSearch) || p.desc.toLowerCase().includes(currentSearch));
+                perfumesToRender = filteredPerfumes;
+                renderPerfumes(grid, perfumesToRender);
+            } else if (currentSection === 'favorites') {
+                favoritesGrid.style.display = 'grid';
+                paginationContainer.style.display = 'flex';
+                let filteredPerfumes = perfumes.filter(p => p.liked);
+                if (currentFilter !== 'all') filteredPerfumes = filteredPerfumes.filter(p => p.notes.includes(currentFilter));
+                if (currentSearch) filteredPerfumes = filteredPerfumes.filter(p => p.name.toLowerCase().includes(currentSearch) || p.desc.toLowerCase().includes(currentSearch));
+                perfumesToRender = filteredPerfumes;
+                renderPerfumes(favoritesGrid, perfumesToRender);
+            } else if (currentSection === 'discover') {
+                discoverGrid.style.display = 'grid';
+                paginationContainer.style.display = 'flex';
+                let filteredPerfumes = perfumes.filter(p => !p.liked);
+                if (currentFilter !== 'all') filteredPerfumes = filteredPerfumes.filter(p => p.notes.includes(currentFilter));
+                if (currentSearch) filteredPerfumes = filteredPerfumes.filter(p => p.name.toLowerCase().includes(currentSearch) || p.desc.toLowerCase().includes(currentSearch));
+                perfumesToRender = filteredPerfumes;
+                renderPerfumes(discoverGrid, perfumesToRender);
+            }
+        };
+
+        searchInput.addEventListener('input', (e) => { currentSearch = e.target.value.toLowerCase(); currentPage = 1; render(); });
+        filterSelect.addEventListener('change', (e) => { currentFilter = e.target.value; currentPage = 1; render(); });
+        gridViewBtn.addEventListener('click', () => { grid.classList.remove('list-view'); favoritesGrid.classList.remove('list-view'); discoverGrid.classList.remove('list-view'); gridViewBtn.classList.add('active'); listViewBtn.classList.remove('active'); render(); });
+        listViewBtn.addEventListener('click', () => { grid.classList.add('list-view'); favoritesGrid.classList.add('list-view'); discoverGrid.classList.add('list-view'); listViewBtn.classList.add('active'); gridViewBtn.classList.remove('active'); render(); });
+
+        grid.addEventListener('click', (e) => { handleLike(e, grid); });
+        favoritesGrid.addEventListener('click', (e) => { handleLike(e, favoritesGrid); });
+        discoverGrid.addEventListener('click', (e) => { handleLike(e, discoverGrid); });
+
+        const handleLike = (e, targetGrid) => {
+            const heartBtn = e.target.closest('.heart-btn');
+            if (heartBtn) {
+                const card = heartBtn.closest('.perfume-card');
+                const perfumeId = parseInt(card.dataset.id);
+                const perfume = perfumes.find(p => p.id === perfumeId);
+                perfume.liked = !perfume.liked;
+                heartBtn.classList.toggle('liked', perfume.liked);
+                render();
+            }
+        };
+
+        themeToggle.addEventListener('click', () => { document.body.classList.toggle('dark-mode'); const icon = themeToggle.querySelector('i'); icon.className = document.body.classList.contains('dark-mode') ? 'fas fa-sun' : 'fas fa-moon'; });
+
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                navItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                currentSection = item.dataset.section;
+                currentPage = 1;
+                render();
+            });
+        });
+
+        render();
+    });
+    </script>

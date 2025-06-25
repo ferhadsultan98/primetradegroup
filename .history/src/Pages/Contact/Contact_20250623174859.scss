@@ -1,0 +1,296 @@
+.contactContainer {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+
+
+
+  .contactInfoSection {
+    padding: 0 60px;
+
+    .sectionTitle {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #253f57;
+      margin-bottom: 60px;
+      font-weight: 600;
+    }
+
+    .contactInfoGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+
+      .contactInfoCard {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 8px 30px rgba(37, 63, 87, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-top: 4px solid #253f57;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(37, 63, 87, 0.15);
+        }
+
+        .contactIconWrapper {
+          background: #253f57;
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 25px;
+
+          .contactIcon {
+            width: 35px;
+            height: 35px;
+            color: white;
+          }
+        }
+
+        .contactTitle {
+          font-size: 1.4rem;
+          color: #253f57;
+          margin-bottom: 20px;
+          font-weight: 600;
+        }
+
+        .contactText {
+          color: #666;
+          font-size: 1rem;
+          line-height: 1.7;
+          margin-bottom: 8px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .contactFormSection {
+    padding: 100px 0;
+
+
+    .formContainer {
+      max-width: 800px;
+      margin: 0 auto;
+
+      .formHeader {
+        text-align: center;
+        margin-bottom: 50px;
+
+        .formTitle {
+          font-size: 2.5rem;
+          color: #cccc;
+          margin-bottom: 20px;
+          font-weight: 600;
+        }
+
+        .formSubtitle {
+          font-size: 1.1rem;
+          color: #666;
+          line-height: 1.7;
+        }
+      }
+
+      .contactForm {
+        .formGrid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 30px;
+          margin-bottom: 30px;
+        }
+
+        .inputGroup {
+          .inputWrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .inputIcon {
+              position: absolute;
+              left: 15px;
+              width: 20px;
+              height: 20px;
+              color: #253f57;
+              z-index: 1;
+            }
+
+            .formInput {
+              width: 100%;
+              padding: 15px 15px 15px 50px;
+              border: 2px solid #e9ecef;
+              border-radius: 8px;
+              font-size: 1rem;
+              transition: border-color 0.3s ease, box-shadow 0.3s ease;
+              background: white;
+
+              &:focus {
+                outline: none;
+                border-color: #253f57;
+                box-shadow: 0 0 0 3px rgba(37, 63, 87, 0.1);
+              }
+
+              &::placeholder {
+                color: #999;
+              }
+            }
+          }
+
+          .textareaWrapper {
+            position: relative;
+
+            .textareaIcon {
+              position: absolute;
+              top: 15px;
+              left: 15px;
+              width: 20px;
+              height: 20px;
+              color: #253f57;
+              z-index: 1;
+            }
+
+            .formTextarea {
+              width: 100%;
+              padding: 15px 15px 15px 50px;
+              border: 2px solid #e9ecef;
+              border-radius: 8px;
+              font-size: 1rem;
+              transition: border-color 0.3s ease, box-shadow 0.3s ease;
+              background: white;
+              resize: vertical;
+              min-height: 120px;
+              font-family: inherit;
+
+              &:focus {
+                outline: none;
+                border-color: #253f57;
+                box-shadow: 0 0 0 3px rgba(37, 63, 87, 0.1);
+              }
+
+              &::placeholder {
+                color: #999;
+              }
+            }
+          }
+
+          &.fullWidth {
+            grid-column: 1 / -1;
+            margin-bottom: 40px;
+          }
+        }
+
+        .submitButton {
+          background: #1e3245;
+          color: white;
+          border: none;
+          padding: 18px 40px;
+          border-radius: 8px;
+          font-size: 1.1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          margin: 0 auto;
+
+          .submitIcon {
+            width: 20px;
+            height: 20px;
+          }
+
+          &:hover {
+            background: #1e3245;
+            transform: translateY(-2px);
+          }
+
+          &:active {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+
+  .ctaSection {
+    padding: 80px 0;
+    background: #253f57;
+    color: white;
+
+    .ctaContent {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+
+      .ctaTitle {
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .ctaText {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #d3d8e8;
+        margin-bottom: 30px;
+      }
+
+      .ctaButtons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        .ctaButtonPrimary {
+          background: #007bff;
+          color: white;
+          border: none;
+          padding: 16px 32px;
+          font-size: 1.05rem;
+          font-weight: 600;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+
+          &:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+          }
+ 
+          &:active {
+            transform: translateY(0);
+          }
+        }
+
+        .ctaButtonSecondary {
+          background: transparent;
+          color: #d3d7e8;
+          border: 2px solid #ffffff;
+          padding: 16px 32px;
+          font-size: 1.05rem;
+          font-weight: 600;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transform: translateY(-2px);
+          }
+
+          &:active {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}

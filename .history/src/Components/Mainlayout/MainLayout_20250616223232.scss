@@ -1,0 +1,11 @@
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Konteynerin kullanılabilir alanını doldurur */
+  margin-top: 60px; /* Header yüksekliğine göre ayarlayın */
+  padding: 20px;
+}

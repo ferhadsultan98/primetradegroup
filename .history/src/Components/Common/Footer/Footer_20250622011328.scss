@@ -1,0 +1,306 @@
+.footer {
+  color: #333;
+
+
+  .footerContainer {
+    .containerWrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+  }
+
+  .footerMain {
+    background: white;
+    padding: 80px 0 60px;
+    border-bottom: 1px solid rgba(37, 63, 87, 0.1);
+
+    .footerGrid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 50px;
+
+      .footerSection {
+        &.companySection {
+          .companyLogo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+
+            .logoIcon {
+              width: 40px;
+              height: 40px;
+              color: #253f57;
+              margin-right: 12px;
+            }
+
+            .companyName {
+              font-size: 1.8rem;
+              color: #253f57;
+              font-weight: 700;
+              margin: 0;
+            }
+          }
+
+          .companyDescription {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-size: 1rem;
+          }
+
+          .socialLinks {
+            display: flex;
+            gap: 15px;
+
+            .socialLink {
+              width: 45px;
+              height: 45px;
+              background: #253f57;
+              color: white;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-decoration: none;
+              transition: all 0.3s ease;
+
+              &:hover {
+                background: #1a2b3a;
+                transform: translateY(-2px);
+              }
+
+              .socialIcon {
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+        }
+
+        .sectionTitle {
+          font-size: 1.3rem;
+          color: #253f57;
+          font-weight: 600;
+          margin-bottom: 25px;
+          position: relative;
+          padding-bottom: 10px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, gray, #1a2b3a);
+          }
+        }
+
+        .linkList {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            margin-bottom: 12px;
+
+            .footerLink {
+              color: #666;
+              text-decoration: none;
+              display: flex;
+              align-items: center;
+              transition: all 0.3s ease;
+              font-size: 0.95rem;
+
+              &:hover {
+                color: #253f57;
+                padding-left: 5px;
+              }
+
+              .linkIcon {
+                width: 14px;
+                height: 14px;
+                margin-right: 8px;
+                flex-shrink: 0;
+              }
+            }
+          }
+        }
+
+        .contactList {
+          .contactItem {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+
+            .contactIcon {
+              width: 20px;
+              height: 20px;
+              color: #253f57;
+              margin-right: 15px;
+              margin-top: 2px;
+              flex-shrink: 0;
+            }
+
+            .contactDetails {
+              .contactText {
+                color: #666;
+                line-height: 1.6;
+                font-size: 0.95rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footerBottom {
+    background: linear-gradient(135deg, #253f57 0%, #52585a 100%);
+    padding: 25px 0;
+
+    .bottomContent {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+
+      .copyrightText {
+        line-height: 1.5;
+      }
+
+      .legalLinks {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .legalLink {
+          color: rgba(255, 255, 255, 0.8);
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: white;
+          }
+        }
+
+        .separator {
+          color: rgba(255, 255, 255, 0.4);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .footerMain {
+      .footerGrid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footerMain {
+      padding: 60px 0 40px;
+
+      .footerGrid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    .footerBottom {
+      .bottomContent {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+
+        .legalLinks {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footerContainer {
+      .containerWrapper {
+        padding: 0 15px;
+      }
+    }
+
+    .footerMain {
+      padding: 40px 0 30px;
+
+      .footerGrid {
+        gap: 30px;
+
+        .footerSection {
+          &.companySection {
+            .companyLogo {
+              .companyName {
+                font-size: 1.5rem;
+              }
+            }
+
+            .socialLinks {
+              justify-content: center;
+
+              .socialLink {
+                width: 40px;
+                height: 40px;
+
+                .socialIcon {
+                  width: 18px;
+                  height: 18px;
+                }
+              }
+            }
+          }
+
+          .sectionTitle {
+            font-size: 1.2rem;
+            text-align: center;
+
+            &::after {
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+
+          .linkList {
+            text-align: center;
+
+            li {
+              .footerLink {
+                justify-content: center;
+              }
+            }
+          }
+
+          .contactList {
+            .contactItem {
+              justify-content: center;
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+
+    .footerBottom {
+      padding: 20px 0;
+
+      .bottomContent {
+        .legalLinks {
+          gap: 10px;
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}
