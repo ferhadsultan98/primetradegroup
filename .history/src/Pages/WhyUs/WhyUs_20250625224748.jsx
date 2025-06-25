@@ -25,7 +25,6 @@ const WhyUs = () => {
       {/* Main Benefits Section */}
       <section className="benefitsSection">
         <div className="containerWrapper">
-            <SectionHeader title="Why Choose Us" subtitle="Your Strategic Procurement Partner"/>
           <div className="benefitsGrid">
             <div className="benefitCard">
               <DollarSign className="benefitIcon" />

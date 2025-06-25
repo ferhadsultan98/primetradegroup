@@ -13,7 +13,7 @@ const Footer = () => {
               alt="Company Logo" 
               className="companyLogo"
             />
-            <h2>PRIME TRADE GROUP</h2>
+            <h2></h2>
             <p className="companyDescription">
               We are committed to providing excellent service and innovative solutions 
               to meet all your business needs.

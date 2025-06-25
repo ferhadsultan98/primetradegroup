@@ -203,7 +203,7 @@
 
     .missionSection,
     .servicesSection {
-      padding: 5px;
+      padding: 60px 20px;
     }
 
     .heroSection {
@@ -225,7 +225,6 @@
         grid-template-columns: 1fr;
 
         .statCard {
-          padding: 0;
           .statNumber {
             font-size: 2.5rem;
           }

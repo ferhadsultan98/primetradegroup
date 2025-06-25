@@ -37,7 +37,7 @@ const ContactSection = () => {
      
       <div className="containerWrapper">
          <SectionHeader title="salam" subtitle="sagol"/>
-      
+        {/* Contact Info Section */}
         <div className="contactInfoSection">
           <div className="sectionTitle">Get In Touch</div>
           <div className="contactInfoGrid">

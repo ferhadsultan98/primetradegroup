@@ -14,7 +14,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 40px;
-      padding: 60px 0;
+
       .benefitCard {
         background: white;
         padding: 50px 30px;
@@ -305,7 +305,6 @@
       .benefitsGrid {
         grid-template-columns: 1fr;
         gap: 30px;
-        padding: 0;
 
         .benefitCard {
           padding: 40px 25px;

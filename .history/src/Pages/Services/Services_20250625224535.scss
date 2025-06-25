@@ -12,7 +12,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 40px;
-      padding: 60px 0;
+  
 
       .serviceCard {
         background: white;
@@ -21,12 +21,20 @@
         text-align: center;
         box-shadow: 0 8px 32px rgba(37, 63, 87, 0.1);
         transition: all 0.3s ease;
-   
+        border: 2px solid transparent;
         position: relative;
         overflow: hidden;
-         border-top: 4px solid #1a2b3a;
 
-        
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: linear-gradient(90deg, #253f57 0%, #34495e 100%);
+        }
+
         &:hover {
           transform: translateY(-8px);
           box-shadow: 0 20px 48px rgba(37, 63, 87, 0.15);
@@ -255,7 +263,6 @@
 
     .servicesSection {
       .servicesGrid {
-        padding: 0;
         .serviceCard {
           padding: 25px 20px;
 
