@@ -194,7 +194,7 @@
           cursor: pointer;
           transition: background-color 0.3s ease, transform 0.2s ease;
           display: flex;
-          align-items: center;
+          align-items: start;
           justify-content: center;
           gap: 10px;
           margin: 0 auto;
@@ -227,7 +227,6 @@
       text-align: center;
       max-width: 700px;
       margin: 0 auto;
-      padding: 0 20px;
 
       .ctaTitle {
         font-size: 2.2rem;
@@ -247,9 +246,6 @@
         justify-content: center;
         gap: 20px;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
         .ctaButtonPrimary {
           background: #007bff;
           color: white;
