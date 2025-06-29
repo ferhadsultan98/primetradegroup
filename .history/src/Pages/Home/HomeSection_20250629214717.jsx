@@ -92,7 +92,15 @@ const HomeSection = () => {
             </div>
           ))}
         </div>
-   
+        <div className="slideIndicators">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className={`indicatorDot ${index === currentSlide ? 'indicatorActive' : ''}`}
+              onClick={() => setCurrentSlide(index)}
+            />
+          ))}
+        </div>
       </section>
 
       {/* Our Expertise Section */}

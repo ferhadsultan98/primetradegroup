@@ -21,7 +21,6 @@ const AboutUs = () => {
              {/* Company Overview Section */}
       <section className="companyOverviewSection">
         <div className="containerWrapper">
-          <h2 className="sectionTitle">Who We Are</h2>
           <div className="overviewContent">
             <p className="overviewText">
               As PRIME TRADE GROUP MMC, we procure goods directly from importing
@@ -33,7 +32,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-      
+
           <div className="missionGrid">
             <div className="missionCard">
               <Target className="missionIcon" />

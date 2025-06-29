@@ -5,6 +5,32 @@
   .containerWrapper {
     margin: 0 auto;
     padding: 60px;
+    max-width: 1200px;
+  }
+
+  .whoWeAreSection {
+    padding: 80px 60px;
+    background: #f8f9fa;
+
+    .sectionTitle {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #253f57;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+
+    .overviewContent {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+
+      .overviewText {
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.8;
+      }
+    }
   }
 
   .missionSection {
@@ -51,38 +77,13 @@
     }
   }
 
-  .companyOverviewSection {
-
-    background: #f8f9fa;
-       border-radius: 12px;
-    .sectionTitle {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #1a2b3a;
-
-      font-weight: 600;
-    }
-
-    .overviewContent {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-
-      .overviewText {
-        font-size: 1.1rem;
-        color: #666;
-        line-height: 1.8;
-      }
-    }
-  }
-
   .servicesSection {
-
+    padding: 20px 60px;
 
     .sectionTitle {
       text-align: center;
       font-size: 2.5rem;
-      color: white;
+      color: #253f57;
       margin-bottom: 60px;
       font-weight: 600;
     }
@@ -152,14 +153,7 @@
   }
 
   @media (max-width: 768px) {
-    .missionSection {
-      .missionGrid {
-        grid-template-columns: 1fr;
-        padding: 0;
-      }
-    }
-
-    .companyOverviewSection {
+    .whoWeAreSection {
       padding: 60px 20px;
 
       .sectionTitle {
@@ -168,6 +162,13 @@
 
       .overviewText {
         font-size: 1rem;
+      }
+    }
+
+    .missionSection {
+      .missionGrid {
+        grid-template-columns: 1fr;
+        padding: 0;
       }
     }
 
@@ -192,15 +193,7 @@
   }
 
   @media (max-width: 480px) {
-    .missionSection {
-      .missionGrid {
-        .missionCard {
-          padding: 10px;
-        }
-      }
-    }
-
-    .companyOverviewSection {
+    .whoWeAreSection {
       padding: 40px 20px;
 
       .sectionTitle {
@@ -209,6 +202,14 @@
 
       .overviewText {
         font-size: 0.9rem;
+      }
+    }
+
+    .missionSection {
+      .missionGrid {
+        .missionCard {
+          padding: 10px;
+        }
       }
     }
 

@@ -5,6 +5,8 @@
   .containerWrapper {
     margin: 0 auto;
     padding: 60px;
+    display: flex;
+    flex-direction: column;
   }
 
   .missionSection {

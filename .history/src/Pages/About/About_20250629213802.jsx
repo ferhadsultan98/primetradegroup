@@ -18,22 +18,6 @@ const AboutUs = () => {
       <section className="missionSection">
         <div className="containerWrapper">
           <SectionHeader title="About Us" subtitle="Get to know who we are and what we do" />
-             {/* Company Overview Section */}
-      <section className="companyOverviewSection">
-        <div className="containerWrapper">
-          <h2 className="sectionTitle">Who We Are</h2>
-          <div className="overviewContent">
-            <p className="overviewText">
-              As PRIME TRADE GROUP MMC, we procure goods directly from importing
-              and manufacturing companies across various sectors, offering them
-              to our clients under competitive terms. Our company stands out with
-              a diverse product portfolio, a flexible service mechanism, and a
-              commitment to long-term partnerships.
-            </p>
-          </div>
-        </div>
-      </section>
-      
           <div className="missionGrid">
             <div className="missionCard">
               <Target className="missionIcon" />

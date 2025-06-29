@@ -77,7 +77,7 @@
   }
 
   .servicesSection {
-
+    padding: 20px 60px;
 
     .sectionTitle {
       text-align: center;
@@ -89,8 +89,8 @@
 
     .servicesGrid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 40px;
+      display: flex;
+      justify-content: space-between;
 
       .serviceCard {
         background: #f8f9fa;

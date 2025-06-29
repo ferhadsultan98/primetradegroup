@@ -7,6 +7,31 @@
     padding: 0 60px;
   }
 
+  .companyOverviewSection {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 60px 0;
+
+    .sectionTitle {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #1a2b3a;
+      font-weight: 600;
+    }
+
+    .overviewContent {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+
+      .overviewText {
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.8;
+      }
+    }
+  }
+
   .benefitsSection {
     padding: 60px 0;
 
@@ -15,6 +40,7 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 40px;
       padding: 60px 0;
+
       .benefitCard {
         background: white;
         padding: 50px 30px;
@@ -85,7 +111,7 @@
     .sectionTitle {
       text-align: center;
       font-size: 2.8rem;
-      color: #cccc;
+      color: white;
       margin-bottom: 70px;
       font-weight: 700;
       position: relative;
@@ -299,6 +325,18 @@
   }
 
   @media (max-width: 768px) {
+    .companyOverviewSection {
+      padding: 60px 20px;
+
+      .sectionTitle {
+        font-size: 2rem;
+      }
+
+      .overviewText {
+        font-size: 1rem;
+      }
+    }
+
     .benefitsSection {
       padding: 0;
 
@@ -316,100 +354,4 @@
     .advantagesSection {
       padding: 80px 0;
 
-      .advantagesGrid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-
-        .advantageCard {
-          padding: 35px 25px;
-        }
-      }
-    }
-
-    .successSection {
-      padding: 70px 0;
-
-      .successGrid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-
-        .successCard {
-          padding: 30px 15px;
-
-          .successNumber {
-            font-size: 2.8rem;
-          }
-        }
-      }
-    }
-
-    .trustSection {
-      padding: 80px 0;
-
-      .trustGrid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-
-        .trustCard {
-          padding: 35px 25px;
-        }
-      }
-    }
-
-    .sectionTitle {
-      font-size: 2.2rem;
-    }
-
-    .containerWrapper {
-      padding: 0 15px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .benefitsSection {
-      .benefitCard {
-        padding: 30px 20px;
-
-        .benefitTitle {
-          font-size: 1.4rem;
-        }
-      }
-    }
-
-    .advantagesSection {
-      .advantageCard {
-        padding: 30px 20px;
-
-        .advantageTitle {
-          font-size: 1.2rem;
-        }
-      }
-    }
-
-    .successSection {
-      .successGrid {
-        grid-template-columns: 1fr;
-
-        .successCard {
-          .successNumber {
-            font-size: 2.5rem;
-          }
-        }
-      }
-    }
-
-    .trustSection {
-      .trustCard {
-        padding: 30px 20px;
-
-        .trustTitle {
-          font-size: 1.3rem;
-        }
-      }
-    }
-
-    .sectionTitle {
-      font-size: 1.8rem;
-    }
-  }
-}
+      .advantagesGrid___executor_end_

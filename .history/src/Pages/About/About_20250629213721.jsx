@@ -1,11 +1,10 @@
 import React from "react";
 import {
+  Target,
+  Award,
+  Shield,
   Truck,
   Globe,
-  Users,
-  Award,
-  Target,
-  Shield,
   CheckCircle,
 } from "lucide-react";
 import "./About.scss";
@@ -14,12 +13,8 @@ import SectionHeader from "../../Components/SectionHeader/SectionHeader";
 const AboutUs = () => {
   return (
     <div className="aboutContainer">
-      {/* Mission Section */}
-      <section className="missionSection">
-        <div className="containerWrapper">
-          <SectionHeader title="About Us" subtitle="Get to know who we are and what we do" />
-             {/* Company Overview Section */}
-      <section className="companyOverviewSection">
+      {/* Who We Are Section */}
+      <section className="whoWeAreSection">
         <div className="containerWrapper">
           <h2 className="sectionTitle">Who We Are</h2>
           <div className="overviewContent">
@@ -33,7 +28,11 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-      
+
+      {/* Mission Section */}
+      <section className="missionSection">
+        <div className="containerWrapper">
+          <SectionHeader title="Our Mission" subtitle="What drives us forward" />
           <div className="missionGrid">
             <div className="missionCard">
               <Target className="missionIcon" />
@@ -65,8 +64,6 @@ const AboutUs = () => {
         </div>
       </section>
 
-   
-
       {/* Services Section */}
       <section className="servicesSection">
         <div className="containerWrapper">
@@ -92,7 +89,6 @@ const AboutUs = () => {
                 </div>
               </div>
             </div>
-
             <div className="serviceCard">
               <div className="serviceIconWrapper">
                 <Globe className="serviceIcon" />
@@ -110,27 +106,6 @@ const AboutUs = () => {
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
                   <span>Cost optimization</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="serviceCard">
-              <div className="serviceIconWrapper">
-                <Shield className="serviceIcon" />
-              </div>
-              <h4 className="serviceTitle">Risk Management</h4>
-              <div className="serviceFeatures">
-                <div className="featureItem">
-                  <CheckCircle className="featureIcon" />
-                  <span>Compliance monitoring</span>
-                </div>
-                <div className="featureItem">
-                  <CheckCircle className="featureIcon" />
-                  <span>Supply chain security</span>
-                </div>
-                <div className="featureItem">
-                  <CheckCircle className="featureIcon" />
-                  <span>Contingency planning</span>
                 </div>
               </div>
             </div>

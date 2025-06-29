@@ -385,7 +385,6 @@
     padding: 80px 0;
     background: white;
     color: #253f57;
-    border-radius: 20px;
 
     @media (max-width: 768px) {
       padding: 60px 0;
@@ -448,7 +447,7 @@
         }
 
         .ctaButtonPrimary {
-          background: #253f57;
+          background: #007bff;
           color: white;
           border: none;
           padding: 16px 32px;
@@ -469,7 +468,7 @@
           }
 
           &:hover {
-            // background: #0056b3;
+            background: #0056b3;
             transform: translateY(-2px);
           }
 
@@ -479,7 +478,7 @@
         }
 
         .ctaButtonSecondary {
-          background: #253f57;
+          background: transparent;
           color: #d3d7e8;
           border: 2px solid #ffffff;
           padding: 16px 32px;
@@ -501,7 +500,7 @@
           }
 
           &:hover {
-            // background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             transform: translateY(-2px);
           }

@@ -76,10 +76,14 @@ const Services = () => {
         {/* Company Overview Section */}
         <section className="companyOverviewSection">
           <div className="containerWrapper">
-            <h2 className="sectionTitle">Our Service Expertise</h2>
+            <h2 className="sectionTitle">Who We Are</h2>
             <div className="overviewContent">
               <p className="overviewText">
-                At PRIME TRADE GROUP MMC, we deliver comprehensive supply chain and logistics solutions tailored to your business needs. Our services combine advanced technology, strategic partnerships, and industry expertise to optimize operations, reduce costs, and ensure seamless global trade.
+                As PRIME TRADE GROUP MMC, we procure goods directly from importing
+                and manufacturing companies across various sectors, offering them
+                to our clients under competitive terms. Our company stands out with
+                a diverse product portfolio, a flexible service mechanism, and a
+                commitment to long-term partnerships.
               </p>
             </div>
           </div>
