@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farhad - Frontend Developer</title>
+    <style>
+        :root {
+            --color-background: #0A0F1A;
+            --color-surface1: #131B2D;
+            --color-surface2: #1E2945;
+            --color-primary-accent: #00A9E0;
+            --color-secondary-accent: #E60073;
+            --color-text-primary: #E0E5F0;
+            --color-text-secondary: #A0A8B8;
+            --color-border: rgba(224, 229, 240, 0.15);
+            --color-glass-border: rgba(0, 169, 224, 0.2);
+            --color-glass-bg: rgba(30, 41, 69, 0.5);
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Manrope', sans-serif;
+            --transition-speed-fast: 0.3s;
+            --transition-speed-medium: 0.5s;
+            --border-radius-main: 18px;
+            --border-radius-small: 10px;
+            --shadow-light: 0 5px 15px rgba(0, 169, 224, 0.1);
+            --shadow-medium: 0 8px 25px rgba(0, 169, 224, 0.15);
+            --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .profileImage {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-surface1), var(--color-surface2));
+            border: 3px solid var(--color-border);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            font-weight: bold;
+            color: var(--color-text-primary);
+            box-shadow: var(--shadow-dark);
+            transition: transform var(--transition-speed-fast) ease;
+        }
+
+        .profileImage:hover {
+            transform: scale(1.05);
+        }
+
+        .name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            color: var(--color-text-primary);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contactSection {
+            margin-top: 3rem;
+        }
+
+        .contactTitle {
+            font-size: 2rem;
+            color: var(--color-text-primary);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: var(--font-heading);
+        }
+
+        .contactLinks {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contactLink {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: var(--color-glass-bg);
+            color: var(--color-text-primary);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius-small);
+            font-weight: 500;
+            transition: all var(--transition-speed-fast) ease;
+            border: 2px solid var(--color-glass-border);
+            min-width: 150px;
+            justify-content: center;
+        }
+
+        .contactLink:hover {
+            background: var(--color-surface2);
+            border-color: var(--color-primary-accent);
+            transform: translateY(-2px);
+        }
+
+        .contactIcon {
+            width: 20px;
+            height: 20px;
+            background: var(--color-text-primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .profileImage {
+                width: 150px;
+                height: 150px;
+                font-size: 4rem;
+            }
+
+            .name {
+                font-size: 2.5rem;
+            }
+
+            .title {
+                font-size: 1.2rem;
+            }
+
+            .about {
+                font-size: 1rem;
+            }
+
+            .contactLinks {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contactLink {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name {
+                font-size: 2rem;
+            }
+
+            .profileImage {
+                width: 120px;
+                height: 120px;
+                font-size: 3rem;
+            }
+
+            .contactTitle {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profileImage"><img src="" alt=""></div>
+        <h1 class="name">Farhad</h1>
+        <p class="title">Frontend Developer</p>
+        <p class="about">
+            Azərbaycandan olan bir frontend developer. Modern web texnologiyaları ilə istifadəçi dostu və responsive veb tətbiqlər yaradıram. JavaScript, React və digər müasir frameworklər ilə işləyirəm.
+        </p>
+        
+        <div class="contactSection">
+            <h2 class="contactTitle">Contact</h2>
+            <div class="contactLinks">
+                <a href="mailto:farhad@example.com" class="contactLink">
+                    <div class="contactIcon"></div>
+                    Email
+                </a>
+                <a href="https://github.com/farhad" class="contactLink">
+                    <div class="contactIcon"></div>
+                    GitHub
+                </a>
+                <a href="https://linkedin.com/in/farhad" class="contactLink">
+                    <div class="contactIcon"></div>
+                    LinkedIn
+                </a>
+                <a href="tel:+994501234567" class="contactLink">
+                    <div class="contactIcon"></div>
+                    Phone
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactLinks = document.querySelectorAll('.contactLink');
+            contactLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.href.includes('mailto:') || this.href.includes('tel:')) {
+                        return true;
+                    }
+                    e.preventDefault();
+                    
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                        window.open(this.href, '_blank');
+                    }, 100);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

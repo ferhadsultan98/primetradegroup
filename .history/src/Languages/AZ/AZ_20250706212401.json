@@ -1,0 +1,31 @@
+{
+  "header": {
+    "about": "Haqqımızda",
+    "services": "Xidmətlər",
+    "whyUs": "Niyə biz?",
+    "contact": "Əlaqə"
+  },
+   "footer": {
+    "companyDescription": "Biz sizin biznes ehtiyaclarınızı qarşılamaq üçün əla xidmət və innovativ həllər təqdim etməyə sadiqik.",
+    "quickLinks": "Sürətli Keçidlər",
+    "home": "Əsas Səhifə",
+    "about": "Haqqımızda",
+    "services": "Xidmətlər",
+    "products": "Məhsullar",
+    "contact": "Əlaqə",
+    "servicesTitle": "Xidmətlər",
+    "webDesign": "Veb Dizayn",
+    "development": "İnkişaf",
+    "consulting": "Konsaltinq",
+    "support": "Dəstək",
+    "maintenance": "Texniki Xidmət",
+    "contactInfo": "Əlaqə Məlumatları",
+    "address": "Biznes Küçəsi 123, Şəhər 12345",
+    "phone": "+994 (55) 123-45-67",
+    "email": "info@primtradegroup.com",
+    "copyright": "© 2025 Prime Trade Group. Bütün hüquqlar qorunur.",
+    "privacy": "Məxfilik Siyasəti",
+    "terms": "Xidmət Şərtləri",
+    "cookies": "Cookie Siyasəti"
+  }
+}

@@ -1,0 +1,144 @@
+.CTPageContents {
+  padding: 1.5rem;
+  background: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.CTPageContentsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.CTPageContentsHeader {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  
+  h1 {
+    font-size: clamp(1.2rem, 5vw, 2rem); /* Responsive font size */
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    position: relative;
+    
+    &::after {
+      content: "";
+      width: clamp(50px, 10vw, 80px);
+      height: 2px;
+      background: #3498db;
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.CTPageContentsDivider {
+  height: 1px;
+  background: #3498db;
+  margin: 1rem auto;
+  width: clamp(150px, 20vw, 200px);
+}
+
+.CTPageContentsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.CTPageContentsItem {
+  background: white;
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.2s;
+}
+
+.CTPageContentsItem:hover {
+  transform: translateY(-3px);
+}
+
+.CTPageContentsItemIcon {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #3498db;
+  margin-right: 0.8rem;
+  flex-shrink: 0;
+}
+
+.CTPageContentsItemDetails {
+  flex: 1;
+}
+
+.CTPageContentsItemPage {
+  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+  color: #7f8c8d;
+  margin-bottom: 0.2rem;
+}
+
+.CTPageContentsItemTitle {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: #2c3e50;
+  margin: 0 0 0.3rem 0;
+}
+
+.CTPageContentsItemDescription {
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+  color: #7f8c8d;
+  line-height: 1.3;
+}
+
+@media (max-width: 1024px) {
+  .CTPageContents {
+    padding: 1rem;
+  }
+  
+  .CTPageContentsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .CTPageContentsHeader h1 {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+  
+  .CTPageContentsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .CTPageContentsItem {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .CTPageContents {
+    padding: 0.5rem;
+  }
+  
+  .CTPageContentsHeader h1 {
+    font-size: 1rem;
+  }
+  
+  .CTPageContentsItemIcon {
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+  }
+  
+  .CTPageContentsItem {
+    padding: 0.6rem;
+  }
+  
+  .CTPageContentsItemTitle {
+    font-size: 0.9rem;
+  }
+  
+  .CTPageContentsItemDescription {
+    font-size: 0.7rem;
+  }
+}

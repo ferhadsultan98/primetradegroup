@@ -1,0 +1,87 @@
+.CTPageContents {
+  padding: 1.5rem;
+  background: #f9f9f9;
+  font-family: "Segoe UI", sans-serif;
+  width: 100%;
+}
+
+.CTPageContentsContainer {
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.CTPageContentsHeader {
+  text-align: center;
+  margin-bottom: 1.5rem;
+
+  h1 {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+    color: #2c3e50;
+    margin: 0;
+  }
+}
+
+.CTPageContentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.CTPageContentsItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.CTPageContentsItemPage,
+.CTPageContentsItemTitle {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: #2c3e50;
+  white-space: nowrap; // Metnin tek satırda kalmasını sağlar
+  overflow: hidden; // Taşan içeriği gizler
+  text-overflow: ellipsis; // Taşan kısımda "..." ekler
+}
+
+.CTPageContentsItemPage {
+  margin-right: 1rem; // Sayfanın başlıktan ayrılması için boşluk
+  min-width: 2rem; // Sayı için minimum genişlik
+}
+
+@media (max-width: 768px) {
+
+
+  .CTPageContentsHeader h1 {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .CTPageContentsItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .CTPageContentsItemPage {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .CTPageContents {
+    padding: 0.5rem;
+  }
+
+  .CTPageContentsHeader h1 {
+    font-size: 1rem;
+  }
+
+  .CTPageContentsItemPage,
+  .CTPageContentsItemTitle {
+    font-size: 0.9rem;
+  }
+}
