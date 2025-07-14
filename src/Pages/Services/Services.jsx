@@ -1,82 +1,76 @@
 import React from "react";
-import { Helmet } from "react-helmet"; // Import Helmet
+import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 import { Package, ShoppingCart, Users, Truck, Shield } from "lucide-react";
 import "./Services.scss";
 import SectionHeader from "../../Components/SectionHeader/SectionHeader";
 
 const Services = () => {
+  const { t } = useTranslation();
+
   const servicesData = [
     {
-      title: "Supply Chain Management",
+      title: t("services.supply_chain.title"),
       icon: Package,
       features: [
-        "End-to-end supply chain optimization",
-        "Real-time inventory tracking",
-        "Demand forecasting and planning",
-        "Supply chain risk management",
-        "Performance analytics and reporting",
+        t("services.supply_chain.features.optimization"),
+        t("services.supply_chain.features.tracking"),
+        t("services.supply_chain.features.forecasting"),
+        t("services.supply_chain.features.risk_management"),
+        t("services.supply_chain.features.analytics"),
       ],
     },
     {
-      title: "Procurement Services",
+      title: t("services.procurement.title"),
       icon: ShoppingCart,
       features: [
-        "Strategic sourcing solutions",
-        "Supplier evaluation and selection",
-        "Contract negotiation and management",
-        "Cost reduction strategies",
-        "Procurement process automation",
+        t("services.procurement.features.sourcing"),
+        t("services.procurement.features.evaluation"),
+        t("services.procurement.features.contract"),
+        t("services.procurement.features.cost_reduction"),
+        t("services.procurement.features.automation"),
       ],
     },
     {
-      title: "Vendor Management",
+      title: t("services.vendor.title"),
       icon: Users,
       features: [
-        "Vendor performance monitoring",
-        "Relationship management",
-        "Quality assurance programs",
-        "Compliance and audit support",
-        "Vendor development initiatives",
+        t("services.vendor.features.monitoring"),
+        t("services.vendor.features.relationship"),
+        t("services.vendor.features.quality"),
+        t("services.vendor.features.compliance"),
+        t("services.vendor.features.development"),
       ],
     },
     {
-      title: "Logistics Solutions",
+      title: t("services.logistics.title"),
       icon: Truck,
       features: [
-        "Transportation management",
-        "Warehousing and distribution",
-        "Route optimization",
-        "Last-mile delivery solutions",
-        "International shipping coordination",
+        t("services.logistics.features.transportation"),
+        t("services.logistics.features.warehousing"),
+        t("services.logistics.features.route"),
+        t("services.logistics.features.last_mile"),
+        t("services.logistics.features.shipping"),
       ],
     },
     {
-      title: "Risk Assessment",
+      title: t("services.risk.title"),
       icon: Shield,
       features: [
-        "Supply chain risk identification",
-        "Business continuity planning",
-        "Financial risk evaluation",
-        "Regulatory compliance assessment",
-        "Crisis management strategies",
+        t("services.risk.features.identification"),
+        t("services.risk.features.continuity"),
+        t("services.risk.features.financial"),
+        t("services.risk.features.compliance"),
+        t("services.risk.features.crisis"),
       ],
     },
   ];
 
   return (
     <div className="servicesContainer">
-      {/* SEO Meta Tags with Helmet */}
       <Helmet>
         <title>XİDMƏTLƏR - PRIME TRADE GROUP MMC</title>
-        <meta
-          name="description"
-          content="PRIME TRADE GROUP MMC-nin təchizat zənciri və logistika sahəsində təqdim etdiyi hərtərəfli xidmətlərlə tanış olun: təchizat zəncirinin idarə olunması, satınalma xidmətləri, tədarükçülərin idarə olunması, logistika həlləri və risklərin qiymətləndirilməsi."
-        />
-        <meta
-          name="keywords"
-          content="təchizat zəncirinin idarə olunması, logistika həlləri, satınalma xidmətləri, tədarükçülərin idarə olunması, risklərin qiymətləndirilməsi, təchizat zəncirinin optimallaşdırılması, strateji satınalma, daşımaların idarə olunması, ehtiyatların izlənməsi, biznesin davamlılığının planlaşdırılması, qlobal ticarət həlləri"
-        />
-        <meta name="robots" content="index, follow" />
+
         <meta name="author" content="PRIME TRADE GROUP MMC" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -84,22 +78,15 @@ const Services = () => {
 
       <div className="containerWrapper">
         <SectionHeader
-          title="Our Services"
-          subtitle="Explore the solutions we provide to help your business grow"
+          title={t("services.section_header.title")}
+          subtitle={t("services.section_header.subtitle")}
         />
 
-        {/* Company Overview Section */}
         <section className="companyOverviewSection">
           <div className="containerWrapper">
-            <h2 className="sectionTitle">Our Service Expertise</h2>
+            <h2 className="sectionTitle">{t("services.overview.title")}</h2>
             <div className="overviewContent">
-              <p className="overviewText">
-                At PRIME TRADE GROUP MMC, we deliver comprehensive supply chain
-                and logistics solutions tailored to your business needs. Our
-                services combine advanced technology, strategic partnerships,
-                and industry expertise to optimize operations, reduce costs, and
-                ensure seamless global trade.
-              </p>
+              <p className="overviewText">{t("services.overview.text")}</p>
             </div>
           </div>
         </section>
@@ -122,7 +109,9 @@ const Services = () => {
                       </div>
                     ))}
                   </div>
-                  <button className="serviceButton">Learn More</button>
+                  <button className="serviceButton">
+                    {t("services.learn_more")}
+                  </button>
                 </div>
               );
             })}
@@ -131,12 +120,9 @@ const Services = () => {
 
         <div className="ctaSection">
           <div className="ctaContent">
-            <h2 className="ctaTitle">Ready to Transform Your Business?</h2>
-            <p className="ctaText">
-              Let us help you optimize your operations and achieve sustainable
-              growth
-            </p>
-            <button className="ctaButton">Get Started Today</button>
+            <h2 className="ctaTitle">{t("services.cta.title")}</h2>
+            <p className="ctaText">{t("services.cta.text")}</p>
+            <button className="ctaButton">{t("services.cta.button")}</button>
           </div>
         </div>
       </div>

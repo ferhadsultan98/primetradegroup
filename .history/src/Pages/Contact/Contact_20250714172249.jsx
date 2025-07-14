@@ -1,51 +1,60 @@
-import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
-import { Phone, Mail, MapPin, Clock, Send, User, MessageSquare } from 'lucide-react';
-import './Contact.scss';
-import SectionHeader from '../../Components/SectionHeader/SectionHeader';
+import React, { useState } from "react";
+import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Send,
+  User,
+  MessageSquare,
+} from "lucide-react";
+import "./Contact.scss";
+import SectionHeader from "../../Components/SectionHeader/SectionHeader";
 
 const ContactSection = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    company: "",
+    subject: "",
+    message: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Message sent successfully!');
+    console.log("Form submitted:", formData);
+    alert(t("contact.form.success_message"));
     setFormData({
-      name: '',
-      email: '',
-      company: '',
-      subject: '',
-      message: ''
+      name: "",
+      email: "",
+      company: "",
+      subject: "",
+      message: "",
     });
   };
 
   return (
     <div className="contactContainer">
-      {/* SEO Meta Tags with Helmet */}
       <Helmet>
-        <title>CONTACT US - PRIME TRADE GROUP MMC</title>
-        <meta 
-          name="description" 
-          content="Contact PRIME TRADE GROUP MMC in Baku, Azerbaijan for expert procurement and supply chain solutions. Reach us by phone, email, or schedule a consultation." 
+        <title>BİZİMLƏ ƏLAQƏ - PRIME TRADE GROUP MMC</title>
+        <meta
+          name="description"
+          content="Bakı, Azərbaycan-da yerləşən PRIME TRADE GROUP MMC ilə əlaqə saxlayın – peşəkar satınalma və təchizat zənciri həlləri üçün bizimlə telefon, e-poçt vasitəsilə əlaqə yaradın və ya məsləhətləşmə təyin edin."
         />
-        <meta 
-          name="keywords" 
-          content="contact procurement services, supply chain consultation, Baku procurement, procurement Azerbaijan, supply chain solutions Baku, business consultation, contact PRIME TRADE GROUP MMC, procurement services Baku Azerbaijan, schedule procurement consultation, supply chain management contact, Baku business procurement, Azerbaijan supply chain services, Nizami District procurement" 
+        <meta
+          name="keywords"
+          content="satınalma xidmətləri ilə əlaqə, təchizat zənciri məsləhətləşməsi, Bakı satınalma, Azərbaycan satınalma, Bakı təchizat zənciri həlləri, biznes məsləhətləşməsi, PRIME TRADE GROUP MMC ilə əlaqə, Bakı Azərbaycan-da satınalma xidmətləri, satınalma üzrə məsləhətləşmə təyin et, təchizat zəncirinin idarə olunması əlaqə, Bakı biznes satınalması, Azərbaycan təchizat zənciri xidmətləri, Nizami rayonu satınalma"
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="PRIME TRADE GROUP MMC" />
@@ -54,57 +63,81 @@ const ContactSection = () => {
       </Helmet>
 
       <div className="containerWrapper">
-        <SectionHeader title="Contact Us" subtitle="We’re here to answer your questions and assist you" />
+        <SectionHeader
+          title={t("contact.section_header.title")}
+          subtitle={t("contact.section_header.subtitle")}
+        />
 
         <div className="contactInfoSection">
-          <div className="sectionTitle">Get In Touch</div>
+          <div className="sectionTitle">{t("contact.info.title")}</div>
           <div className="contactInfoGrid">
             <div className="contactInfoCard">
               <div className="contactIconWrapper">
                 <Phone className="contactIcon" />
               </div>
-              <div className="contactTitle">Phone</div>
-              <div className="contactText">+994 12 345 67 89</div>
-              <div className="contactText">+994 50 123 45 67</div>
+              <div className="contactTitle">
+                {t("contact.info.phone.title")}
+              </div>
+              <div className="contactText">
+                {t("contact.info.phone.number1")}
+              </div>
+              <div className="contactText">
+                {t("contact.info.phone.number2")}
+              </div>
             </div>
 
             <div className="contactInfoCard">
               <div className="contactIconWrapper">
                 <Mail className="contactIcon" />
               </div>
-              <div className="contactTitle">Email</div>
-              <div className="contactText">info@procurement.az</div>
-              <div className="contactText">sales@procurement.az</div>
+              <div className="contactTitle">
+                {t("contact.info.email.title")}
+              </div>
+              <div className="contactText">
+                {t("contact.info.email.address1")}
+              </div>
+              <div className="contactText">
+                {t("contact.info.email.address2")}
+              </div>
             </div>
 
             <div className="contactInfoCard">
               <div className="contactIconWrapper">
                 <MapPin className="contactIcon" />
               </div>
-              <div className="contactTitle">Address</div>
-              <div className="contactText">28 May Street, Nizami District</div>
-              <div className="contactText">Baku, Azerbaijan AZ1000</div>
+              <div className="contactTitle">
+                {t("contact.info.address.title")}
+              </div>
+              <div className="contactText">
+                {t("contact.info.address.line1")}
+              </div>
+              <div className="contactText">
+                {t("contact.info.address.line2")}
+              </div>
             </div>
 
             <div className="contactInfoCard">
               <div className="contactIconWrapper">
                 <Clock className="contactIcon" />
               </div>
-              <div className="contactTitle">Business Hours</div>
-              <div className="contactText">Mon - Fri: 9:00 - 18:00</div>
-              <div className="contactText">Sat: 9:00 - 14:00</div>
+              <div className="contactTitle">
+                {t("contact.info.hours.title")}
+              </div>
+              <div className="contactText">
+                {t("contact.info.hours.weekdays")}
+              </div>
+              <div className="contactText">
+                {t("contact.info.hours.saturday")}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Contact Form Section */}
         <div className="contactFormSection">
           <div className="formContainer">
             <div className="formHeader">
-              <div className="formTitle">Send Us a Message</div>
-              <div className="formSubtitle">
-                Ready to streamline your procurement process? Contact us today for a consultation.
-              </div>
+              <div className="formTitle">{t("contact.form.title")}</div>
+              <div className="formSubtitle">{t("contact.form.subtitle")}</div>
             </div>
 
             <div className="contactForm">
@@ -115,7 +148,7 @@ const ContactSection = () => {
                     <input
                       type="text"
                       name="name"
-                      placeholder="Full Name"
+                      placeholder={t("contact.form.fields.name")}
                       value={formData.name}
                       onChange={handleInputChange}
                       className="formInput"
@@ -130,7 +163,7 @@ const ContactSection = () => {
                     <input
                       type="email"
                       name="email"
-                      placeholder="Email Address"
+                      placeholder={t("contact.form.fields.email")}
                       value={formData.email}
                       onChange={handleInputChange}
                       className="formInput"
@@ -145,7 +178,7 @@ const ContactSection = () => {
                     <input
                       type="text"
                       name="company"
-                      placeholder="Company Name"
+                      placeholder={t("contact.form.fields.company")}
                       value={formData.company}
                       onChange={handleInputChange}
                       className="formInput"
@@ -159,7 +192,7 @@ const ContactSection = () => {
                     <input
                       type="text"
                       name="subject"
-                      placeholder="Subject"
+                      placeholder={t("contact.form.fields.subject")}
                       value={formData.subject}
                       onChange={handleInputChange}
                       className="formInput"
@@ -174,7 +207,7 @@ const ContactSection = () => {
                   <MessageSquare className="textareaIcon" />
                   <textarea
                     name="message"
-                    placeholder="Your message..."
+                    placeholder={t("contact.form.fields.message")}
                     value={formData.message}
                     onChange={handleInputChange}
                     className="formTextarea"
@@ -184,25 +217,29 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <button type="button" onClick={handleSubmit} className="submitButton">
+              <button
+                type="button"
+                onClick={handleSubmit}
+                className="submitButton"
+              >
                 <Send className="submitIcon" />
-                Send Message
+                {t("contact.form.submit")}
               </button>
             </div>
           </div>
         </div>
 
-        {/* CTA Section */}
         <div className="ctaSection">
           <div className="ctaContent">
-            <div className="ctaTitle">Ready to Optimize Your Procurement?</div>
-            <div className="ctaText">
-              Join hundreds of companies that trust us with their procurement needs. 
-              Let's discuss how we can help streamline your supply chain operations.
-            </div>
+            <div className="ctaTitle">{t("contact.cta.title")}</div>
+            <div className="ctaText">{t("contact.cta.text")}</div>
             <div className="ctaButtons">
-              <button className="ctaButtonPrimary">Schedule Consultation</button>
-              <button className="ctaButtonSecondary">Request Quote</button>
+              <button className="ctaButtonPrimary">
+                {t("contact.cta.buttons.consultation")}
+              </button>
+              <button className="ctaButtonSecondary">
+                {t("contact.cta.buttons.quote")}
+              </button>
             </div>
           </div>
         </div>

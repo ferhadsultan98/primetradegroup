@@ -23,22 +23,15 @@ const WhyUs = () => {
 
   return (
     <div className="whyUsContainer">
-   <Helmet>
-        <title>NİYƏ BİZİ SEÇMƏLİSİNİZ - PRIME TRADE GROUP MMC</title>
-        <meta
-          name="description"
-          content="PRIME TRADE GROUP MMC-ni etibarlı satınalma partnyorunuz edən səbəbləri kəşf edin – xərcin azaldılması, qlobal tədarükçü şəbəkələri, süni intellekt əsaslı həllər və 98%-lik müştəri məmnuniyyəti."
-        />
-        <meta
-          name="keywords"
-          content="strateji satınalma, xərcin azaldılması, qlobal tədarükçü şəbəkəsi, satınalmanın effektivliyi, süni intellekt əsaslı satınalma, risklərin azaldılması, 24/7 dəstək, müştəri məmnuniyyəti, təchizat zəncirində xərcə qənaət, avtomatlaşdırılmış satınalma həlləri, qlobal satınalma xidmətləri, etibarlı satınalma partnyoru, ISO 9001 sertifikatlı satınalma, Fortune 500 üçün satınalma"
-        />
+      <Helmet>
+        <title>{t("whyus.title")}</title>
+        <meta name="description" content={t("whyus.meta_description")} />
+        <meta name="keywords" content={t("whyus.meta_keywords")} />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="PRIME TRADE GROUP MMC" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Helmet>
-
 
       <section className="benefitsSection">
         <div className="containerWrapper">

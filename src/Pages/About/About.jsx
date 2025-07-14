@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 import {
   Truck,
   Globe,
@@ -13,55 +14,45 @@ import "./About.scss";
 import SectionHeader from "../../Components/SectionHeader/SectionHeader";
 
 const AboutUs = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="aboutContainer">
-     <Helmet>
-  <title>HAQQIMIZDA - PRIME TRADE GROUP MMC</title>
-  <meta
-    name="description"
-    content="PRIME TRADE GROUP MMC haqqında ətraflı məlumat əldə edin – missiyamız, baxışımız, dəyərlərimiz və qlobal təchizat zəncirinin idarə olunması, logistika, satınalma və risklərin idarə olunmasındakı peşəkarlığımız."
-  />
-  <meta
-    name="keywords"
-    content="PRIME TRADE GROUP, təchizat zəncirinin idarə olunması, logistika, qlobal satınalma, risklərin idarə olunması"
-  />
-  <meta name="robots" content="index, follow" />
-</Helmet>
-
+      <Helmet>
+        <title>HAQQIMIZDA - PRIME TRADE GROUP MMC</title>
+        <meta
+          name="description"
+          content="PRIME TRADE GROUP MMC haqqında ətraflı məlumat əldə edin – missiyamız, baxışımız, dəyərlərimiz və qlobal təchizat zəncirinin idarə olunması, logistika, satınalma və risklərin idarə olunmasındakı peşəkarlığımız."
+        />
+        <meta
+          name="keywords"
+          content="PRIME TRADE GROUP, təchizat zəncirinin idarə olunması, logistika, qlobal satınalma, risklərin idarə olunması"
+        />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
 
       {/* Mission Section */}
       <section className="missionSection">
         <div className="containerWrapper">
           <SectionHeader
-            title="About Us"
-            subtitle="Get to know who we are and what we do"
+            title={t("about.section_header.title")}
+            subtitle={t("about.section_header.subtitle")}
           />
           <div className="missionGrid">
             <div className="missionCard">
               <Target className="missionIcon" />
-              <h3 className="missionTitle">Our Mission</h3>
-              <p className="missionText">
-                To revolutionize global supply chain management through
-                cutting-edge technology and strategic partnerships that drive
-                efficiency and sustainability.
-              </p>
+              <h3 className="missionTitle">{t("about.mission.title")}</h3>
+              <p className="missionText">{t("about.mission.text")}</p>
             </div>
             <div className="missionCard">
               <Award className="missionIcon" />
-              <h3 className="missionTitle">Our Vision</h3>
-              <p className="missionText">
-                To be the world's most trusted supply chain partner, enabling
-                businesses to achieve operational excellence and competitive
-                advantage.
-              </p>
+              <h3 className="missionTitle">{t("about.vision.title")}</h3>
+              <p className="missionText">{t("about.vision.text")}</p>
             </div>
             <div className="missionCard">
               <Shield className="missionIcon" />
-              <h3 className="missionTitle">Our Values</h3>
-              <p className="missionText">
-                Integrity, innovation, and reliability form the foundation of
-                every partnership we build and every solution we deliver.
-              </p>
+              <h3 className="missionTitle">{t("about.values.title")}</h3>
+              <p className="missionText">{t("about.values.text")}</p>
             </div>
           </div>
         </div>
@@ -70,15 +61,9 @@ const AboutUs = () => {
       {/* Company Overview Section */}
       <section className="companyOverviewSection">
         <div className="containerWrapper">
-          <h2 className="sectionTitle">Who We Are</h2>
+          <h2 className="sectionTitle">{t("about.company_overview.title")}</h2>
           <div className="overviewContent">
-            <p className="overviewText">
-              As PRIME TRADE GROUP MMC, we procure goods directly from importing
-              and manufacturing companies across various sectors, offering them to
-              our clients under competitive terms. Our company stands out with a
-              diverse product portfolio, a flexible service mechanism, and a
-              commitment to long-term partnerships.
-            </p>
+            <p className="overviewText">{t("about.company_overview.text")}</p>
           </div>
         </div>
       </section>
@@ -86,25 +71,25 @@ const AboutUs = () => {
       {/* Services Section */}
       <section className="servicesSection">
         <div className="containerWrapper">
-          <h2 className="sectionTitle">Our Expertise</h2>
+          <h2 className="sectionTitle">{t("about.services.title")}</h2>
           <div className="servicesGrid">
             <div className="serviceCard">
               <div className="serviceIconWrapper">
                 <Truck className="serviceIcon" />
               </div>
-              <h4 className="serviceTitle">Logistics Management</h4>
+              <h4 className="serviceTitle">{t("about.services.logistics.title")}</h4>
               <div className="serviceFeatures">
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>End-to-end tracking</span>
+                  <span>{t("about.services.logistics.features.tracking")}</span>
                 </div>
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>Route optimization</span>
+                  <span>{t("about.services.logistics.features.route")}</span>
                 </div>
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>Real-time updates</span>
+                  <span>{t("about.services.logistics.features.updates")}</span>
                 </div>
               </div>
             </div>
@@ -113,19 +98,19 @@ const AboutUs = () => {
               <div className="serviceIconWrapper">
                 <Globe className="serviceIcon" />
               </div>
-              <h4 className="serviceTitle">Global Procurement</h4>
+              <h4 className="serviceTitle">{t("about.services.procurement.title")}</h4>
               <div className="serviceFeatures">
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>Supplier network</span>
+                  <span>{t("about.services.procurement.features.network")}</span>
                 </div>
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>Quality assurance</span>
+                  <span>{t("about.services.procurement.features.quality")}</span>
                 </div>
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>Cost optimization</span>
+                  <span>{t("about.services.procurement.features.cost")}</span>
                 </div>
               </div>
             </div>
@@ -134,19 +119,19 @@ const AboutUs = () => {
               <div className="serviceIconWrapper">
                 <Shield className="serviceIcon" />
               </div>
-              <h4 className="serviceTitle">Risk Management</h4>
+              <h4 className="serviceTitle">{t("about.services.risk.title")}</h4>
               <div className="serviceFeatures">
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>Compliance monitoring</span>
+                  <span>{t("about.services.risk.features.compliance")}</span>
                 </div>
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>Supply chain security</span>
+                  <span>{t("about.services.risk.features.security")}</span>
                 </div>
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>Contingency planning</span>
+                  <span>{t("about.services.risk.features.contingency")}</span>
                 </div>
               </div>
             </div>

@@ -200,56 +200,7 @@
       }
     }
   },
-  "contact": {
-    "section_header": {
-      "title": "Contact Us",
-      "subtitle": "We’re here to answer your questions and assist you"
-    },
-    "info": {
-      "title": "Get In Touch",
-      "phone": {
-        "title": "Phone",
-        "number1": "+994 12 345 67 89",
-        "number2": "+994 50 123 45 67"
-      },
-      "email": {
-        "title": "Email",
-        "address1": "info@procurement.az",
-        "address2": "sales@procurement.az"
-      },
-      "address": {
-        "title": "Address",
-        "line1": "28 May Street, Nizami District",
-        "line2": "Baku, Azerbaijan AZ1000"
-      },
-      "hours": {
-        "title": "Business Hours",
-        "weekdays": "Mon - Fri: 9:00 - 18:00",
-        "saturday": "Sat: 9:00 - 14:00"
-      }
-    },
-    "form": {
-      "title": "Send Us a Message",
-      "subtitle": "Ready to streamline your procurement process? Contact us today for a consultation.",
-      "fields": {
-        "name": "Full Name",
-        "email": "Email Address",
-        "company": "Company Name",
-        "subject": "Subject",
-        "message": "Your message..."
-      },
-      "submit": "Send Message",
-      "success_message": "Message sent successfully!"
-    },
-    "cta": {
-      "title": "Ready to Optimize Your Procurement?",
-      "text": "Join hundreds of companies that trust us with their procurement needs. Let's discuss how we can help streamline your supply chain operations.",
-      "buttons": {
-        "consultation": "Schedule Consultation",
-        "quote": "Request Quote"
-      }
-    }
-  },
+  
   "footer": {
     "companyDescription": "We are committed to providing excellent service and innovative solutions to meet your business needs.",
     "quickLinks": "Quick Links",
