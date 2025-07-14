@@ -15,13 +15,11 @@ const resources = {
   },
   ru: {
     translation: RU,
-  },
-};
+    
 
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
+
+
+    
     resources,
     fallbackLng: 'az',
     supportedLngs: ['az', 'en', 'ru'],
