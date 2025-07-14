@@ -1,0 +1,92 @@
+.catalog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center vertically */
+  padding: 20px;
+  min-height: 100vh; /* Full viewport height for centering */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.catalog-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  gap: 10px; /* Consistent spacing between buttons */
+
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    &:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+}
+
+.catalog-book {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  background-color: white; /* Ensure consistent background */
+}
+
+.catalog-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: white;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the page without distortion */
+    object-position: center;
+    margin: 0;
+    display: block;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .catalog-container {
+    padding: 10px;
+  }
+
+  .catalog-controls {
+    button {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+    }
+  }
+
+  .catalog-book {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Slightly lighter shadow for smaller screens */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .catalog-page {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure consistency in image scaling */
+    }
+  }
+}

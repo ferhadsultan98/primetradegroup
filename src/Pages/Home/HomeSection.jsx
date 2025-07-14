@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import './HomeSection.scss';
 import { useTranslation } from "react-i18next";
 
+
 const HomeSection = () => {
     const { t } = useTranslation();
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -166,6 +167,7 @@ const HomeSection = () => {
                         ))}
                     </div>
                 </div>
+      
             </section>
         </>
     );

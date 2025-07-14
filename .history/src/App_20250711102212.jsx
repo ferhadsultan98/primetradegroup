@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { I18nextProvider } from 'react-i18next'; // I18nextProvider əlavə edilir
-import i18n from './Languages/i18n'; // i18n.js faylını idxal edin
+import { I18nextProvider } from 'react-i18next';
+import i18n from './Languages/i18n';
 import MainLayout from './Components/Mainlayout/Mainlayout';
 import ScrollTopBtn from './Components/ScrollTopBtn/ScrollTopBtn';
 import './App.css';
@@ -15,11 +15,10 @@ import ContactSection from './Pages/Contact/Contact';
 import NotFound from './Pages/NotFound/NotFound';
 import EditCatalog from './Pages/EditCatalog/EditCatalog';
 
-
 function ScrollToTop() {
   const { pathname } = useLocation();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
@@ -28,7 +27,7 @@ function ScrollToTop() {
 
 const App = () => {
   return (
-    <I18nextProvider i18n={i18n}> 
+    <I18nextProvider i18n={i18n}>
       <Router>
         <ScrollToTop />
         <Routes>
@@ -37,7 +36,7 @@ const App = () => {
           <Route path="/services" element={<MainLayout><Services /><ScrollTopBtn /></MainLayout>} />
           <Route path="/why-us" element={<MainLayout><WhyUs /><ScrollTopBtn /></MainLayout>} />
           <Route path="/contact" element={<MainLayout><ContactSection /><ScrollTopBtn /></MainLayout>} />
-          <Route path="/catalogue" element={<EditCatalog/>} />
+          <Route path="/catalogue" element={<EditCatalog />} />
           <Route path="*" element={<MainLayout><NotFound /><ScrollTopBtn /></MainLayout>} />
         </Routes>
       </Router>
