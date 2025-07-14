@@ -38,21 +38,20 @@ const ContactSection = () => {
     <div className="contactContainer">
       {/* SEO Meta Tags with Helmet */}
       <Helmet>
-  <title>BİZİMLƏ ƏLAQƏ - PRIME TRADE GROUP MMC</title>
-  <meta 
-    name="description" 
-    content="Bakı, Azərbaycan-da yerləşən PRIME TRADE GROUP MMC ilə əlaqə saxlayın – peşəkar satınalma və təchizat zənciri həlləri üçün bizimlə telefon, e-poçt vasitəsilə əlaqə yaradın və ya məsləhətləşmə təyin edin." 
-  />
-  <meta 
-    name="keywords" 
-    content="satınalma xidmətləri ilə əlaqə, təchizat zənciri məsləhətləşməsi, Bakı satınalma, Azərbaycan satınalma, Bakı təchizat zənciri həlləri, biznes məsləhətləşməsi, PRIME TRADE GROUP MMC ilə əlaqə, Bakı Azərbaycan-da satınalma xidmətləri, satınalma üzrə məsləhətləşmə təyin et, təchizat zəncirinin idarə olunması əlaqə, Bakı biznes satınalması, Azərbaycan təchizat zənciri xidmətləri, Nizami rayonu satınalma"
-  />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="PRIME TRADE GROUP MMC" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</Helmet>
-
+        <title>CONTACT US - PRIME TRADE GROUP MMC</title>
+        <meta 
+          name="description" 
+          content="Contact PRIME TRADE GROUP MMC in Baku, Azerbaijan for expert procurement and supply chain solutions. Reach us by phone, email, or schedule a consultation." 
+        />
+        <meta 
+          name="keywords" 
+          content="contact procurement services, supply chain consultation, Baku procurement, procurement Azerbaijan, supply chain solutions Baku, business consultation, contact PRIME TRADE GROUP MMC, procurement services Baku Azerbaijan, schedule procurement consultation, supply chain management contact, Baku business procurement, Azerbaijan supply chain services, Nizami District procurement" 
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="PRIME TRADE GROUP MMC" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Helmet>
 
       <div className="containerWrapper">
         <SectionHeader title="Contact Us" subtitle="We’re here to answer your questions and assist you" />

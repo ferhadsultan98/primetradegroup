@@ -46,18 +46,17 @@ const HomeSection = () => {
     return (
         <>
             <Helmet>
-  <title>ANA SƏHİFƏ - PRIME TRADE GROUP MMC</title>
-  <meta
-    name="description"
-    content="PRIME TRADE GROUP MMC-nin qlobal təchizat zəncirinin idarə olunması, strateji satınalma, rəqəmsal transformasiya və digər sahələrdəki peşəkarlığı ilə tanış olun. Praktiki nümunələrimizi və proseslərimizi araşdırın."
-  />
-  <meta
-    name="keywords"
-    content="PRIME TRADE GROUP, təchizat zəncirinin idarə olunması, strateji satınalma, rəqəmsal transformasiya, logistika, risklərin azaldılması"
-  />
-  <meta name="robots" content="index, follow" />
-</Helmet>
-
+                <title>HOME - PRIME TRADE GROUP MMC</title>
+                <meta
+                    name="description"
+                    content="Discover PRIME TRADE GROUP MMC's expertise in global supply chain management, strategic procurement, digital transformation, and more. Explore our case studies and processes."
+                />
+                <meta
+                    name="keywords"
+                    content="PRIME TRADE GROUP, supply chain management, strategic procurement, digital transformation, logistics, risk mitigation"
+                />
+                <meta name="robots" content="index, follow" />
+            </Helmet>
 
             {/* Hero Slider Section */}
             <section className="homeSection">

@@ -15,19 +15,18 @@ import SectionHeader from "../../Components/SectionHeader/SectionHeader";
 const AboutUs = () => {
   return (
     <div className="aboutContainer">
-     <Helmet>
-  <title>HAQQIMIZDA - PRIME TRADE GROUP MMC</title>
-  <meta
-    name="description"
-    content="PRIME TRADE GROUP MMC haqqında ətraflı məlumat əldə edin – missiyamız, baxışımız, dəyərlərimiz və qlobal təchizat zəncirinin idarə olunması, logistika, satınalma və risklərin idarə olunmasındakı peşəkarlığımız."
-  />
-  <meta
-    name="keywords"
-    content="PRIME TRADE GROUP, təchizat zəncirinin idarə olunması, logistika, qlobal satınalma, risklərin idarə olunması"
-  />
-  <meta name="robots" content="index, follow" />
-</Helmet>
-
+      <Helmet>
+        <title>ABOUT US - PRIME TRADE GROUP MMC</title>
+        <meta
+          name="description"
+          content="Learn about PRIME TRADE GROUP MMC, our mission, vision, values, and expertise in global supply chain management, logistics, procurement, and risk management."
+        />
+        <meta
+          name="keywords"
+          content="PRIME TRADE GROUP, supply chain management, logistics, global procurement, risk management"
+        />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
 
       {/* Mission Section */}
       <section className="missionSection">

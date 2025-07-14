@@ -38,7 +38,7 @@ const ContactSection = () => {
     <div className="contactContainer">
       {/* SEO Meta Tags with Helmet */}
       <Helmet>
-  <title>BİZİMLƏ ƏLAQƏ - PRIME TRADE GROUP MMC</title>
+  <title>ƏLAQƏ - PRIME TRADE GROUP MMC</title>
   <meta 
     name="description" 
     content="Bakı, Azərbaycan-da yerləşən PRIME TRADE GROUP MMC ilə əlaqə saxlayın – peşəkar satınalma və təchizat zənciri həlləri üçün bizimlə telefon, e-poçt vasitəsilə əlaqə yaradın və ya məsləhətləşmə təyin edin." 

@@ -12,7 +12,7 @@ import {
   Building2,
   Timer,
   ShieldCheck,
-  TrendingDown,
+  TrendingDown
 } from "lucide-react";
 import "./WhyUs.scss";
 import SectionHeader from "../../Components/SectionHeader/SectionHeader";
@@ -21,44 +21,41 @@ const WhyUs = () => {
   return (
     <div className="whyUsContainer">
       {/* SEO Meta Tags with Helmet */}
-      <Helmet>
-        <title>NİYƏ BİZİ SEÇMƏLİSİNİZ - PRIME TRADE GROUP MMC</title>
-        <meta
-          name="description"
-          content="PRIME TRADE GROUP MMC-ni etibarlı satınalma partnyorunuz edən səbəbləri kəşf edin – xərcin azaldılması, qlobal tədarükçü şəbəkələri, süni intellekt əsaslı həllər və 98%-lik müştəri məmnuniyyəti."
-        />
-        <meta
-          name="keywords"
-          content="strateji satınalma, xərcin azaldılması, qlobal tədarükçü şəbəkəsi, satınalmanın effektivliyi, süni intellekt əsaslı satınalma, risklərin azaldılması, 24/7 dəstək, müştəri məmnuniyyəti, təchizat zəncirində xərcə qənaət, avtomatlaşdırılmış satınalma həlləri, qlobal satınalma xidmətləri, etibarlı satınalma partnyoru, ISO 9001 sertifikatlı satınalma, Fortune 500 üçün satınalma"
-        />
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="PRIME TRADE GROUP MMC" />
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Helmet>
+     <Helmet>
+  <title>NİYƏ BİZİ SEÇMƏLİSİNİZ - PRIME TRADE GROUP MMC</title>
+  <meta 
+    name="description" 
+    content="PRIME TRADE GROUP MMC-ni etibarlı satınalma partnyorunuz edən səbəbləri kəşf edin – xərcin azaldılması, qlobal tədarükçü şəbəkələri, süni intellekt əsaslı həllər və 98%-lik müştəri məmnuniyyəti." 
+  />
+  <meta 
+    name="keywords" 
+    content="strateji satınalma, xərcin azaldılması, qlobal tədarükçü şəbəkəsi, satınalmanın effektivliyi, süni intellekt əsaslı satınalma, risklərin azaldılması, 24/7 dəstək, müştəri məmnuniyyəti, təchizat zəncirində xərcə qənaət, avtomatlaşdırılmış satınalma həlləri, qlobal satınalma xidmətləri, etibarlı satınalma partnyoru, ISO 9001 sertifikatlı satınalma, Fortune 500 üçün satınalma"
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="PRIME TRADE GROUP MMC" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</Helmet>
+
 
       {/* Main Benefits Section */}
       <section className="benefitsSection">
         <div className="containerWrapper">
-          <SectionHeader
-            title="Why Choose Us"
-            subtitle="Your Strategic Procurement Partner"
-          />
+          <SectionHeader title="Why Choose Us" subtitle="Your Strategic Procurement Partner"/>
           <div className="benefitsGrid">
             <div className="benefitCard">
               <DollarSign className="benefitIcon" />
               <h3 className="benefitTitle">Cost Reduction</h3>
               <p className="benefitText">
-                Our strategic sourcing approach delivers average cost savings of
-                15-30% while maintaining superior quality standards across all
-                categories.
+                Our strategic sourcing approach delivers average cost savings of 
+                15-30% while maintaining superior quality standards across all categories.
               </p>
             </div>
             <div className="benefitCard">
               <Timer className="benefitIcon" />
               <h3 className="benefitTitle">Speed & Efficiency</h3>
               <p className="benefitText">
-                Streamlined processes and automated workflows reduce procurement
+                Streamlined processes and automated workflows reduce procurement 
                 cycle times by up to 60%, accelerating your time-to-market.
               </p>
             </div>
@@ -66,7 +63,7 @@ const WhyUs = () => {
               <Network className="benefitIcon" />
               <h3 className="benefitTitle">Global Network</h3>
               <p className="benefitText">
-                Access to our extensive supplier network spanning 80+ countries
+                Access to our extensive supplier network spanning 80+ countries 
                 ensures optimal sourcing options for any requirement.
               </p>
             </div>
@@ -155,7 +152,7 @@ const WhyUs = () => {
               <Users2 className="trustIcon" />
               <h4 className="trustTitle">Fortune 500 Companies</h4>
               <p className="trustText">
-                Over 150 Fortune 500 companies trust us with their strategic
+                Over 150 Fortune 500 companies trust us with their strategic 
                 procurement initiatives across diverse industries.
               </p>
             </div>
@@ -163,7 +160,7 @@ const WhyUs = () => {
               <Star className="trustIcon" />
               <h4 className="trustTitle">Industry Recognition</h4>
               <p className="trustText">
-                Award-winning procurement solutions recognized by leading
+                Award-winning procurement solutions recognized by leading 
                 industry associations and business publications.
               </p>
             </div>
@@ -171,8 +168,8 @@ const WhyUs = () => {
               <ShieldCheck className="trustIcon" />
               <h4 className="trustTitle">Certified Excellence</h4>
               <p className="trustText">
-                ISO 9001, SOC 2, and industry-specific certifications ensure the
-                highest standards of quality and security.
+                ISO 9001, SOC 2, and industry-specific certifications ensure 
+                the highest standards of quality and security.
               </p>
             </div>
           </div>
