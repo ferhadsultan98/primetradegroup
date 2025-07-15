@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "emailjs": "^4.0.3",
     "hamburger-react": "^2.5.2",
     "i18next": "^25.3.1",
     "i18next-browser-languagedetector": "^8.2.0",

@@ -1,0 +1,420 @@
+{
+  "header": {
+    "about": "Haqqımızda",
+    "services": "Xidmətlər",
+    "whyUs": "Niyə biz?",
+    "contact": "Əlaqə"
+  },
+  "about": {
+    "section_header": {
+      "title": "Haqqımızda",
+      "subtitle": "Bizi tanıyın və nə etdiyimizi öyrənin"
+    },
+    "mission": {
+      "title": "Missiyamız",
+      "text": "Qabaqcıl texnologiya və strateji tərəfdaşlıqlar vasitəsilə qlobal təchizat zəncirinin idarə edilməsində inqilab etmək, səmərəlilik və davamlılığı təmin etmək."
+    },
+    "vision": {
+      "title": "Baxışımız",
+      "text": "Dünyanın ən etibarlı təchizat zənciri tərəfdaşı olmaq, bizneslərə əməliyyat mükəmməlliyi və rəqabət üstünlüyü əldə etməyə imkan yaratmaq."
+    },
+    "values": {
+      "title": "Dəyərlərimiz",
+      "text": "Dürüstlük, innovasiya və etibarlılıq qurduğumuz hər tərəfdaşlığın və təqdim etdiyimiz hər həllin təməlini təşkil edir."
+    },
+    "company_overview": {
+      "title": "Biz kimiq",
+      "text": "PRIME TRADE GROUP MMC olaraq, müxtəlif sektorlarda idxal və istehsal şirkətlərindən birbaşa mallar tədarük edir, müştərilərimizə rəqabətli şərtlərlə təklif edirik. Şirkətimiz geniş məhsul portfelimiz, çevik xidmət mexanizmimiz və uzunmüddətli tərəfdaşlığa sadiqliyimizlə fərqlənir."
+    },
+    "services": {
+      "title": "Təcrübəmiz",
+      "logistics": {
+        "title": "Logistika İdarəetmə",
+        "features": {
+          "tracking": "Tam izləmə",
+          "route": "Marşrut optimallaşdırma",
+          "updates": "Real vaxt yeniləmələri"
+        }
+      },
+      "procurement": {
+        "title": "Qlobal Təchizat",
+        "features": {
+          "network": "Təchizatçı şəbəkəsi",
+          "quality": "Keyfiyyət təminatı",
+          "cost": "Xərc optimallaşdırma"
+        }
+      },
+      "risk": {
+        "title": "Risk İdarəetmə",
+        "features": {
+          "compliance": "Uyğunluq monitorinqi",
+          "security": "Təchizat zəncirinin təhlükəsizliyi",
+          "contingency": "Fövqəladə hallar planlaşdırması"
+        }
+      }
+    }
+  },
+  "services": {
+    "helmet": {
+      "title": "XİDMƏTLƏR - PRIME TRADE GROUP MMC"
+    },
+    "section_header": {
+      "title": "Xidmətlərimiz",
+      "subtitle": "Müxtəlif ehtiyaclara uyğun keyfiyyətli və etibarlı həllər"
+    },
+    "overview": {
+      "title": "Şirkətə Baxış",
+      "text": "Şirkətimiz müxtəlif sektorlarda fəaliyyət göstərən qurumların tələblərinə uyğun məhsulların təchizatını həyata keçirir. Təklif etdiyimiz məhsullar keyfiyyət, funksionallıq və əlçatanlıq baxımından seçilir və müxtəlif istifadə sahələri üzrə çeşidli həlləri əhatə edir. Bu istiqamətdə təqdim etdiyimiz məhsul kateqoriyaları aşağıdakı əsas sahələri əhatə edir:"
+    },
+    "cleaning": {
+      "title": "Yuyucu və Təmizlik Vasitələri",
+      "features": {
+        "detergents": "Yüksək keyfiyyətli yuyucu vasitələr",
+        "equipment": "Peşəkar təmizlik avadanlıqları",
+        "professional": "Sənaye təmizlik həlləri",
+        "eco": "Ekoloji cəhətdən təmiz məhsullar",
+        "specialized": "Xüsusi təmizlik məhsulları"
+      }
+    },
+    "workwear": {
+      "title": "İşçi və Məktəbli Geyimləri",
+      "features": {
+        "uniforms": "Standart işçi geyimləri",
+        "safety": "Təhlükəsizlik geyimləri",
+        "customized": "Fərdi dizaynlı geyimlər",
+        "durable": "Davamlı və keyfiyyətli materiallar",
+        "student": "Məktəbli formaları"
+      }
+    },
+    "it_equipment": {
+      "title": "İT Avadanlıqları",
+      "features": {
+        "hardware": "Kompüter və server avadanlıqları",
+        "peripherals": "Periferik cihazlar",
+        "networking": "Şəbəkə avadanlıqları",
+        "software": "Proqram təminatı",
+        "maintenance": "Texniki dəstək və baxım"
+      }
+    },
+    "household": {
+      "title": "Təsərrüfat Malları",
+      "features": {
+        "tools": "Müxtəlif alətlər",
+        "consumables": "Sərf materialları",
+        "maintenance": "Baxım avadanlıqları",
+        "industrial": "Sənaye təsərrüfat malları",
+        "custom": "Sifarişlə hazırlanmış məhsullar"
+      }
+    },
+    "furniture": {
+      "title": "Mebellər",
+      "features": {
+        "office": "Ofis mebelləri",
+        "ergonomic": "Erqonomik dizayn",
+        "custom": "Fərdi sifarişlə mebel",
+        "modern": "Müasir dizaynlı mebellər",
+        "durable": "Davamlı və keyfiyyətli materiallar"
+      }
+    },
+    "plumbing": {
+      "title": "Santexnika Malları",
+      "features": {
+        "pipes": "Boru və fitinqlər",
+        "fittings": "Santexnika aksesuarları",
+        "tools": "Quraşdırma alətləri",
+        "sanitary": "Sanitar qovşaq avadanlıqları",
+        "installation": "Quraşdırma xidmətləri"
+      }
+    },
+    "office_supplies": {
+      "title": "Dəftərxana və Ofis Ləvazimatları",
+      "features": {
+        "stationery": "Dəftərxana ləvazimatları",
+        "equipment": "Ofis avadanlıqları",
+        "organizers": "Təşkilatçılar və saxlama həlləri",
+        "consumables": "Sərf materialları",
+        "custom": "Fərdi sifarişlə ləvazimatlar"
+      }
+    },
+    "learn_more": "Ətraflı",
+    "cta": {
+      "title": "Bizimlə Əlaqə Saxlayın",
+      "text": "Ehtiyaclarınıza uyğun həllərimizi kəşf etmək üçün bu gün bizimlə əlaqə saxlayın!",
+      "button": "Əlaqə"
+    }
+  },
+  "whyus": {
+    "section_header": {
+      "title": "Niyə Bizi Seçməlisiniz",
+      "subtitle": "Strateji Təchizat Tərəfdaşınız"
+    },
+    "benefits": {
+      "cost_reduction": {
+        "title": "Xərc Azaldılması",
+        "text": "Strateji təchizat yanaşmamız bütün kateqoriyalarda yüksək keyfiyyət standartlarını qoruyaraq orta hesabla 15-30% xərc qənaəti təmin edir."
+      },
+      "speed_efficiency": {
+        "title": "Sürət və Səmərəlilik",
+        "text": "Sadələşdirilmiş proseslər və avtomatlaşdırılmış iş axınları təchizat dövrü müddətlərini 60%-ə qədər qısaldır, bazarvaxtınızı sürətləndirir."
+      },
+      "global_network": {
+        "title": "Qlobal Şəbəkə",
+        "text": "80-dən çox ölkəni əhatə edən geniş təchizatçı şəbəkəmizə giriş istənilən tələb üçün optimal təchizat variantlarını təmin edir."
+      }
+    },
+    "advantages": {
+      "title": "Bizi Fərqləndirən Nədir",
+      "innovation": {
+        "title": "İnnovasiya İlk",
+        "features": {
+          "supplier_matching": "Sİ ilə dəstəklənən təchizatçı uyğunlaşdırma",
+          "demand_planning": "Proqnozlaşdırıcı tələb planlaşdırması",
+          "contract_management": "Avtomatlaşdırılmış müqavilə idarəetmə"
+        }
+      },
+      "risk_mitigation": {
+        "title": "Risklərin Azaldılması",
+        "features": {
+          "supplier_audits": "Hərtərəfli təchizatçı auditləri",
+          "supply_chain_visibility": "Çoxsəviyyəli təchizat zənciri görünürlüğü",
+          "risk_assessment": "Proaktiv risk qiymətləndirmə"
+        }
+      },
+      "support": {
+        "title": "24/7 Dəstək",
+        "features": {
+          "account_managers": "Xüsusi hesab menecerləri",
+          "monitoring": "Gecə-gündüz monitorinq",
+          "emergency_protocols": "Fövqəladə vəziyyət reaksiya protokolları"
+        }
+      }
+    },
+    "success": {
+      "cost_reduction": {
+        "number": "25%",
+        "label": "Orta Xərc Azaldılması"
+      },
+      "procurement_cycles": {
+        "number": "60%",
+        "label": "Daha Sürətli Təchizat Dövrləri"
+      },
+      "satisfaction": {
+        "number": "98%",
+        "label": "Müştəri Məmnuniyyət Dərəcəsi"
+      },
+      "projects": {
+        "number": "500+",
+        "label": "Uğurlu Layihələr"
+      }
+    },
+    "trust": {
+      "title": "Sənaye Liderləri tərəfindən Etibar Edilir",
+      "fortune": {
+        "title": "Fortune 500 Şirkətləri",
+        "text": "150-dən çox Fortune 500 şirkəti müxtəlif sənayelərdə strateji təchizat təşəbbüsləri üçün bizə etibar edir."
+      },
+      "recognition": {
+        "title": "Sənaye Təqdiri",
+        "text": "Aparıcı sənaye assosiasiyaları və biznes nəşrləri tərəfindən tanınan mükafat qazanmış təchizat həlləri."
+      },
+      "certified": {
+        "title": "Sertifikatlaşdırılmış Mükəmməllik",
+        "text": "ISO 9001, SOC 2 və sənayeyə xas sertifikatlar keyfiyyət və təhlükəsizliyin ən yüksək standartlarını təmin edir."
+      }
+    }
+  },
+  "contact": {
+    "section_header": {
+      "title": "Bizimlə Əlaqə",
+      "subtitle": "Sualınızı cavablandırmaq və sizə kömək etmək üçün buradayıq"
+    },
+    "info": {
+      "title": "Əlaqə Saxlayın",
+      "phone": {
+        "title": "Telefon",
+        "number1": "+994 12 345 67 89",
+        "number2": "+994 50 123 45 67"
+      },
+      "email": {
+        "title": "E-poçt",
+        "address1": "info@procurement.az",
+        "address2": "sales@procurement.az"
+      },
+      "address": {
+        "title": "Ünvan",
+        "line1": "28 May Küçəsi, Nizami Rayonu",
+        "line2": "Bakı, Azərbaycan AZ1000"
+      },
+      "hours": {
+        "title": "İş Saatları",
+        "weekdays": "Bazar ertəsi - Cümə: 9:00 - 18:00",
+        "saturday": "Şənbə: 9:00 - 14:00"
+      }
+    },
+    "form": {
+      "title": "Bize Mesaj Göndərin",
+      "subtitle": "Təchizat prosesinizi sadələşdirməyə hazırsınız? Konsultasiya üçün bu gün bizimlə əlaqə saxlayın.",
+      "fields": {
+        "name": "Tam Ad",
+        "email": "E-poçt Ünvanı",
+        "company": "Şirkət Adı",
+        "subject": "Mövzu",
+        "message": "Mesajınız..."
+      },
+      "submit": "Mesaj Göndər",
+      "success_message": "Mesaj uğurla göndərildi!"
+    },
+    "cta": {
+      "title": "Təchizatınızı Optimallaşdırmağa Hazırsınız?",
+      "text": "Təchizat ehtiyacları ilə bizə etibar edən yüzlərlə şirkətə qoşulun. Təchizat zənciri əməliyyatlarınızı necə sadələşdirə biləcəyimizi müzakirə edək.",
+      "buttons": {
+        "consultation": "Konsultasiya Planlaşdırın",
+        "quote": "Təklif İstəyin"
+      }
+    }
+  },
+
+  "homeSection": {
+    "homeSection": {
+      "helmet": {
+        "title": "Ana Səhifə - PRIME TRADE GROUP MMC",
+        "description": "PRIME TRADE GROUP MMC-nin qlobal təchizat zənciri idarəetməsi, strateji satınalma, rəqəmsal transformasiya və digər sahələrdəki təcrübəsini kəşf edin. Bizim nümunə araşdırmalarımızı və proseslərimizi öyrənin.",
+        "keywords": "PRIME TRADE GROUP, təchizat zənciri idarəetməsi, strateji satınalma, rəqəmsal transformasiya, logistika, risklərin azaldılması"
+      }
+    },
+    "slides": {
+      "globalSupplyChain": {
+        "title": "Qlobal Təchizat Zənciri Həlləri",
+        "subtitle": "Dünya miqyasında əməliyyatlarınızı sadələşdirir",
+        "description": "Təchizat zəncirinizin səmərəliliyini optimallaşdırmaq və əməliyyat xərclərini azaltmaq üçün nəzərdə tutulmuş hərtərəfli logistika və satınalma xidmətləri."
+      },
+      "strategicProcurement": {
+        "title": "Strateji Satınalma Mükəmməlliyi",
+        "subtitle": "Daha yaxşı nəticələr üçün ağıllı satınalma",
+        "description": "Dəyər yaradan, keyfiyyəti təmin edən və sənaye daxilində dayanıqlı təchizatçı əlaqələrini saxlayan qabaqcıl satınalma strategiyaları."
+      },
+      "digitalTransformation": {
+        "title": "Rəqəmsal Transformasiya",
+        "subtitle": "Texnologiyaya əsaslanan təchizat zənciri",
+        "description": "İntellektual, cavabdeh və dayanıqlı təchizat zənciri şəbəkələri yaratmaq üçün qabaqcıl texnologiya və məlumat analitikalarından istifadə."
+      },
+      "endToEndVisibility": {
+        "title": "Tam Təchizat Zənciri Görünüşü",
+        "subtitle": "Tam təchizat zənciri şəffaflığı",
+        "description": "Mənbədən çatdırılmaya qədər təchizat zənciri əməliyyatlarına tam görünüş təmin edən real vaxt izləmə və monitorinq həlləri."
+      }
+    },
+    "buttons": {
+      "getStarted": "Başla",
+      "learnMore": "Ətraflı Öyrən",
+      "readMore": "Daha Çox Oxu"
+    },
+    "expertise": {
+      "title": "Bizim Təcrübəmiz",
+      "description": "Satınalma və təchizat zənciri mükəmməlliyi üçün xüsusi həllər təqdim edirik.",
+      "items": {
+        "tenderManagement": {
+          "title": "Tender İdarəetmə",
+          "description": "Səmərəli tender yaradılması, qiymətləndirilməsi və təchizatçı seçimi üçün sadələşdirilmiş proseslər."
+        },
+        "supplierOptimization": {
+          "title": "Təchizatçı Optimallaşdırma",
+          "description": "Qlobal səviyyədə ən yaxşı təchizatçılarla güclü, dayanıqlı əlaqələr qurma."
+        },
+        "costReduction": {
+          "title": "Xərc Azaltma",
+          "description": "Keyfiyyətdən ödün vermədən xərcləri minimuma endirmək üçün strateji satınalma."
+        },
+        "riskMitigation": {
+          "title": "Risklərin Azaldılması",
+          "description": "Təchizat zənciri risklərini müəyyən etmək və idarə etmək üçün proaktiv strategiyalar."
+        }
+      }
+    },
+    "caseStudies": {
+      "title": "Uğur Hekayələri",
+      "description": "Müştərilərimizin real dünya uğur hekayələri.",
+      "items": {
+        "globalRetailChain": {
+          "title": "Qlobal Pərakəndə Zənciri",
+          "description": "Optimallaşdırılmış təchizatçı şəbəkələri vasitəsilə logistika xərclərini 20% azaltdı."
+        },
+        "manufacturingGiant": {
+          "title": "İstehsal nəhəngi",
+          "description": "Təchizat zəncirinin 100% görünüşü üçün real vaxt izləmə tətbiq edildi."
+        },
+        "energySector": {
+          "title": "Enerji Sektoru",
+          "description": "Satınalma xərclərində 15% qənaət edərək tender proseslərini sadələşdirdi."
+        }
+      }
+    },
+    "process": {
+      "title": "Bizim Prosesimiz",
+      "description": "Nəticələrə nail olmaq üçün sübut edilmiş yanaşma.",
+      "steps": {
+        "analysis": {
+          "step": "1",
+          "title": "Təhlil",
+          "description": "Cari təchizat zənciri və satınalma ehtiyaclarınızı qiymətləndirin."
+        },
+        "strategy": {
+          "step": "2",
+          "title": "Strategiya",
+          "description": "Maksimum səmərəlilik üçün xüsusi həllər hazırlayın."
+        },
+        "execution": {
+          "step": "3",
+          "title": "İcra",
+          "description": "Strategiyaları dəqiqlik və şəffaflıqla tətbiq edin."
+        },
+        "optimization": {
+          "step": "4",
+          "title": "Optimallaşdırma",
+          "description": "Performansı davamlı olaraq izləyin və təkmilləşdirin."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Müştərilərimiz Nə Deyir",
+      "description": "Dünya miqyasında sənaye liderləri tərəfindən etibar edilir.",
+      "items": {
+        "testimonial1": {
+          "quote": "Təchizat zəncirimizi misilsiz səmərəliliklə dəyişdirdi.",
+          "author": "Con Dou, Baş Direktor"
+        },
+        "testimonial2": {
+          "quote": "Onların tender idarəetməsi bizə illik milyonlarla qənaət etdi.",
+          "author": "Ceyn Smit, Satınalma Rəhbəri"
+        },
+        "testimonial3": {
+          "quote": "Mürəkkəb qlobal şəbəkə üçün innovativ həllər.",
+          "author": "Mayk Braun, Əməliyyatlar Direktoru"
+        }
+      }
+    }
+  },
+  "footer": {
+    "companyDescription": "Biz sizin biznes ehtiyaclarınızı ödəmək üçün mükəmməl xidmət və innovativ həllər təqdim etməyə sadiqik.",
+    "quickLinks": "Sürətli Keçidlər",
+    "home": "Ana Səhifə",
+    "about": "Haqqımızda",
+    "services": "Xidmətlər",
+    "products": "Məhsullar",
+    "contact": "Əlaqə",
+    "servicesTitle": "Məhsullar",
+    "cleaningDetergent": "Təmizlik və Yuyucu Vasitələr",
+    "uniforms": "İş və Məktəb Uniformları",
+    "itEquipment": "İnformasiya Texnologiyaları Avadanlıqları",
+    "householdGoods": "Ev Əşyaları",
+    "furniture": "Mebel",
+    "plumbing": "Santexnika Məhsulları",
+    "stationery": "Kargüzarlıq və Ofis Ləvazimatları",
+    "contactInfo": "Əlaqə Məlumatları",
+    "address": "Biznes Küçəsi 123, Şəhər 12345",
+    "copyright": "© 2025 Prime Trade Group. Bütün hüquqlar qorunur.",
+    "privacy": "Məxfilik Siyasəti",
+    "terms": "Xidmət Şərtləri",
+    "cookies": "Kuki Siyasəti"
+  }
+}
