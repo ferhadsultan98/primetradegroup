@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Droplet, Shirt, Monitor, Warehouse, Sofa, Wrench, Book } from "lucide-react";
 import "./ServiceDetails.scss";
 import SectionHeader from "../../../Components/SectionHeader/SectionHeader";
-import { db } from "../../../Firebase/Server";
+import { db } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";
 
 const ServiceDetails = () => {
@@ -86,7 +86,7 @@ const ServiceDetails = () => {
                     <h3 className="productName">{product.name}</h3>
                     <p className="productDescription">{product.description}</p>
 
-                    <div className="reuseSection">
+                    <div className "reuseSection">
                       <h4 className="sectionTitle">İstifadə</h4>
                       <p>{product.usage}</p>
                     </div>

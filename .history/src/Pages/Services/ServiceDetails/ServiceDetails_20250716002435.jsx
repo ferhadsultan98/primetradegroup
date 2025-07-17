@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Droplet, Shirt, Monitor, Warehouse, Sofa, Wrench, Book } from "lucide-react";
 import "./ServiceDetails.scss";
 import SectionHeader from "../../../Components/SectionHeader/SectionHeader";
-import { db } from "../../../Firebase/Server";
+import { db } from "../../";
 import { doc, getDoc } from "firebase/firestore";
 
 const ServiceDetails = () => {

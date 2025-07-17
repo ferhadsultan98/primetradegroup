@@ -115,17 +115,17 @@ const Header = () => {
             </li>
             <li className="mobileNavItem">
               <Link to="/services" className="mobileNavLink" onClick={closeMenu}>
-                {t("header.services")}
+                {t("headerşservices")}
               </Link>
             </li>
             <li className="mobileNavItem">
               <Link to="/why-us" className="mobileNavLink" onClick={closeMenu}>
-                {t("header.whyUs")}
+                {t("whyUs")}
               </Link>
             </li>
             <li className="mobileNavItem">
               <Link to="/contact" className="mobileNavLink" onClick={closeMenu}>
-                {t("header.contact")}
+                {t("contact")}
               </Link>
             </li>
             <li className="mobileNavItem">

@@ -13,7 +13,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import "./Services.scss";
 import SectionHeader from "../../Components/SectionHeader/SectionHeader";
-import { db } from "../../Firebase/Server";
+import { db } from "../";
 import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";
 

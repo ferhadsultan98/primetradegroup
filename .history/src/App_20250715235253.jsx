@@ -1,5 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./Languages/i18n";
 import MainLayout from "./Components/Mainlayout/Mainlayout";
@@ -16,12 +21,11 @@ import ContactSection from "./Pages/Contact/Contact";
 import NotFound from "./Pages/NotFound/NotFound";
 import EditCatalog from "./Pages/EditCatalog/EditCatalog";
 import PolicyContent from "./Pages/PolicyContent/PolicyContent";
-// import PrimeAdmin from "./Admin/PrimeAdmin";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
@@ -65,9 +69,7 @@ const App = () => {
             path="/services/:id"
             element={
               <MainLayout>
-                <React.Suspense fallback={<div>Loading...</div>}>
-                  <ServiceDetails />
-                </React.Suspense>
+                <ServiceDetails />
                 <ScrollTopBtn />
               </MainLayout>
             }
@@ -94,13 +96,13 @@ const App = () => {
             path="/privacy"
             element={
               <MainLayout>
-                <PolicyContent />
+                <PolicyContent/>
                 <ScrollTopBtn />
               </MainLayout>
             }
           />
           <Route path="/catalogue" element={<EditCatalog />} />
-          {/* <Route path="/admin" element={<PrimeAdmin />} /> */}
+          <Route path="/admin" element={<PrimeAd} />
           <Route
             path="*"
             element={

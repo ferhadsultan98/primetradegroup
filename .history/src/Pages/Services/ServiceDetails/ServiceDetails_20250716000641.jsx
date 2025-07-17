@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+// src/components/ServiceDetails/ServiceDetails.jsx
+import React from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { useParams, useNavigate } from "react-router-dom";
@@ -6,65 +7,59 @@ import { Droplet, Shirt, Monitor, Warehouse, Sofa, Wrench, Book } from "lucide-r
 import "./ServiceDetails.scss";
 import SectionHeader from "../../../Components/SectionHeader/SectionHeader";
 import { db } from "../../../Firebase/Server";
-import { doc, getDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
+import { useState, useEffect } from "react";
 
 const ServiceDetails = () => {
   const { t } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
-  const [service, setService] = useState(null);
-
+  const [servicesData, setServicesData] = useState([]);
   const iconMap = {
-    Droplet,
-    Shirt,
-    Monitor,
-    Warehouse,
-    Sofa,
-    Wrench,
-    Book,
+    Droplet: Droplet,
+    Shirt: Shirt,
+    Monitor: Monitor,
+    Warehouse: Warehouse,
+    Sofa: Sofa,
+    Wrench: Wrench,
+    Book: Book,
   };
 
   useEffect(() => {
-    const fetchService = async () => {
+    const fetchServices = async () => {
       try {
-        const docRef = doc(db, "services", id);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          setService({
-            id: docSnap.id,
-            ...docSnap.data(),
-            icon: iconMap[docSnap.data().icon],
-          });
-        } else {
-          console.error("No such service!");
-        }
+        const querySnapshot = await getDocs(collection(db, "services"));
+        const services = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setServicesData(services);
       } catch (error) {
-        console.error("Error fetching service: ", error);
+        console.error("Error fetching services: ", error);
       }
     };
-    fetchService();
-  }, [id]);
+    fetchServices();
+  }, []);
+
+  const service = servicesData.find((s) => s.id === id);
 
   if (!service) {
     return <div>{t("services.not_found")}</div>;
   }
 
-  const IconComponent = service.icon;
+  const IconComponent = iconMap[service.icon];
 
   return (
     <div className="serviceDetailsContainer">
       <Helmet>
-        <title>{`${service.title} - PRIME TRADE GROUP MMC`}</title>
+        <title>{`${t(service.title)} - PRIME TRADE GROUP MMC`}</title>
         <meta name="author" content="PRIME TRADE GROUP MMC" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Helmet>
 
       <div className="containerWrapper">
-        <SectionHeader
-          title={service.title}
-          subtitle={t("services.details.subtitle")}
-        />
+        <SectionHeader title={t(service.title)} subtitle={t("services.details.subtitle")} />
 
         <section className="serviceDetailsSection">
           <div className="serviceDetailsContent">
@@ -72,8 +67,8 @@ const ServiceDetails = () => {
               <IconComponent className="serviceIcon" />
             </div>
 
-            <h2 className="serviceTitle">{service.title}</h2>
-            <p className="serviceDetailsText">{service.details}</p>
+            <h2 className="serviceTitle">{t(service.title)}</h2>
+            <p className="serviceDetailsText">{t(service.details)}</p>
 
             <div className="productsContainer">
               {service.products.map((product, index) => (
@@ -86,13 +81,13 @@ const ServiceDetails = () => {
                     <h3 className="productName">{product.name}</h3>
                     <p className="productDescription">{product.description}</p>
 
-                    <div className="reuseSection">
-                      <h4 className="sectionTitle">İstifadə</h4>
+                    <div className="usageSection">
+                      <h4 className="sectionTitle">{t("services.usage")}</h4>
                       <p>{product.usage}</p>
                     </div>
 
                     <div className="featuresSection">
-                      <h4 className="sectionTitle">Əsas Xüsusiyyətlər</h4>
+                      <h4 className="sectionTitle">{t("services.features")}</h4>
                       <ul className="featuresList">
                         {product.features.map((feature, i) => (
                           <li key={i}>{feature}</li>
@@ -101,22 +96,30 @@ const ServiceDetails = () => {
                     </div>
 
                     <div className="additionalInfoSection">
-                      <h4 className="sectionTitle">Əlavə Məlumat</h4>
-                      <p><strong>Həcm/Material:</strong> {product.volume || product.material}</p>
-                      <p><strong>Mənşə:</strong> {product.origin}</p>
-                      <p><strong>Təhlükəsizlik:</strong> {product.safety}</p>
-                      <p><strong>Buraxılış Tarixi:</strong> {product.releaseDate}</p>
-                      <p><strong>Haştaqlar:</strong> {product.hashtags.join(" ")}</p>
+                      <h4 className="sectionTitle">{t("services.additional_info")}</h4>
+                      <p>
+                        <strong>{t("services.volume_material")}:</strong>{" "}
+                        {product.volume || product.material}
+                      </p>
+                      <p>
+                        <strong>{t("services.origin")}:</strong> {product.origin}
+                      </p>
+                      <p>
+                        <strong>{t("services.safety")}:</strong> {product.safety}
+                      </p>
+                      <p>
+                        <strong>{t("services.release_date")}:</strong> {product.releaseDate}
+                      </p>
+                      <p>
+                        <strong>{t("services.hashtags")}:</strong> {product.hashtags.join(" ")}
+                      </p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            <button
-              className="backButton"
-              onClick={() => navigate("/services")}
-            >
+            <button className="backButton" onClick={() => navigate("/services")}>
               {t("services.back")}
             </button>
           </div>

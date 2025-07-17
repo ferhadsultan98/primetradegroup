@@ -1,19 +1,11 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
-import {
-  Droplet,
-  Shirt,
-  Monitor,
-  Warehouse,
-  Sofa,
-  Wrench,
-  Book,
-} from "lucide-react";
+import { Droplet, Shirt, Monitor, Warehouse, Sofa, Wrench, Book } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import "./Services.scss";
 import SectionHeader from "../../Components/SectionHeader/SectionHeader";
-import { db } from "../../Firebase/Server";
+import { db } from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";
 
@@ -73,12 +65,7 @@ const Services = () => {
             <h2 className="sectionTitle">{t("services.overview.title")}</h2>
             <div className="overviewContent">
               <p className="overviewText">
-                Şirkətimiz müxtəlif sektorlarda fəaliyyət göstərən qurumların
-                tələblərinə uyğun məhsulların təchizatını həyata keçirir. Təklif
-                etdiyimiz məhsullar keyfiyyət, funksionallıq və əlçatanlıq
-                baxımından seçilir və müxtəlif istifadə sahələri üzrə çeşidli
-                həlləri əhatə edir. Bu istiqamətdə təqdim etdiyimiz məhsul
-                kateqoriyaları aşağıdakı əsas sahələri əhatə edir:
+                Şirkətimiz müxtəlif sektorlarda fəaliyyət göstərən qurumların tələblərinə uyğun məhsulların təchizatını həyata keçirir. Təklif etdiyimiz məhsullar keyfiyyət, funksionallıq və əlçatanlıq baxımından seçilir və müxtəlif istifadə sahələri üzrə çeşidli həlləri əhatə edir. Bu istiqamətdə təqdim etdiyimiz məhsul kateqoriyaları aşağıdakı əsas sahələri əhatə edir:
               </p>
             </div>
           </div>
@@ -97,6 +84,7 @@ const Services = () => {
                   <div className="serviceFeatures">
                     {service.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="featureItem">
+                        <divBullet"></div>
                         <span className="featureText">{feature}</span>
                       </div>
                     ))}

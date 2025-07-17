@@ -125,7 +125,7 @@ const Header = () => {
             </li>
             <li className="mobileNavItem">
               <Link to="/contact" className="mobileNavLink" onClick={closeMenu}>
-                {t("header.contact")}
+                {t("contact")}
               </Link>
             </li>
             <li className="mobileNavItem">

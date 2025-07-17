@@ -16,7 +16,7 @@ import ContactSection from "./Pages/Contact/Contact";
 import NotFound from "./Pages/NotFound/NotFound";
 import EditCatalog from "./Pages/EditCatalog/EditCatalog";
 import PolicyContent from "./Pages/PolicyContent/PolicyContent";
-// import PrimeAdmin from "./Admin/PrimeAdmin";
+import PrimeAdmin from "./Admin/PrimeAdmin";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
