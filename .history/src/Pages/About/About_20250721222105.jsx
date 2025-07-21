@@ -56,14 +56,14 @@ const AboutUs = () => {
             </div>
           </div>
             {/* Company Overview Section */}
-      {/* <section className="companyOverviewSection">
+      <section className="companyOverviewSection">
         <div className="containerWrapper">
           <h2 className="sectionTitle">{t("about.company_overview.title")}</h2>
           <div className="overviewContent">
             <p className="overviewText">{t("about.company_overview.text")}</p>
           </div>
         </div>
-      </section> */}
+      </section>
         </div>
       </section>
 
@@ -95,26 +95,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="serviceCard">
-              <div className="serviceIconWrapper">
-                <Globe className="serviceIcon" />
-              </div>
-              <h4 className="serviceTitle">{t("about.services.procurement.title")}</h4>
-              <div className="serviceFeatures">
-                <div className="featureItem">
-                  <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.procurement.features.network")}</span>
-                </div>
-                <div className="featureItem">
-                  <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.procurement.features.quality")}</span>
-                </div>
-                <div className="featureItem">
-                  <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.procurement.features.cost")}</span>
-                </div>
-              </div>
-            </div>
+          
 
             <div className="serviceCard">
               <div className="serviceIconWrapper">

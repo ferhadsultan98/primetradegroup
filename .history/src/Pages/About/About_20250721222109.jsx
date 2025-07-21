@@ -56,14 +56,14 @@ const AboutUs = () => {
             </div>
           </div>
             {/* Company Overview Section */}
-      {/* <section className="companyOverviewSection">
+      <section className="companyOverviewSection">
         <div className="containerWrapper">
           <h2 className="sectionTitle">{t("about.company_overview.title")}</h2>
           <div className="overviewContent">
             <p className="overviewText">{t("about.company_overview.text")}</p>
           </div>
         </div>
-      </section> */}
+      </section>
         </div>
       </section>
 
