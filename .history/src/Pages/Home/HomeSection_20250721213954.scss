@@ -1,0 +1,330 @@
+/* General Styles */
+.homeSection, .expertiseSection, .caseStudiesSection, .processSection {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.contentWrapper {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #253f57;
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.sectionDescription {
+  font-size: 1.1rem;
+  color: #52585a;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+/* Hero Slider Section */
+.homeSection {
+  height: 100vh;
+}
+
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slideItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideActive {
+  opacity: 1;
+}
+
+.slideOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(37, 63, 87, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideContent {
+  text-align: center;
+  color: #ffffff;
+  animation: slideContentFadeIn 1.5s ease-out;
+}
+
+.slideTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+.slideSubtitle {
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin: 0 0 20px;
+}
+
+.slideDescription {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+@keyframes slideContentFadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Expertise Section */
+.expertiseSection {
+  padding: 60px 0;
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.expertiseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.expertiseCard {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.expertiseCard:hover {
+  transform: translateY(-5px);
+}
+
+.cardTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #253f57;
+  margin-bottom: 10px;
+}
+
+.cardDescription {
+  font-size: 0.9rem;
+  color: #5258
+5a;
+}
+
+/* Case Studies Section */
+.caseStudiesSection {
+  padding: 60px 0;
+  background: #253f57;
+}
+
+.caseStudiesSection .sectionTitle,
+.caseStudiesSection .sectionDescription {
+  color: #ffffff;
+}
+
+.caseStudiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.caseStudyCard {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.caseStudyCard:hover {
+  transform: translateY(-5px);
+}
+
+.caseStudyCard .cardTitle {
+  color: #ffffff;
+}
+
+.caseStudyCard .cardDescription {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.caseStudyCard .secondaryButton {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.caseStudyCard .secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+}
+
+/* Process Section */
+.processSection {
+  padding: 60px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.processCard {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.processCard:hover {
+  transform: translateY(-5px);
+}
+
+.stepNumber {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #253f57;
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .contentWrapper {
+    padding: 0 15px;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .sectionDescription {
+    font-size: 1rem;
+  }
+
+  .slideTitle {
+    font-size: 2.5rem;
+  }
+
+  .slideSubtitle {
+    font-size: 1.4rem;
+  }
+
+  .slideDescription {
+    font-size: 1rem;
+  }
+
+  .homeSection,
+  .expertiseSection,
+  .caseStudiesSection,
+  .processSection {
+    padding: 40px 0;
+  }
+
+  .expertiseCard,
+  .caseStudyCard,
+  .processCard {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.9rem;
+  }
+
+  .slideTitle {
+    font-size: 2rem;
+  }
+
+  .slideSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .slideDescription {
+    font-size: 0.9rem;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+
+  .cardDescription {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .contentWrapper {
+    max-width: 1400px;
+    padding: 0 40px;
+  }
+
+  .sectionTitle {
+    font-size: 3rem;
+  }
+
+  .sectionDescription {
+    font-size: 1.2rem;
+  }
+
+  .slideTitle {
+    font-size: 3.5rem;
+  }
+
+  .slideSubtitle {
+    font-size: 1.8rem;
+  }
+
+  .slideDescription {
+    font-size: 1.2rem;
+  }
+}

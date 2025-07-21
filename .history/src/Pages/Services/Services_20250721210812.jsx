@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import "./Services.scss";
 import SectionHeader from "../../Components/SectionHeader/SectionHeader";
 import { db } from "../../Firebase/Server";
-import { ref, get } from "firebase/database"; // Realtime Database
+import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";
 
 const Services = () => {
@@ -35,18 +35,13 @@ const Services = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const servicesRef = ref(db, "services"); // Realtime Database referansı
-        const snapshot = await get(servicesRef);
-        if (snapshot.exists()) {
-          const services = Object.entries(snapshot.val()).map(([id, data]) => ({
-            id,
-            ...data,
-            icon: iconMap[data.icon] || Book, // Varsayılan ikon
-          }));
-          setServicesData(services);
-        } else {
-          console.error("No services found!");
-        }
+        const querySnapshot = await getDocs(collection(db, "services"));
+        const services = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+          icon: iconMap[doc.data().icon],
+        }));
+        setServicesData(services);
       } catch (error) {
         console.error("Error fetching services: ", error);
       }

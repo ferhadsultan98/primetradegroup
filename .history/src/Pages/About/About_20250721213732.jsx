@@ -55,15 +55,6 @@ const AboutUs = () => {
               <p className="missionText">{t("about.values.text")}</p>
             </div>
           </div>
-            {/* Company Overview Section */}
-      <section className="companyOverviewSection">
-        <div className="containerWrapper">
-          <h2 className="sectionTitle">{t("about.company_overview.title")}</h2>
-          <div className="overviewContent">
-            <p className="overviewText">{t("about.company_overview.text")}</p>
-          </div>
-        </div>
-      </section>
         </div>
       </section>
 

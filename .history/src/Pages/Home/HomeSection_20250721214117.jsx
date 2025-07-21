@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import "./HomeSection.scss";
-import TestimonialsSection from "./TestimonialSection/TestimonialSection";
 
 const HomeSection = () => {
   const { t } = useTranslation();
@@ -77,55 +76,55 @@ const HomeSection = () => {
             </div>
           ))}
         </div>
-
-        <div className="expertiseSection">
-          <div className="contentWrapper">
-            <h2 className="sectionTitle">{t("homeSection.expertise.title")}</h2>
-            <p className="sectionDescription">{t("homeSection.expertise.description")}</p>
-            <div className="expertiseGrid">
-              {["tenderManagement", "supplierOptimization", "costReduction", "riskMitigation"].map((key, index) => (
-                <div key={index} className="expertiseCard">
-                  <h3 className="cardTitle">{t(`homeSection.expertise.items.${key}.title`)}</h3>
-                  <p className="cardDescription">{t(`homeSection.expertise.items.${key}.description`)}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="caseStudiesSection">
-          <div className="contentWrapper">
-            <h2 className="sectionTitle">{t("homeSection.caseStudies.title")}</h2>
-            <p className="sectionDescription">{t("homeSection.caseStudies.description")}</p>
-            <div className="caseStudiesGrid">
-              {["globalRetailChain", "manufacturingGiant", "energySector"].map((key, index) => (
-                <div key={index} className="caseStudyCard">
-                  <h3 className="cardTitle">{t(`homeSection.caseStudies.items.${key}.title`)}</h3>
-                  <p className="cardDescription">{t(`homeSection.caseStudies.items.${key}.description`)}</p>
-                  <button className="secondaryButton">{t("homeSection.buttons.readMore")}</button>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="processSection">
-          <div className="contentWrapper">
-            <h2 className="sectionTitle">{t("homeSection.process.title")}</h2>
-            <p className="sectionDescription">{t("homeSection.process.description")}</p>
-            <div className="processGrid">
-              {["analysis", "strategy", "execution", "optimization"].map((key, index) => (
-                <div key={index} className="processCard">
-                  <div className="stepNumber">{t(`homeSection.process.steps.${key}.step`)}</div>
-                  <h3 className="cardTitle">{t(`homeSection.process.steps.${key}.title`)}</h3>
-                  <p className="cardDescription">{t(`homeSection.process.steps.${key}.description`)}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        <TestimonialsSection />
       </section>
+
+      <section className="expertiseSection">
+        <div className="contentWrapper">
+          <h2 className="sectionTitle">{t("homeSection.expertise.title")}</h2>
+          <p className="sectionDescription">{t("homeSection.expertise.description")}</p>
+          <div className="expertiseGrid">
+            {["tenderManagement", "supplierOptimization", "costReduction", "riskMitigation"].map((key, index) => (
+              <div key={index} className="expertiseCard">
+                <h3 className="cardTitle">{t(`homeSection.expertise.items.${key}.title`)}</h3>
+                <p className="cardDescription">{t(`homeSection.expertise.items.${key}.description`)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="caseStudiesSection">
+        <div className="contentWrapper">
+          <h2 className="sectionTitle">{t("homeSection.caseStudies.title")}</h2>
+          <p className="sectionDescription">{t("homeSection.caseStudies.description")}</p>
+          <div className="caseStudiesGrid">
+            {["globalRetailChain", "manufacturingGiant", "energySector"].map((key, index) => (
+              <div key={index} className="caseStudyCard">
+                <h3 className="cardTitle">{t(`homeSection.caseStudies.items.${key}.title`)}</h3>
+                <p className="cardDescription">{t(`homeSection.caseStudies.items.${key}.description`)}</p>
+                <button className="secondaryButton">{t("homeSection.buttons.readMore")}</button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="processSection">
+        <div className="contentWrapper">
+          <h2 className="sectionTitle">{t("homeSection.process.title")}</h2>
+          <p className="sectionDescription">{t("homeSection.process.description")}</p>
+          <div className="processGrid">
+            {["analysis", "strategy", "execution", "optimization"].map((key, index) => (
+              <div key={index} className="processCard">
+                <div className="stepNumber">{t(`homeSection.process.steps.${key}.step`)}</div>
+                <h3 className="cardTitle">{t(`homeSection.process.steps.${key}.title`)}</h3>
+                <p className="cardDescription">{t(`homeSection.process.steps.${key}.description`)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <Testim
     </>
   );
 };

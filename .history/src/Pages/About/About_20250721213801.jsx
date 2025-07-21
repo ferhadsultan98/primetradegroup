@@ -116,26 +116,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="serviceCard">
-              <div className="serviceIconWrapper">
-                <Shield className="serviceIcon" />
-              </div>
-              <h4 className="serviceTitle">{t("about.services.risk.title")}</h4>
-              <div className="serviceFeatures">
-                <div className="featureItem">
-                  <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.risk.features.compliance")}</span>
-                </div>
-                <div className="featureItem">
-                  <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.risk.features.security")}</span>
-                </div>
-                <div className="featureItem">
-                  <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.risk.features.contingency")}</span>
-                </div>
-              </div>
-            </div>
+         
           </div>
         </div>
       </section>
