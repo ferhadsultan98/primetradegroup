@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import {
@@ -14,8 +14,7 @@ import { useNavigate } from "react-router-dom";
 import "./Services.scss";
 import SectionHeader from "../../Components/SectionHeader/SectionHeader";
 import { db } from "../../Firebase/Server";
-import { ref, get } from "firebase/database"; // Realtime Database
-import { useState, useEffect } from "react";
+import { ref, get } from "firebase/database";
 
 const Services = () => {
   const { t } = useTranslation();
@@ -35,13 +34,14 @@ const Services = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const servicesRef = ref(db, "services"); // Realtime Database referansı
+        const servicesRef = ref(db, "services");
         const snapshot = await get(servicesRef);
         if (snapshot.exists()) {
           const services = Object.entries(snapshot.val()).map(([id, data]) => ({
             id,
             ...data,
-            icon: iconMap[data.icon] || Book, // Varsayılan ikon
+            icon: iconMap[data.icon] || Book,
+            features: Array.isArray(data.features) ? data.features : [], // Ensure features is an array
           }));
           setServicesData(services);
         } else {
@@ -100,11 +100,12 @@ const Services = () => {
                   </div>
                   <h3 className="serviceTitle">{service.title}</h3>
                   <div className="serviceFeatures">
-                    {service.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="featureItem">
-                        <span className="featureText">{feature}</span>
-                      </div>
-                    ))}
+                    {Array.isArray(service.features) &&
+                      service.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="featureItem">
+                          <span className="featureText">{feature}</span>
+                        </div>
+                      ))}
                   </div>
                   <button
                     className="serviceButton"
