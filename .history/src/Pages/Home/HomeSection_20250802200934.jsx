@@ -9,8 +9,7 @@ import ExpertiseSection from "./HomeAbout/HomeAbout";
 import Slide1 from "../../../public/assets/Home/slide1.jpg";
 import Slide2 from "../../../public/assets/Home/slide2.jpg";
 import Slide3 from "../../../public/assets/Home/slide3.jpg";
-import FAQSection from "./FAQSection/FAQSection";
-
+import FAQSection from "./FAQSection/FaqSection";
 
 const HomeSection = () => {
   const { t } = useTranslation();

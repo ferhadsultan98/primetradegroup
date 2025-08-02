@@ -87,7 +87,7 @@ const HomeSection = () => {
         <ExpertiseSection />
         <ProcessSection />
         <TestimonialsSection />
-        <FAQSection/>
+        <FAQSection
         <CTASection />
       </section>
     </>

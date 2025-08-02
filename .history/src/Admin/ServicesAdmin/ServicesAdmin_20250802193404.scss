@@ -25,35 +25,6 @@
     text-align: center;
   }
 
-  .servicesAdminTabs {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
-
-    .servicesAdminTabButton {
-      background: #d1d4d7;
-      color: #333;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &.active {
-        background: linear-gradient(135deg, #253f57 0%, #34495e 100%);
-        color: white;
-      }
-
-      &:hover {
-        background: linear-gradient(135deg, #34495e 0%, #253f57 100%);
-        color: white;
-        transform: translateY(-2px);
-      }
-    }
-  }
-
   .servicesAdminSection {
     background: white;
     border-radius: 12px;
@@ -108,7 +79,7 @@
             width: 100%;
           }
 
-          textarea {
+          &textarea {
             min-height: 100px;
             resize: vertical;
           }
@@ -147,6 +118,21 @@
             margin-bottom: 8px;
           }
         }
+      }
+
+      .servicesAdminSubSectionTitle {
+        font-size: 1.4rem;
+        color: #34495e;
+        margin: 20px 0 15px;
+        font-weight: 600;
+      }
+
+      .servicesAdminProductForm {
+        border-top: 1px solid #d1d4d7;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
       }
 
       .servicesAdminSubmitButton,
@@ -265,11 +251,6 @@
       font-size: 1rem;
     }
 
-    .servicesAdminTabs {
-      flex-direction: column;
-      gap: 10px;
-    }
-
     .servicesAdminSection {
       padding: 20px;
 
@@ -300,6 +281,10 @@
               font-size: 0.85rem;
             }
           }
+        }
+
+        .servicesAdminSubSectionTitle {
+          font-size: 1.2rem;
         }
 
         .servicesAdminSubmitButton,
@@ -383,6 +368,10 @@
               font-size: 0.8rem;
             }
           }
+        }
+
+        .servicesAdminSubSectionTitle {
+          font-size: 1.1rem;
         }
 
         .servicesAdminSubmitButton,
