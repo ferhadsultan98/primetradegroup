@@ -3,13 +3,13 @@ import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import "./HomeSection.scss";
 import TestimonialsSection from "./TestimonialSection/TestimonialSection";
-import FAQSection from "./FaqSection/FaqSection";
 import CTASection from "./CTASection/CTASection";
 import ProcessSection from "./ProcessSection/ProcessSection";
 import ExpertiseSection from "./HomeAbout/HomeAbout";
 import Slide1 from "../../../public/assets/Home/slide1.jpg";
 import Slide2 from "../../../public/assets/Home/slide2.jpg";
 import Slide3 from "../../../public/assets/Home/slide3.jpg";
+import FAQSection from "./FaqSection/FaqSection";
 
 const HomeSection = () => {
   const { t } = useTranslation();
@@ -86,7 +86,7 @@ const HomeSection = () => {
         <ExpertiseSection />
         <ProcessSection />
         <TestimonialsSection />
-        <FAQSection />
+        <FAQSection/>
         <CTASection />
       </section>
     </>
