@@ -180,57 +180,6 @@
     }
   }
 
-  .successSection {
-    padding: 90px 0;
-    color: white;
-
-    .successGrid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 50px;
-
-      .successCard {
-        text-align: center;
-        padding: 40px 20px;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        transition: transform 0.3s ease;
-
-        &:hover {
-          transform: translateY(-8px);
-          background: rgba(255, 255, 255, 0.15);
-        }
-
-        .successIcon {
-          width: 55px;
-          height: 55px;
-          color: rgba(255, 255, 255, 0.9);
-          margin-bottom: 25px;
-        }
-
-        .successNumber {
-          font-size: 3.5rem;
-          font-weight: 800;
-          margin-bottom: 15px;
-          color: white;
-          background: linear-gradient(90deg, #cccc, #1a2b3a);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .successLabel {
-          font-size: 1.1rem;
-          opacity: 0.9;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          font-weight: 500;
-        }
-      }
-    }
-  }
 
   .trustSection {
     padding: 100px 0;
@@ -326,23 +275,7 @@
       }
     }
 
-    .successSection {
-      padding: 70px 0;
-
-      .successGrid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-
-        .successCard {
-          padding: 30px 15px;
-
-          .successNumber {
-            font-size: 2.8rem;
-          }
-        }
-      }
-    }
-
+  
     .trustSection {
       padding: 80px 0;
 
@@ -386,17 +319,7 @@
       }
     }
 
-    .successSection {
-      .successGrid {
-        grid-template-columns: 1fr;
 
-        .successCard {
-          .successNumber {
-            font-size: 2.5rem;
-          }
-        }
-      }
-    }
 
     .trustSection {
       .trustCard {

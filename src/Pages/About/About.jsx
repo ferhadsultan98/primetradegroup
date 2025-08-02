@@ -9,6 +9,11 @@ import {
   Target,
   Shield,
   CheckCircle,
+  Sparkles,
+  Monitor,
+  Home,
+  Shirt,
+  Wrench
 } from "lucide-react";
 import "./About.scss";
 import SectionHeader from "../../Components/SectionHeader/SectionHeader";
@@ -22,11 +27,11 @@ const AboutUs = () => {
         <title>HAQQIMIZDA - PRIME TRADE GROUP MMC</title>
         <meta
           name="description"
-          content="PRIME TRADE GROUP MMC haqqında ətraflı məlumat əldə edin – missiyamız, baxışımız, dəyərlərimiz və qlobal təchizat zəncirinin idarə olunması, logistika, satınalma və risklərin idarə olunmasındakı peşəkarlığımız."
+          content="PRIME TRADE GROUP MMC haqqında ətraflı məlumat əldə edin – 2025-ci ildə təsis edilmiş təchizat, tender və satınalma şirkəti. Yüksək keyfiyyətli xidmətlər və etibarlı həllər."
         />
         <meta
           name="keywords"
-          content="PRIME TRADE GROUP, təchizat zəncirinin idarə olunması, logistika, qlobal satınalma, risklərin idarə olunması"
+          content="PRIME TRADE GROUP, təchizat, tender, satınalma, təmizlik məhsulları, mebel, IT avadanlıqları, ofis ləvazimatları, iş geyimləri, santexnika"
         />
         <meta name="robots" content="index, follow" />
       </Helmet>
@@ -35,110 +40,172 @@ const AboutUs = () => {
       <section className="missionSection">
         <div className="containerWrapper">
           <SectionHeader
-            title={t("about.section_header.title")}
-            subtitle={t("about.section_header.subtitle")}
+            title="PRIME TRADE GROUP MMC"
+            subtitle="2025-ci ildə təsis edilmiş, yüksək keyfiyyətli təchizat, tender və satınalma xidmətləri göstərən etibarlı şirkət"
           />
           <div className="missionGrid">
             <div className="missionCard">
               <Target className="missionIcon" />
-              <h3 className="missionTitle">{t("about.mission.title")}</h3>
-              <p className="missionText">{t("about.mission.text")}</p>
+              <h3 className="missionTitle">Missiya</h3>
+              <p className="missionText">
+                Dövlət və özəl sektorda fəaliyyət göstərən müəssisələrin ehtiyaclarına uyğun olaraq, 
+                operativ, etibarlı və kompleks təchizat həlləri təqdim etmək.
+              </p>
             </div>
             <div className="missionCard">
               <Award className="missionIcon" />
-              <h3 className="missionTitle">{t("about.vision.title")}</h3>
-              <p className="missionText">{t("about.vision.text")}</p>
+              <h3 className="missionTitle">Vizyon</h3>
+              <p className="missionText">
+                Təchizat və satınalma sahəsində lider mövqe tutaraq, müştərilərimizə uzunmüddətli 
+                və davamlı həllər təqdim etmək.
+              </p>
             </div>
             <div className="missionCard">
               <Shield className="missionIcon" />
-              <h3 className="missionTitle">{t("about.values.title")}</h3>
-              <p className="missionText">{t("about.values.text")}</p>
+              <h3 className="missionTitle">Dəyərlər</h3>
+              <p className="missionText">
+                Etibarlılıq, operativlik, keyfiyyət və müştəri məmnuniyyəti - bizim əsas prinsiplərimizdir.
+              </p>
             </div>
           </div>
-            {/* Company Overview Section */}
-      {/* <section className="companyOverviewSection">
-        <div className="containerWrapper">
-          <h2 className="sectionTitle">{t("about.company_overview.title")}</h2>
-          <div className="overviewContent">
-            <p className="overviewText">{t("about.company_overview.text")}</p>
-          </div>
-        </div>
-      </section> */}
         </div>
       </section>
-
-    
 
       {/* Services Section */}
       <section className="servicesSection">
         <div className="containerWrapper">
-          <h2 className="sectionTitle">{t("about.services.title")}</h2>
+          <h2 className="sectionTitle">Xidmətlərimiz</h2>
           <div className="servicesGrid">
             <div className="serviceCard">
               <div className="serviceIconWrapper">
-                <Truck className="serviceIcon" />
+                <Sparkles className="serviceIcon" />
               </div>
-              <h4 className="serviceTitle">{t("about.services.logistics.title")}</h4>
+              <h4 className="serviceTitle">Təmizlik məhsulları</h4>
               <div className="serviceFeatures">
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.logistics.features.tracking")}</span>
+                  <span>Sertifikatlı təmizlik vasitələri</span>
                 </div>
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.logistics.features.route")}</span>
+                  <span>Ofis və ictimai sahələr üçün</span>
                 </div>
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.logistics.features.updates")}</span>
+                  <span>Keyfiyyətli və təhlükəsiz</span>
                 </div>
               </div>
             </div>
 
             <div className="serviceCard">
               <div className="serviceIconWrapper">
-                <Globe className="serviceIcon" />
+                <Home className="serviceIcon" />
               </div>
-              <h4 className="serviceTitle">{t("about.services.procurement.title")}</h4>
+              <h4 className="serviceTitle">Mebel</h4>
               <div className="serviceFeatures">
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.procurement.features.network")}</span>
+                  <span>Ofis və məktəb mebeli</span>
                 </div>
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.procurement.features.quality")}</span>
+                  <span>Erqonomik və müasir dizayn</span>
                 </div>
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.procurement.features.cost")}</span>
+                  <span>Quraşdırma xidməti</span>
                 </div>
               </div>
             </div>
 
             <div className="serviceCard">
               <div className="serviceIconWrapper">
-                <Shield className="serviceIcon" />
+                <Monitor className="serviceIcon" />
               </div>
-              <h4 className="serviceTitle">{t("about.services.risk.title")}</h4>
+              <h4 className="serviceTitle">IT avadanlıqları</h4>
               <div className="serviceFeatures">
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.risk.features.compliance")}</span>
+                  <span>Kompüter texnikası</span>
                 </div>
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.risk.features.security")}</span>
+                  <span>Server sistemləri</span>
                 </div>
                 <div className="featureItem">
                   <CheckCircle className="featureIcon" />
-                  <span>{t("about.services.risk.features.contingency")}</span>
+                  <span>Şəbəkə avadanlıqları</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="serviceCard">
+              <div className="serviceIconWrapper">
+                <Users className="serviceIcon" />
+              </div>
+              <h4 className="serviceTitle">Ofis ləvazimatları</h4>
+              <div className="serviceFeatures">
+                <div className="featureItem">
+                  <CheckCircle className="featureIcon" />
+                  <span>Kağız məhsulları</span>
+                </div>
+                <div className="featureItem">
+                  <CheckCircle className="featureIcon" />
+                  <span>Yazı alətləri</span>
+                </div>
+                <div className="featureItem">
+                  <CheckCircle className="featureIcon" />
+                  <span>Təşkilati vasitələr</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="serviceCard">
+              <div className="serviceIconWrapper">
+                <Shirt className="serviceIcon" />
+              </div>
+              <h4 className="serviceTitle">İş geyimləri</h4>
+              <div className="serviceFeatures">
+                <div className="featureItem">
+                  <CheckCircle className="featureIcon" />
+                  <span>Təhlükəsizlik standartları</span>
+                </div>
+                <div className="featureItem">
+                  <CheckCircle className="featureIcon" />
+                  <span>Fərdi mühafizə vasitələri</span>
+                </div>
+                <div className="featureItem">
+                  <CheckCircle className="featureIcon" />
+                  <span>Müxtəlif sənaye sahələri</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="serviceCard">
+              <div className="serviceIconWrapper">
+                <Wrench className="serviceIcon" />
+              </div>
+              <h4 className="serviceTitle">Santexnika məhsulları</h4>
+              <div className="serviceFeatures">
+                <div className="featureItem">
+                  <CheckCircle className="featureIcon" />
+                  <span>Müasir və funksional</span>
+                </div>
+                <div className="featureItem">
+                  <CheckCircle className="featureIcon" />
+                  <span>Yeni layihələr üçün</span>
+                </div>
+                <div className="featureItem">
+                  <CheckCircle className="featureIcon" />
+                  <span>Təmir-təchizat ehtiyacları</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+   
     </div>
   );
 };

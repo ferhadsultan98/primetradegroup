@@ -1,0 +1,407 @@
+.servicesAdminContainer {
+  line-height: 1.6;
+  color: #333;
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 40px 20px;
+
+  .servicesAdminWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .servicesAdminTitle {
+    font-size: 2.5rem;
+    color: #253f57;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .servicesAdminSubtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .servicesAdminSection {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    .servicesAdminSectionTitle {
+      font-size: 1.8rem;
+      color: #34495e;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .servicesAdminForm {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .servicesAdminInputGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .servicesAdminInputLabel {
+          font-size: 1rem;
+          color: #34495e;
+          font-weight: 500;
+        }
+
+        .servicesAdminInputField {
+          padding: 12px;
+          border: 1px solid #d1d4d7;
+          border-radius: 8px;
+          font-size: 1rem;
+          color: #333;
+          transition: border-color 0.3s ease;
+
+          &:focus {
+            outline: none;
+            border-color: #253f57;
+            box-shadow: 0 0 5px rgba(37, 63, 87, 0.2);
+          }
+
+          &::placeholder {
+            color: #999;
+          }
+
+          &[type="text"],
+          &[type="select"],
+          textarea {
+            width: 100%;
+          }
+
+          &textarea {
+            min-height: 100px;
+            resize: vertical;
+          }
+        }
+
+        .servicesAdminFeatureInput {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+
+          .servicesAdminAddButton {
+            background: linear-gradient(135deg, #253f57 0%, #34495e 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background: linear-gradient(135deg, #34495e 0%, #253f57 100%);
+              transform: translateY(-2px);
+              box-shadow: 0 8px 20px rgba(37, 63, 87, 0.3);
+            }
+          }
+        }
+
+        .servicesAdminFeatureList {
+          padding-left: 20px;
+          margin-top: 10px;
+
+          .servicesAdminFeatureItem {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 8px;
+          }
+        }
+      }
+
+      .servicesAdminSubSectionTitle {
+        font-size: 1.4rem;
+        color: #34495e;
+        margin: 20px 0 15px;
+        font-weight: 600;
+      }
+
+      .servicesAdminProductForm {
+        border-top: 1px solid #d1d4d7;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .servicesAdminSubmitButton,
+      .servicesAdminCancelButton {
+        background: linear-gradient(135deg, #253f57 0%, #34495e 100%);
+        color: white;
+        border: none;
+        padding: 12px 32px;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-top: 10px;
+
+        &:hover {
+          background: linear-gradient(135deg, #34495e 0%, #253f57 100%);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(37, 63, 87, 0.3);
+        }
+      }
+
+      .servicesAdminCancelButton {
+        background: #e74c3c;
+
+        &:hover {
+          background: #c0392b;
+        }
+      }
+    }
+  }
+
+  .servicesAdminListSection {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    .servicesAdminSectionTitle {
+      font-size: 1.8rem;
+      color: #34495e;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .servicesAdminList {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .servicesAdminServiceCard {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .servicesAdminServiceTitle {
+          font-size: 1.2rem;
+          color: #253f57;
+          font-weight: 600;
+        }
+
+        .servicesAdminServiceCategory {
+          font-size: 0.9rem;
+          color: #666;
+        }
+
+        .servicesAdminButtonGroup {
+          display: flex;
+          gap: 10px;
+
+          .servicesAdminEditButton,
+          .servicesAdminDeleteButton {
+            background: linear-gradient(135deg, #253f57 0%, #34495e 100%);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background: linear-gradient(135deg, #34495e 0%, #253f57 100%);
+              transform: translateY(-2px);
+              box-shadow: 0 8px 20px rgba(37, 63, 87, 0.3);
+            }
+          }
+
+          .servicesAdminDeleteButton {
+            background: #e74c3c;
+
+            &:hover {
+              background: #c0392b;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .servicesAdminContainer {
+      padding: 20px;
+    }
+
+    .servicesAdminTitle {
+      font-size: 2rem;
+    }
+
+    .servicesAdminSubtitle {
+      font-size: 1rem;
+    }
+
+    .servicesAdminSection {
+      padding: 20px;
+
+      .servicesAdminSectionTitle {
+        font-size: 1.5rem;
+      }
+
+      .servicesAdminForm {
+        .servicesAdminInputGroup {
+          .servicesAdminInputLabel {
+            font-size: 0.9rem;
+          }
+
+          .servicesAdminInputField {
+            font-size: 0.9rem;
+            padding: 10px;
+          }
+
+          .servicesAdminFeatureInput {
+            .servicesAdminAddButton {
+              padding: 8px 16px;
+              font-size: 0.85rem;
+            }
+          }
+
+          .servicesAdminFeatureList {
+            .servicesAdminFeatureItem {
+              font-size: 0.85rem;
+            }
+          }
+        }
+
+        .servicesAdminSubSectionTitle {
+          font-size: 1.2rem;
+        }
+
+        .servicesAdminSubmitButton,
+        .servicesAdminCancelButton {
+          padding: 10px 28px;
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .servicesAdminListSection {
+      padding: 20px;
+
+      .servicesAdminSectionTitle {
+        font-size: 1.5rem;
+      }
+
+      .servicesAdminList {
+        .servicesAdminServiceCard {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+
+          .servicesAdminServiceTitle {
+            font-size: 1.1rem;
+          }
+
+          .servicesAdminServiceCategory {
+            font-size: 0.85rem;
+          }
+
+          .servicesAdminButtonGroup {
+            .servicesAdminEditButton,
+            .servicesAdminDeleteButton {
+              padding: 6px 12px;
+              font-size: 0.85rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .servicesAdminContainer {
+      padding: 15px;
+    }
+
+    .servicesAdminTitle {
+      font-size: 1.8rem;
+    }
+
+    .servicesAdminSubtitle {
+      font-size: 0.9rem;
+    }
+
+    .servicesAdminSection {
+      padding: 15px;
+
+      .servicesAdminSectionTitle {
+        font-size: 1.3rem;
+      }
+
+      .servicesAdminForm {
+        .servicesAdminInputGroup {
+          .servicesAdminInputLabel {
+            font-size: 0.85rem;
+          }
+
+          .servicesAdminInputField {
+            font-size: 0.85rem;
+            padding: 8px;
+          }
+
+          .servicesAdminFeatureInput {
+            flex-direction: column;
+            align-items: stretch;
+
+            .servicesAdminAddButton {
+              padding: 8px;
+              font-size: 0.8rem;
+            }
+          }
+        }
+
+        .servicesAdminSubSectionTitle {
+          font-size: 1.1rem;
+        }
+
+        .servicesAdminSubmitButton,
+        .servicesAdminCancelButton {
+          padding: 8px 24px;
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    .servicesAdminListSection {
+      padding: 15px;
+
+      .servicesAdminSectionTitle {
+        font-size: 1.3rem;
+      }
+
+      .servicesAdminList {
+        .servicesAdminServiceCard {
+          padding: 15px;
+
+          .servicesAdminServiceTitle {
+            font-size: 1rem;
+          }
+
+          .servicesAdminServiceCategory {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}

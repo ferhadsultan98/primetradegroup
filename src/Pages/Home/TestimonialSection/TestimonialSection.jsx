@@ -2,35 +2,31 @@ import React from 'react';
 import './TestimonialSection.scss';
 
 const TestimonialsSection = () => {
-  const quotes = [
+  const testimonials = [
     {
-      text: "Effektiv satınalma təchizat zəncirinin uğurudur.",
-      author: "Jack Ma",
-      image: "https://example.com/jack-ma.jpg"
+      quote: "Keyfiyyət təsadüf deyil, daim ağıllı səylərin nəticəsidir.",
+      author: "John Ruskin"
     },
     {
-      text: "Keyfiyyətli təchizat biznesin davamlılığını təmin edir.",
-      author: "Elon Musk",
-      image: "https://example.com/elon-musk.jpg"
+      quote: "Etibar – qazanılması çətin, itirilməsi isə ani olan ən dəyərli kapitaldır.",
+      author: "Warren Buffett"
     },
     {
-      text: "Satınalmada innovasiya rəqabət üstünlüyü yaradır.",
-      author: "Jeff Bezos",
-      image: "https://example.com/jeff-bezos.jpg"
+      quote: "Təchizat zənciri işləri çox mürəkkəbdir.",
+      author: "Elon Musk"
     }
   ];
 
   return (
     <section className="testimonialsSection">
       <div className="contentWrapper">
-        <h2 className="sectionTitle">Məşhurların satınalma və təchizatla bağlı fikirləri</h2>
-        <p className="sectionDescription">Sənayedəki tanınmış simalardan satınalma və təchizat prosesləri haqqında ilhamverici sözlər.</p>
+        <h2 className="sectionTitle">Tanınmış Şəxslərin Fikirləri</h2>
+        <p className="sectionDescription">Sənaye liderlərindən ilhamverici sitatlar.</p>
         <div className="testimonialsGrid">
-          {quotes.map((quote, index) => (
+          {testimonials.map((testimonial, index) => (
             <div key={index} className="testimonialCard">
-              <img src={quote.image} alt={quote.author} className="authorImage" />
-              <p className="testimonialQuote">{quote.text}</p>
-              <p className="testimonialAuthor">{quote.author}</p>
+              <p className="testimonialQuote">{testimonial.quote}</p>
+              <p className="testimonialAuthor">{testimonial.author}</p>
             </div>
           ))}
         </div>

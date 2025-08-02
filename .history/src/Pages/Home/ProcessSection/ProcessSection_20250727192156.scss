@@ -1,0 +1,133 @@
+.processSection {
+  padding: 60px 0;
+  background: #253f57;
+
+  .contentWrapper {
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin: 40px 0 20px;
+  }
+
+  .sectionDescription {
+    font-size: 1.1rem;
+    color: #747d81;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+
+  .processGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+
+    .processCard {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .stepNumber {
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ffffff;
+        color: #253f57;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border: 1px solid #253f57;
+      }
+
+      .cardTitle {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #253f57;
+        margin-bottom: 10px;
+      }
+
+      .cardDescription {
+        font-size: 0.9rem;
+        color: #52585a;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .contentWrapper {
+      padding: 0 15px;
+    }
+
+    .sectionTitle {
+      font-size: 2rem;
+    }
+
+    .sectionDescription {
+      font-size: 1rem;
+    }
+
+    .processSection {
+      padding: 40px 0;
+    }
+
+    .processGrid .processCard {
+      padding: 15px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .sectionTitle {
+      font-size: 1.8rem;
+    }
+
+    .sectionDescription {
+      font-size: 0.9rem;
+    }
+
+    .processGrid .processCard {
+      .cardTitle {
+        font-size: 1.2rem;
+      }
+
+      .cardDescription {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .contentWrapper {
+      max-width: 1400px;
+      padding: 0 40px;
+    }
+
+    .sectionTitle {
+      font-size: 3rem;
+    }
+
+    .sectionDescription {
+      font-size: 1.2rem;
+    }
+  }
+}
