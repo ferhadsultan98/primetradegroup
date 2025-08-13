@@ -32,6 +32,7 @@
   }
 
   .servicesSection {
+    background: none;
     .servicesGrid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -320,5 +321,19 @@
         }
       }
     }
+  }
+
+  .serviceLoader {
+    width: 120px;
+    height: 20px;
+    -webkit-mask: radial-gradient(circle closest-side, #000 94%, #0000) left/20% 100%;
+    background: linear-gradient(#000 0 0) left/0% 100% no-repeat #ddd;
+    animation: l17 2s infinite steps(6);
+    margin: 40px auto 40px 40px; /* Top and right margins, auto for centering */
+    display: block;
+  }
+
+  @keyframes l17 {
+    100% { background-size: 120% 100% }
   }
 }

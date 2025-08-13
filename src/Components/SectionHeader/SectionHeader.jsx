@@ -1,12 +1,15 @@
-import React from 'react';
-import './SectionHeader.scss';
+import React from "react";
+import "./SectionHeader.scss";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 
-const SectionHeader = ({ title, subtitle }) => {
+const SectionHeader = ({ label, title, description, centered = true, breadcrumbItems }) => {
   return (
-    <header className="sectionHeader">
-      <h1>{title}</h1>
-      <p>{subtitle}</p>
-    </header>
+    <div className={`sectionHeader ${centered ? "centered" : ""}`}>
+      <span className="headerLabel">{label}</span>
+      <h2 className="headerTitle">{title}</h2>
+      {description && <p className="headerDescription">{description}</p>}
+      <Breadcrumb items={breadcrumbItems} />
+    </div>
   );
 };
 

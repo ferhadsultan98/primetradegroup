@@ -1,0 +1,223 @@
+.homeSection {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  width: 80vw;
+  margin: 0 auto;
+  border-radius: 2rem;
+  padding: 120px 0;
+
+  .HeroSectioncontentWrapper {
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #253f57;
+    text-align: center;
+    margin: 40px 0 20px;
+  }
+
+  .sectionDescription {
+    font-size: 1.1rem;
+    color: #52585a;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+
+  .sliderContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    .slideItem {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.slideActive {
+        opacity: 1;
+      }
+
+      .slideImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      .slideOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(37, 63, 87, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+
+        .HeroSectioncontentWrapper {
+          .slideContent {
+            text-align: center;
+            color: #ffffff;
+            animation: slideContentFadeIn 1.5s ease-out;
+            background: #253f57;
+            padding: 15px;
+            border-radius: 30px;
+
+
+            .slideTitle {
+              font-size: 3rem;
+              font-weight: 700;
+              margin: 0 0 20px;
+            }
+
+            .slideSubtitle {
+              font-size: 1.6rem;
+              font-weight: 300;
+              margin: 0 0 20px;
+            }
+
+            .slideDescription {
+              font-size: 1.1rem;
+              max-width: 600px;
+              margin: 0 auto 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes slideContentFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .HeroSectioncontentWrapper {
+      padding: 0 15px;
+    }
+
+    .sectionTitle {
+      font-size: 2rem;
+    }
+
+    .sectionDescription {
+      font-size: 1rem;
+    }
+
+    .sliderContainer {
+      .slideItem {
+        .slideOverlay {
+          .HeroSectioncontentWrapper {
+            .slideContent {
+              .slideTitle {
+                font-size: 2.5rem;
+              }
+
+              .slideSubtitle {
+                font-size: 1.4rem;
+              }
+
+              .slideDescription {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .sectionTitle {
+      font-size: 1.8rem;
+    }
+
+    .sectionDescription {
+      font-size: 0.9rem;
+    }
+
+    .sliderContainer {
+      .slideItem {
+        .slideOverlay {
+          .HeroSectioncontentWrapper {
+            .slideContent {
+              .slideTitle {
+                font-size: 2rem;
+              }
+
+              .slideSubtitle {
+                font-size: 1.2rem;
+              }
+
+              .slideDescription {
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .HeroSectioncontentWrapper {
+      max-width: 1400px;
+      padding: 0 40px;
+    }
+
+    .sectionTitle {
+      font-size: 3rem;
+    }
+
+    .sectionDescription {
+      font-size: 1.2rem;
+    }
+
+    .sliderContainer {
+      .slideItem {
+        .slideOverlay {
+          .HeroSectioncontentWrapper {
+            .slideContent {
+              .slideTitle {
+                font-size: 3.5rem;
+              }
+
+              .slideSubtitle {
+                font-size: 1.8rem;
+              }
+
+              .slideDescription {
+                font-size: 1.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

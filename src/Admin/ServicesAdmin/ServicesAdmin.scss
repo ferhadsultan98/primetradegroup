@@ -1,3 +1,4 @@
+// ServicesAdmin.scss
 .servicesAdminContainer {
   line-height: 1.6;
   color: #333;
@@ -6,7 +7,7 @@
   padding: 40px 20px;
 
   .servicesAdminWrapper {
-    max-width: 1200px;
+
     margin: 0 auto;
   }
 
@@ -104,8 +105,14 @@
 
           &[type="text"],
           &[type="select"],
+          &[type="file"],
           textarea {
             width: 100%;
+          }
+
+          &[type="select"]:disabled {
+            background: #e9ecef;
+            cursor: not-allowed;
           }
 
           textarea {
@@ -145,6 +152,7 @@
             font-size: 0.9rem;
             color: #555;
             margin-bottom: 8px;
+            list-style: disc;
           }
         }
       }
@@ -179,20 +187,6 @@
         }
       }
     }
-  }
-
-  .servicesAdminListSection {
-    background: white;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
-    .servicesAdminSectionTitle {
-      font-size: 1.8rem;
-      color: #34495e;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
 
     .servicesAdminList {
       display: flex;
@@ -206,6 +200,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
 
         .servicesAdminServiceTitle {
           font-size: 1.2rem;
@@ -308,14 +308,6 @@
           font-size: 0.9rem;
         }
       }
-    }
-
-    .servicesAdminListSection {
-      padding: 20px;
-
-      .servicesAdminSectionTitle {
-        font-size: 1.5rem;
-      }
 
       .servicesAdminList {
         .servicesAdminServiceCard {
@@ -390,14 +382,6 @@
           padding: 8px 24px;
           font-size: 0.85rem;
         }
-      }
-    }
-
-    .servicesAdminListSection {
-      padding: 15px;
-
-      .servicesAdminSectionTitle {
-        font-size: 1.3rem;
       }
 
       .servicesAdminList {

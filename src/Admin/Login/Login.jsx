@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/services");
+      navigate("/admin");
     } catch (error) {
       setError(t("login.error"));
       console.error("Error logging in: ", error);

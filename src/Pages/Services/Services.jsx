@@ -20,6 +20,7 @@ const Services = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [servicesData, setServicesData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const iconMap = {
     Droplet,
@@ -34,6 +35,7 @@ const Services = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
+        setIsLoading(true);
         const servicesRef = ref(db, "services");
         const snapshot = await get(servicesRef);
         if (snapshot.exists()) {
@@ -41,7 +43,7 @@ const Services = () => {
             id,
             ...data,
             icon: iconMap[data.icon] || Book,
-            features: Array.isArray(data.features) ? data.features : [], // Ensure features is an array
+            features: Array.isArray(data.features) ? data.features : [],
           }));
           setServicesData(services);
         } else {
@@ -49,6 +51,8 @@ const Services = () => {
         }
       } catch (error) {
         console.error("Error fetching services: ", error);
+      } finally {
+        setIsLoading(false);
       }
     };
     fetchServices();
@@ -59,6 +63,11 @@ const Services = () => {
   };
 
   return (
+    <>
+     <SectionHeader
+          title={t("services.section_header.title")}
+          subtitle={t("services.section_header.subtitle")}
+        />
     <div className="servicesContainer">
       <Helmet>
         <title>XİDMƏTLƏR - PRIME TRADE GROUP MMC</title>
@@ -68,10 +77,7 @@ const Services = () => {
       </Helmet>
 
       <div className="containerWrapper">
-        <SectionHeader
-          title={t("services.section_header.title")}
-          subtitle={t("services.section_header.subtitle")}
-        />
+       
 
         <section className="companyOverviewSection">
           <div className="containerWrapper">
@@ -90,33 +96,37 @@ const Services = () => {
         </section>
 
         <div className="servicesSection">
-          <div className="servicesGrid">
-            {servicesData.map((service) => {
-              const IconComponent = service.icon;
-              return (
-                <div key={service.id} className="serviceCard">
-                  <div className="serviceIconWrapper">
-                    <IconComponent className="serviceIcon" />
+          {isLoading ? (
+            <div className="serviceLoader"></div>
+          ) : (
+            <div className="servicesGrid">
+              {servicesData.map((service) => {
+                const IconComponent = service.icon;
+                return (
+                  <div key={service.id} className="serviceCard">
+                    <div className="serviceIconWrapper">
+                      <IconComponent className="serviceIcon" />
+                    </div>
+                    <h3 className="serviceTitle">{service.title}</h3>
+                    <div className="serviceFeatures">
+                      {Array.isArray(service.features) &&
+                        service.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="featureItem">
+                            <span className="featureText">{feature}</span>
+                          </div>
+                        ))}
+                    </div>
+                    <button
+                      className="serviceButton"
+                      onClick={() => handleLearnMore(service.id)}
+                    >
+                      {t("services.learn_more")}
+                    </button>
                   </div>
-                  <h3 className="serviceTitle">{service.title}</h3>
-                  <div className="serviceFeatures">
-                    {Array.isArray(service.features) &&
-                      service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="featureItem">
-                          <span className="featureText">{feature}</span>
-                        </div>
-                      ))}
-                  </div>
-                  <button
-                    className="serviceButton"
-                    onClick={() => handleLearnMore(service.id)}
-                  >
-                    {t("services.learn_more")}
-                  </button>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         <div className="ctaSection">
@@ -128,6 +138,7 @@ const Services = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
