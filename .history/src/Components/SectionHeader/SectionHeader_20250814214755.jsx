@@ -1,6 +1,5 @@
 import React from "react";
 import "./SectionHeader.scss";
-import Breadcrumb from "../BreadCrumb/BreadCrumb";
 
 
 const SectionHeader = ({ label, title, description, centered = true, breadcrumbItems }) => {
