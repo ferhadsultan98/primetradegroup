@@ -98,7 +98,7 @@ const Header = () => {
             toggled={isMenuOpen}
             toggle={toggleMenu}
             size={24}
-            color="white"
+          
             duration={0.3}
           />
         </div>
@@ -118,7 +118,7 @@ const Header = () => {
               </Link>
             </li>
             <li className="mobileNavItem">
-              <Link to="/why-us" className="mobileNavLink" onClick={closeMenu}>
+              <Link to="/whyus" className="mobileNavLink" onClick={closeMenu}>
                 {t("header.whyUs")}
               </Link>
             </li>

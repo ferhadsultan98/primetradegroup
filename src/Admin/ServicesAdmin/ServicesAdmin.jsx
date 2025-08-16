@@ -4,7 +4,6 @@ import { db } from "../../Firebase/Server";
 import { ref, get, set, remove, push } from "firebase/database";
 import "./ServicesAdmin.scss";
 import ServicesTab from "./ServicesTab.jsx";
-import CategoriesTab from "./CategoriesTab.jsx";
 import DetailsTab from "./DetailsTab.jsx";
 
 const ServicesAdmin = () => {
@@ -16,7 +15,7 @@ const ServicesAdmin = () => {
   const [newService, setNewService] = useState({ title: "" });
   const [newServiceDetail, setNewServiceDetail] = useState({
     serviceId: "",
-    categoryId: "",
+    categoryName: "",
     name: "",
     description: "",
     features: [],
@@ -26,11 +25,9 @@ const ServicesAdmin = () => {
     volume: "",
     image: null,
   });
-  const [newCategory, setNewCategory] = useState({ serviceId: "", category: "" });
   const [newFeature, setNewFeature] = useState("");
   const [editingService, setEditingService] = useState(null);
   const [editingDetail, setEditingDetail] = useState(null);
-  const [editingCategory, setEditingCategory] = useState(null);
   const [imageFile, setImageFile] = useState(null);
   const [error, setError] = useState("");
 
@@ -108,12 +105,6 @@ const ServicesAdmin = () => {
             Xidmətlər
           </button>
           <button
-            className={`servicesAdminTabButton ${activeTab === "categories" ? "active" : ""}`}
-            onClick={() => setActiveTab("categories")}
-          >
-            Kateqoriyalar
-          </button>
-          <button
             className={`servicesAdminTabButton ${activeTab === "details" ? "active" : ""}`}
             onClick={() => setActiveTab("details")}
           >
@@ -133,20 +124,6 @@ const ServicesAdmin = () => {
           />
         )}
 
-        {activeTab === "categories" && (
-          <CategoriesTab
-            categories={categories}
-            setCategories={setCategories}
-            newCategory={newCategory}
-            setNewCategory={setNewCategory}
-            editingCategory={editingCategory}
-            setEditingCategory={setEditingCategory}
-            services={services}
-            setServiceDetails={setServiceDetails}
-            serviceDetails={serviceDetails}
-          />
-        )}
-
         {activeTab === "details" && (
           <DetailsTab
             serviceDetails={serviceDetails}
@@ -163,6 +140,7 @@ const ServicesAdmin = () => {
             setError={setError}
             services={services}
             categories={categories}
+            setCategories={setCategories}
             handleImageUpload={handleImageUpload}
           />
         )}

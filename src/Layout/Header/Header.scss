@@ -40,7 +40,7 @@ $shadow: rgba(226, 108, 108, 0.15);
     }
     .logo{
       img{
-        height: 80px !important;
+        height: 80px;
       }
     }
   }
@@ -69,7 +69,7 @@ $shadow: rgba(226, 108, 108, 0.15);
       }
 
       img {
-        height: 100px;
+        height: 80px;
         width: auto;
         max-width: 180px;
         object-fit: contain;

@@ -3,212 +3,408 @@
   min-height: 100vh;
   padding: 20px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
 
-.containerWrapper {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
+  .containerWrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
 
-.categoryFilter {
-  margin: 20px 0;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
+    .searchSection {
+      margin: 20px 0;
+
+      .searchContainer {
+        max-width: 600px;
+        margin: 0 auto;
+
+        .searchInputWrapper {
+          position: relative;
+          display: flex;
+          align-items: center;
+
+          .searchInput {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border: 2px solid #2a3b4a;
+            border-radius: 25px;
+       
+            color: #e0e0e0;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+
+            &::placeholder {
+              color: #888;
+            }
+
+            &:focus {
+              border-color: #4a5b6a;
+              background-color: #2130403d;
+              box-shadow: 0 0 10px rgba(74, 91, 106, 0.3);
+            }
+          }
+
+          .clearSearchButton {
+            position: absolute;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+
+            &:hover {
+              color: #e0e0e0;
+              background-color: #2a3b4a;
+            }
+          }
+        }
+
+        .searchResultsInfo {
+          text-align: center;
+          margin-top: 10px;
+          font-size: 14px;
+          color: #b0b0b0;
+          font-style: italic;
+        }
+      }
+    }
+
+    .categoryFilter {
+      margin: 20px 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .categoryScroll {
+        display: flex;
+        gap: 10px;
+        padding-bottom: 10px;
+        white-space: nowrap;
+
+        .categoryButton {
+          background-color: #2a3b4a;
+          color: #e0e0e0;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 20px;
+          cursor: pointer;
+          font-size: 14px;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: #3a4b5a;
+          }
+
+          &.active {
+            background-color: #4a5b6a;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+
+    .serviceDetailsSection {
+      padding: 20px 0;
+
+      .serviceDetailsContent {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .serviceTitle {
+          font-size: 28px;
+          font-weight: 600;
+          color: #ffffff;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+
+        .productsContainer {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          padding: 20px 0;
+          justify-content: center;
+
+          .productCard {
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 2px solid #2a3b4a;
+            width: 300px;
+
+            &:hover {
+              transform: translateY(-5px);
+            }
+
+            .categoryBadge {
+              background-color: #4a5b6a;
+              color: #ffffff;
+              padding: 6px 12px;
+              font-size: 12px;
+              font-weight: 500;
+              border-radius: 0 0 12px 0;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+
+            .productImageContainer {
+              width: 100%;
+              height: 200px;
+              overflow: hidden;
+
+              .productImage {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+
+            .productInfo {
+              padding: 20px;
+              background-color: #2a3b4a;
+
+              .productName {
+                font-size: 20px;
+                font-weight: 600;
+                color: #ffffff;
+                margin-bottom: 10px;
+              }
+
+              .productDetails {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .productDescription {
+                  font-size: 14px;
+                  line-height: 1.5;
+                  color: #d0d0d0;
+                }
+
+                .additionalInfoSection {
+                  font-size: 14px;
+                  color: #d0d0d0;
+
+                  p {
+                    margin: 5px 0;
+
+                    strong {
+                      color: #ffffff;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .noResultsMessage {
+          text-align: center;
+          padding: 40px 20px;
+          color: #b0b0b0;
+          font-size: 16px;
+
+          p {
+            margin-bottom: 20px;
+          }
+
+          .resetFiltersButton {
+            background-color: #4a5b6a;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+              background-color: #5a6b7a;
+            }
+          }
+        }
+
+        .backButton {
+          background-color: #4a5b6a;
+          color: #ffffff;
+          border: none;
+          padding: 12px 24px;
+          border-radius: 8px;
+          cursor: pointer;
+          font-size: 16px;
+          font-weight: 500;
+          margin: 20px auto;
+          display: block;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #5a6b7a;
+          }
+        }
+      }
+    }
   }
-}
 
-.categoryScroll {
-  display: flex;
-  gap: 10px;
-  padding-bottom: 10px;
-  white-space: nowrap;
-}
+  .loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
 
-.categoryButton {
-  background-color: #2a3b4a;
-  color: #e0e0e0;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  &:hover {
-    background-color: #3a4b5a;
-  }
-  &.active {
-    background-color: #4a5b6a;
-    color: #ffffff;
-  }
-}
+    .loader {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #2a3b4a;
+      border-top: 4px solid #4a5b6a;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
 
-.serviceDetailsSection {
-  padding: 20px 0;
-}
-
-.serviceDetailsContent {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.serviceTitle {
-  font-size: 28px;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.productsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px 0;
-  justify-content: center;
-}
-
-.productCard {
-  border-radius: 12px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  border: 2px solid #2a3b4a;
-  width: 300px;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
-}
-
-.categoryBadge {
-  background-color: #4a5b6a;
-  color: #ffffff;
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 500;
-  border-radius: 0 0 12px 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.productImageContainer {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-
-.productImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.productInfo {
-  padding: 20px;
-  background-color: #2a3b4a;
-}
-
-.productName {
-  font-size: 20px;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
-.productDetails {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.productDescription {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #d0d0d0;
-}
-
-.additionalInfoSection {
-  font-size: 14px;
-  color: #d0d0d0;
-  p {
-    margin: 5px 0;
-    strong {
-      color: #ffffff;
+    p {
+      color: #b0b0b0;
+      font-size: 16px;
     }
   }
 }
 
-.backButton {
-  background-color: #4a5b6a;
-  color: #ffffff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
-  margin: 20px auto;
-  display: block;
-  transition: background-color 0.3s ease;
-  &:hover {
-    background-color: #5a6b7a;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
-  .serviceTitle {
-    font-size: 24px;
-  }
+  .serviceDetailsContainer {
+    .containerWrapper {
+      .serviceDetailsSection {
+        .serviceDetailsContent {
+          .serviceTitle {
+            font-size: 24px;
+          }
 
-  .productsContainer {
-    justify-content: center;
-  }
+          .productsContainer {
+            justify-content: center;
 
-  .productImageContainer {
-    height: 180px;
-  }
+            .productCard {
+              .productImageContainer {
+                height: 180px;
+              }
 
-  .productName {
-    font-size: 18px;
-  }
+              .productInfo {
+                .productName {
+                  font-size: 18px;
+                }
+              }
+            }
+          }
 
-  .categoryButton {
-    padding: 8px 16px;
-    font-size: 13px;
+          .categoryFilter {
+            .categoryScroll {
+              .categoryButton {
+                padding: 8px 16px;
+                font-size: 13px;
+              }
+            }
+          }
+
+          .searchSection {
+            .searchContainer {
+              margin: 0 10px;
+
+              .searchInputWrapper {
+                .searchInput {
+                  font-size: 14px;
+                  padding: 12px 16px 12px 45px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
 @media (max-width: 480px) {
   .serviceDetailsContainer {
     padding: 15px;
-  }
 
-  .serviceTitle {
-    font-size: 20px;
-  }
+    .containerWrapper {
+      .serviceDetailsSection {
+        .serviceDetailsContent {
+          .serviceTitle {
+            font-size: 20px;
+          }
 
-  .productImageContainer {
-    height: 150px;
-  }
+          .productsContainer {
+            .productCard {
+              .productImageContainer {
+                height: 150px;
+              }
 
-  .productName {
-    font-size: 16px;
-  }
+              .productInfo {
+                .productName {
+                  font-size: 16px;
+                }
 
-  .productDescription,
-  .additionalInfoSection {
-    font-size: 13px;
-  }
+                .productDetails {
+                  .productDescription,
+                  .additionalInfoSection {
+                    font-size: 13px;
+                  }
+                }
+              }
+            }
+          }
 
-  .backButton {
-    padding: 10px 20px;
-    font-size: 14px;
+          .backButton {
+            padding: 10px 20px;
+            font-size: 14px;
+          }
+
+          .noResultsMessage {
+            padding: 30px 15px;
+            font-size: 14px;
+
+            .resetFiltersButton {
+              font-size: 13px;
+              padding: 10px 20px;
+            }
+          }
+
+          .searchSection {
+            .searchContainer {
+              .searchInputWrapper {
+                .searchInput {
+                  font-size: 14px;
+                  padding: 10px 14px 10px 40px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

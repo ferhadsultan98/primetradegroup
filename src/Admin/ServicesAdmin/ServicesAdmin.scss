@@ -1,4 +1,3 @@
-// ServicesAdmin.scss
 .servicesAdminContainer {
   line-height: 1.6;
   color: #333;
@@ -7,7 +6,6 @@
   padding: 40px 20px;
 
   .servicesAdminWrapper {
-
     margin: 0 auto;
   }
 
@@ -120,41 +118,6 @@
             resize: vertical;
           }
         }
-
-        .servicesAdminFeatureInput {
-          display: flex;
-          gap: 10px;
-          align-items: center;
-
-          .servicesAdminAddButton {
-            background: linear-gradient(135deg, #253f57 0%, #34495e 100%);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-
-            &:hover {
-              background: linear-gradient(135deg, #34495e 0%, #253f57 100%);
-              transform: translateY(-2px);
-              box-shadow: 0 8px 20px rgba(37, 63, 87, 0.3);
-            }
-          }
-        }
-
-        .servicesAdminFeatureList {
-          padding-left: 20px;
-          margin-top: 10px;
-
-          .servicesAdminFeatureItem {
-            font-size: 0.9rem;
-            color: #555;
-            margin-bottom: 8px;
-            list-style: disc;
-          }
-        }
       }
 
       .servicesAdminSubmitButton,
@@ -188,39 +151,82 @@
       }
     }
 
-    .servicesAdminList {
+    .servicesAdminFilterGroup {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
+      margin-bottom: 20px;
+      input, select{
+         padding: 12px;
+          border: 1px solid #d1d4d7;
+          border-radius: 8px;
+          font-size: 1rem;
+          color: #333;
+          transition: border-color 0.3s ease;
+      }
+
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: flex-end;
+      }
+    }
+
+    .servicesAdminList {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
 
       .servicesAdminServiceCard {
         background: #f8f9fa;
         border-radius: 8px;
         padding: 20px;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         align-items: center;
-        transition: transform 0.3s ease;
+        text-align: center;
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
 
         &:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+          .servicesAdminButtonGroup {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        .servicesAdminServiceImage {
+          max-width: 100px;
+          max-height: 100px;
+          object-fit: cover;
+          margin-bottom: 10px;
         }
 
         .servicesAdminServiceTitle {
           font-size: 1.2rem;
           color: #253f57;
           font-weight: 600;
+          margin-bottom: 5px;
         }
 
         .servicesAdminServiceCategory {
           font-size: 0.9rem;
           color: #666;
+          margin-bottom: 10px;
         }
 
         .servicesAdminButtonGroup {
           display: flex;
           gap: 10px;
+          position: absolute;
+          bottom: 20px;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
 
           .servicesAdminEditButton,
           .servicesAdminDeleteButton {
@@ -247,6 +253,35 @@
               background: #c0392b;
             }
           }
+        }
+      }
+    }
+
+    .servicesAdminPagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+
+      .servicesAdminPageButton {
+        background: #d1d4d7;
+        color: #333;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          background: linear-gradient(135deg, #253f57 0%, #34495e 100%);
+          color: white;
+        }
+
+        &:hover {
+          background: linear-gradient(135deg, #34495e 0%, #253f57 100%);
+          color: white;
+          transform: translateY(-2px);
         }
       }
     }
@@ -287,19 +322,6 @@
             font-size: 0.9rem;
             padding: 10px;
           }
-
-          .servicesAdminFeatureInput {
-            .servicesAdminAddButton {
-              padding: 8px 16px;
-              font-size: 0.85rem;
-            }
-          }
-
-          .servicesAdminFeatureList {
-            .servicesAdminFeatureItem {
-              font-size: 0.85rem;
-            }
-          }
         }
 
         .servicesAdminSubmitButton,
@@ -310,10 +332,10 @@
       }
 
       .servicesAdminList {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
         .servicesAdminServiceCard {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 10px;
+          padding: 15px;
 
           .servicesAdminServiceTitle {
             font-size: 1.1rem;
@@ -330,6 +352,13 @@
               font-size: 0.85rem;
             }
           }
+        }
+      }
+
+      .servicesAdminPagination {
+        .servicesAdminPageButton {
+          padding: 6px 12px;
+          font-size: 0.9rem;
         }
       }
     }
@@ -365,16 +394,6 @@
             font-size: 0.85rem;
             padding: 8px;
           }
-
-          .servicesAdminFeatureInput {
-            flex-direction: column;
-            align-items: stretch;
-
-            .servicesAdminAddButton {
-              padding: 8px;
-              font-size: 0.8rem;
-            }
-          }
         }
 
         .servicesAdminSubmitButton,
@@ -385,6 +404,8 @@
       }
 
       .servicesAdminList {
+        grid-template-columns: 1fr;
+
         .servicesAdminServiceCard {
           padding: 15px;
 
@@ -395,6 +416,13 @@
           .servicesAdminServiceCategory {
             font-size: 0.8rem;
           }
+        }
+      }
+
+      .servicesAdminPagination {
+        .servicesAdminPageButton {
+          padding: 6px 10px;
+          font-size: 0.85rem;
         }
       }
     }
