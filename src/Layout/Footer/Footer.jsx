@@ -30,19 +30,16 @@ const Footer = () => {
             <h3 className="sectionTitle">{t("footer.quickLinks")}</h3>
             <ul className="linkList">
               <li>
-                <a href="#home">{t("footer.home")}</a>
+                <a href="/">{t("footer.home")}</a>
               </li>
               <li>
-                <a href="#about">{t("footer.about")}</a>
+                <a href="/about">{t("footer.about")}</a>
               </li>
               <li>
-                <a href="#services">{t("footer.services")}</a>
+                <a href="/ouractivity">{t("footer.services")}</a>
               </li>
               <li>
-                <a href="#products">{t("footer.products")}</a>
-              </li>
-              <li>
-                <a href="#contact">{t("footer.contact")}</a>
+                <a href="/contact">{t("footer.contact")}</a>
               </li>
             </ul>
           </div>
@@ -51,27 +48,33 @@ const Footer = () => {
             <h3 className="sectionTitle">{t("footer.servicesTitle")}</h3>
             <ul className="linkList">
               <li>
-                <a href="/services/cleaning">
+                <a href="/ouractivity/cleaning">
                   {t("footer.cleaningDetergent")}
                 </a>
               </li>
               <li>
-                <a href="/services/cleaning">{t("footer.uniforms")}</a>
+                <a href="/ouractivity/cleaning">{t("footer.uniforms")}</a>
               </li>
               <li>
-                <a href="/services/it_equipment">{t("footer.itEquipment")}</a>
+                <a href="/ouractivity/it_equipment">
+                  {t("footer.itEquipment")}
+                </a>
               </li>
               <li>
-                <a href="/services/household">{t("footer.householdGoods")}</a>
+                <a href="/ouractivity/household">
+                  {t("footer.householdGoods")}
+                </a>
               </li>
               <li>
-                <a href="/services/furniture">{t("footer.furniture")}</a>
+                <a href="/ouractivity/furniture">{t("footer.furniture")}</a>
               </li>
               <li>
-                <a href="/services/plumbing">{t("footer.plumbing")}</a>
+                <a href="/ouractivity/plumbing">{t("footer.plumbing")}</a>
               </li>
               <li>
-                <a href="/services/office_supplies">{t("footer.stationery")}</a>
+                <a href="/ouractivity/office_supplies">
+                  {t("footer.stationery")}
+                </a>
               </li>
             </ul>
           </div>
@@ -114,9 +117,9 @@ const Footer = () => {
           <div className="bottomContent">
             <p className="copyrightText">{t("footer.copyright")}</p>
             <div className="bottomLinks">
-              <a href="#privacy">{t("footer.privacy")}</a>
-              <a href="#terms">{t("footer.terms")}</a>
-              <a href="#cookies">{t("footer.cookies")}</a>
+              <a >{t("footer.privacy")}</a>
+              <a >{t("footer.terms")}</a>
+              <a >{t("footer.cookies")}</a>
             </div>
           </div>
         </div>

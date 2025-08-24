@@ -10,13 +10,13 @@ import {
   Wrench,
   Book,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import "./Services.scss";
+import { Link, useNavigate } from "react-router-dom";
+import "./OurActivity.scss";
 import SectionHeader from "../../Components/SectionHeader/SectionHeader";
 import { db } from "../../Firebase/Server";
 import { ref, get } from "firebase/database";
 
-const Services = () => {
+const OurActivity = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [servicesData, setServicesData] = useState([]);
@@ -59,7 +59,7 @@ const Services = () => {
   }, []);
 
   const handleLearnMore = (id) => {
-    navigate(`/services/${id}`);
+    navigate(`/ouractivity/${id}`);
   };
 
   return (
@@ -133,7 +133,7 @@ const Services = () => {
           <div className="ctaContent">
             <h2 className="ctaTitle">{t("services.cta.title")}</h2>
             <p className="ctaText">{t("services.cta.text")}</p>
-            <button className="ctaButton">{t("services.cta.button")}</button>
+            <Link to='/contact' className="ctaButton">{t("services.cta.button")}</Link>
           </div>
         </div>
       </div>
@@ -142,4 +142,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default OurActivity;

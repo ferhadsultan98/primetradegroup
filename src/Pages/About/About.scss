@@ -1,4 +1,3 @@
-// Variables
 $primary-color: #1a2b3a;
 $primary-light: lighten($primary-color, 10%);
 $primary-dark: darken($primary-color, 10%);
@@ -57,7 +56,6 @@ $xl-desktop: 1400px;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, $primary-color, $secondary-color);
     opacity: $opacity;
     pointer-events: none;
   }
@@ -66,7 +64,6 @@ $xl-desktop: 1400px;
 // Main Container
 .aboutContainer {
   min-height: 100vh;
-
   color: $text-primary;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
@@ -99,9 +96,45 @@ $xl-desktop: 1400px;
   }
 }
 
+// Introduction Section
+.introSection {
+  padding: 2rem 0;
+  text-align: center;
+
+  @media (max-width: $tablet) {
+    padding: 1.5rem 0;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 1rem 0;
+  }
+
+  .introText {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: $text-primary;
+    margin: 1rem auto;
+    line-height: 1.8;
+    padding: 1rem;
+    background: $background-white;
+    border: 1px solid $border-color;
+    @include card-shadow();
+    border-radius: 2rem 2rem 0 0;
+
+    @media (max-width: $tablet) {
+      font-size: 1.1rem;
+      padding: 0.75rem;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+  }
+}
+
 // Mission Section
 .missionSection {
-  padding: 6rem 0;
 
   position: relative;
   @include gradient-overlay(0.02);
@@ -183,7 +216,6 @@ $xl-desktop: 1400px;
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, $primary-color, $accent-color);
   }
 
   &:hover {
@@ -236,7 +268,6 @@ $xl-desktop: 1400px;
 // Services Section
 .aboutServicesSection {
   padding: 6rem 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   position: relative;
 
   @media (max-width: $tablet) {
@@ -277,10 +308,10 @@ $xl-desktop: 1400px;
       margin-bottom: 1.5rem;
     }
   }
-
+}
 
 // Services Grid
-.servicesGrid {
+.aboutServicesGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
@@ -301,7 +332,7 @@ $xl-desktop: 1400px;
 }
 
 // Service Card
-.serviceCard {
+.aboutServiceCard {
   background: $background-white;
   border-radius: 16px;
   padding: 2.5rem 2rem;
@@ -325,10 +356,10 @@ $xl-desktop: 1400px;
     @include card-shadow(true);
     border-color: transparentize($accent-color, 0.7);
 
-    .serviceIconWrapper {
+    .aboutServiceIconWrapper {
       background: linear-gradient(135deg, $accent-color, $primary-color);
       
-      .serviceIcon {
+      .aboutServiceIcon {
         color: $text-light;
         transform: scale(1.1) rotate(5deg);
       }
@@ -340,7 +371,7 @@ $xl-desktop: 1400px;
   }
 }
 
-.serviceIconWrapper {
+.aboutServiceIconWrapper {
   width: 4rem;
   height: 4rem;
   border-radius: 12px;
@@ -356,7 +387,7 @@ $xl-desktop: 1400px;
   }
 }
 
-.serviceIcon {
+.aboutServiceIcon {
   width: 2rem;
   height: 2rem;
   color: $accent-color;
@@ -369,7 +400,7 @@ $xl-desktop: 1400px;
   }
 }
 
-.serviceTitle {
+.aboutServiceTitle {
   font-size: 1.5rem;
   font-weight: 600;
   color: $primary-color;
@@ -382,10 +413,9 @@ $xl-desktop: 1400px;
 }
 
 // Service Features
-.serviceFeatures {
+.aboutServiceFeature{
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
 }
 
 .featureItem {
@@ -432,7 +462,7 @@ $xl-desktop: 1400px;
 }
 
 @media (max-width: $tablet) {
-  .servicesGrid {
+  .aboutServicesGrid {
     grid-template-columns: 1fr;
   }
   
@@ -452,7 +482,7 @@ $xl-desktop: 1400px;
 
 // Focus states for accessibility
 .missionCard,
-.serviceCard {
+.aboutServiceCard {
   &:focus-within {
     outline: 2px solid $accent-color;
     outline-offset: 2px;
@@ -466,7 +496,8 @@ $xl-desktop: 1400px;
     color: black !important;
     
     .missionCard,
-    .serviceCard {
+    .aboutServiceCard,
+    .introText {
       box-shadow: none !important;
       border: 1px solid #ddd !important;
       break-inside: avoid;
@@ -474,7 +505,7 @@ $xl-desktop: 1400px;
   }
 }
 
-// Dark mode support (optional)
+// Dark mode support
 @media (prefers-color-scheme: dark) {
   .aboutContainer {
     background: #1a1a1a;
@@ -485,8 +516,16 @@ $xl-desktop: 1400px;
     background: #2d2d2d;
   }
   
+  .introSection {
+    .introText {
+      background: #3d3d3d;
+      border-color: #4d4d4d;
+      color: #e0e0e0;
+    }
+  }
+  
   .missionCard,
-  .serviceCard {
+  .aboutServiceCard {
     background: #3d3d3d;
     border-color: #4d4d4d;
     color: #e0e0e0;
@@ -496,4 +535,4 @@ $xl-desktop: 1400px;
   .featureItem span {
     color: #b0b0b0;
   }
-}}
+}

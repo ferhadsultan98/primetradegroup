@@ -51,7 +51,7 @@ const HeroSection = () => {
                 <h1 className="slideTitle">{slide.title}</h1>
                 <h2 className="slideSubtitle">{slide.subtitle}</h2>
                 <div className="buttonGroup">
-                  <Link to='services' className="servicesButton">Fəaliyyət sahələrimiz</Link>
+                  <Link to='ouractivity' className="servicesButton">Fəaliyyət sahələrimiz</Link>
                   <Link to='contact' className="contactButton">Əlaqə</Link>
                 </div>
               </div>

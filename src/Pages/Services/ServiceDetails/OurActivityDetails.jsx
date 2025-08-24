@@ -3,10 +3,11 @@ import { Helmet } from "react-helmet";
 import { useParams, useNavigate } from "react-router-dom";
 import { db } from "../../../Firebase/Server";
 import { ref, get } from "firebase/database";
-import "./ServiceDetails.scss";
+import "./OurActivityDetails.scss";
 import SectionHeader from "../../../Components/SectionHeader/SectionHeader";
+import { FaArrowLeft, FaFilePdf } from "react-icons/fa6";
 
-const ServiceDetails = () => {
+const OurActivityDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [service, setService] = useState(null);
@@ -15,6 +16,8 @@ const ServiceDetails = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,18 +61,14 @@ const ServiceDetails = () => {
   }, [id]);
 
   const filteredDetails = serviceDetails.filter((detail) => {
-    // Category filter
     const matchesCategory =
       selectedCategory === "all" || detail.categoryId === selectedCategory;
-
-    // Search filter
     const matchesSearch =
       searchTerm === "" ||
       detail.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       detail.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
       (detail.origin &&
         detail.origin.toLowerCase().includes(searchTerm.toLowerCase()));
-
     return matchesCategory && matchesSearch;
   });
 
@@ -80,6 +79,18 @@ const ServiceDetails = () => {
 
   const clearSearch = () => {
     setSearchTerm("");
+    setCurrentPage(1);
+  };
+
+  const totalPages = Math.ceil(filteredDetails.length / itemsPerPage);
+  const paginatedDetails = filteredDetails.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -90,15 +101,10 @@ const ServiceDetails = () => {
       />
       <div className="serviceDetailsContainer">
         <Helmet>
-          <title>{`${
-            service?.title || "Xidmət"
-          } - PRIME TRADE GROUP MMC`}</title>
+          <title>{`${service?.title || "Xidmət"} - PRIME TRADE GROUP MMC`}</title>
           <meta name="author" content="PRIME TRADE GROUP MMC" />
           <meta charset="UTF-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Helmet>
 
         {isLoading ? (
@@ -107,10 +113,26 @@ const ServiceDetails = () => {
             <p>Yüklənir...</p>
           </div>
         ) : !service ? (
-          <div>Xidmət tapılmadı!</div>
+          <div className="notService">Fəaliyyət sahəsi tapılmadı!</div>
         ) : (
           <div className="containerWrapper">
-            {/* Category Filter */}
+            <div className="actionButtons">
+              <button
+                className="backButton"
+                onClick={() => navigate("/services")}
+              >
+                <i>
+                  <FaArrowLeft />
+                </i>
+                Geri
+              </button>
+              <a href="#" className="pdfButton">
+                <i>
+                  <FaFilePdf />
+                </i>
+                PDF yüklə
+              </a>
+            </div>
             <div className="categoryFilter">
               <div className="categoryScroll">
                 {categories.map((category) => (
@@ -119,7 +141,10 @@ const ServiceDetails = () => {
                     className={`categoryButton ${
                       selectedCategory === category.id ? "active" : ""
                     }`}
-                    onClick={() => setSelectedCategory(category.id)}
+                    onClick={() => {
+                      setSelectedCategory(category.id);
+                      setCurrentPage(1);
+                    }}
                   >
                     {category.category}
                   </button>
@@ -133,7 +158,10 @@ const ServiceDetails = () => {
                     type="text"
                     placeholder="Məhsul adı, təsvir və ya mənşəyə görə axtarın..."
                     value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onChange={(e) => {
+                      setSearchTerm(e.target.value);
+                      setCurrentPage(1);
+                    }}
                     className="searchInput"
                   />
                   {searchTerm && (
@@ -148,7 +176,7 @@ const ServiceDetails = () => {
                 </div>
                 {searchTerm && (
                   <div className="searchResultsInfo">
-                    {filteredDetails.length} nəticə tapıldı
+                    {filteredDetails.length} məhsul tapıldı
                   </div>
                 )}
               </div>
@@ -159,8 +187,8 @@ const ServiceDetails = () => {
                 <h2 className="serviceTitle">{service.title}</h2>
 
                 <div className="productsContainer">
-                  {filteredDetails.length > 0 ? (
-                    filteredDetails.map((detail) => (
+                  {paginatedDetails.length > 0 ? (
+                    paginatedDetails.map((detail) => (
                       <div key={detail.id} className="productCard">
                         <div className="categoryBadge">
                           {getCategoryName(detail.categoryId)}
@@ -180,7 +208,6 @@ const ServiceDetails = () => {
                             <p className="productDescription">
                               {detail.description}
                             </p>
-
                             {(detail.volume ||
                               detail.origin ||
                               detail.ingredients) && (
@@ -208,6 +235,7 @@ const ServiceDetails = () => {
                             onClick={() => {
                               setSearchTerm("");
                               setSelectedCategory("all");
+                              setCurrentPage(1);
                             }}
                             className="resetFiltersButton"
                           >
@@ -221,12 +249,21 @@ const ServiceDetails = () => {
                   )}
                 </div>
 
-                <button
-                  className="backButton"
-                  onClick={() => navigate("/services")}
-                >
-                  Geri
-                </button>
+                {totalPages > 1 && (
+                  <div className="pagination">
+                    {Array.from({ length: totalPages }, (_, index) => (
+                      <button
+                        key={index + 1}
+                        className={`paginationButton ${
+                          currentPage === index + 1 ? "active" : ""
+                        }`}
+                        onClick={() => handlePageChange(index + 1)}
+                      >
+                        {index + 1}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </section>
           </div>
@@ -236,4 +273,4 @@ const ServiceDetails = () => {
   );
 };
 
-export default ServiceDetails;
+export default OurActivityDetails;

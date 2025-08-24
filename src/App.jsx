@@ -13,8 +13,6 @@ import "./App.css";
 // Pages
 import HomeSection from "./Pages/Home/HomeSection";
 import AboutUs from "./Pages/About/About";
-import Services from "./Pages/Services/Services";
-import ServiceDetails from "./Pages/Services/ServiceDetails/ServiceDetails";
 import WhyUs from "./Pages/WhyUs/WhyUs";
 import ContactSection from "./Pages/Contact/Contact";
 import NotFound from "./Pages/NotFound/NotFound";
@@ -24,6 +22,8 @@ import Login from "./Admin/Login/Login";
 import ServicesAdmin from "./Admin/ServicesAdmin/ServicesAdmin";
 import PrimeAdmin from "./Admin/PrimeAdmin";
 import MainLayout from "./Layout/Mainlayout";
+import OurActivity from "./Pages/Services/OurActivity";
+import OurActivityDetails from "./Pages/Services/ServiceDetails/OurActivityDetails";
 // import PrimeAdmin from "./Admin/PrimeAdmin";
 
 function ScrollToTop() {
@@ -61,20 +61,20 @@ const App = () => {
             }
           />
           <Route
-            path="/services"
+            path="/ouractivity"
             element={
               <MainLayout>
-                <Services />
+             <OurActivity/>
                 <ScrollTopBtn />
               </MainLayout>
             }
           />
           <Route
-            path="/services/:id"
+            path="/ouractivity/:id"
             element={
               <MainLayout>
                 <React.Suspense fallback={<div>Loading...</div>}>
-                  <ServiceDetails />
+                  <OurActivityDetails/>
                 </React.Suspense>
                 <ScrollTopBtn />
               </MainLayout>

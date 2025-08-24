@@ -1,147 +1,126 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Squash as Hamburger } from "hamburger-react";
-import "./Header.scss";
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Spin as Hamburger } from 'hamburger-react';
+import './Header.scss';
 import DefaultLogo from "../../../public/assets/ptglogo.png"; // Default logo
 import ScrolledLogo from "../../../public/assets/fullwhitelogo.png"; // Logo when scrolled
-import { useTranslation } from "react-i18next";
 
 const Header = () => {
-  const { t, i18n } = useTranslation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  const isHomePage = location.pathname === "/home" || location.pathname === "/";
-
+  // Scroll effekti üçün
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth <= 768);
-      if (window.innerWidth > 768) {
-        setIsMenuOpen(false);
-      }
-    };
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("resize", checkScreenSize);
-      window.removeEventListener("scroll", handleScroll);
-    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  // Route dəyişəndə mobil menunu bağla
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
+
+  // Logo kliki - əgər ana səhifədə deyilsə navigate et, əgər aşağıdaysa yuxarı qaldır
+  const handleLogoClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
+  // Mobil menunu bağla
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    closeMenu();
-  };
+  const navItems = [
+    { name: 'Haqqımızda', path: '/about' },
+    { name: 'Fəaliyyət Sahələrimiz', path: '/ouractivity' },
+    { name: 'Niyə Biz', path: '/whyus' },
+    { name: 'Əlaqə', path: '/contact' }
+  ];
 
   return (
-    <header className={`headerContainer ${isScrolled ? "scrolled" : ""}`}>
-      <div className="headerContent">
-        <Link to="/" className="logo" onClick={closeMenu}>
-          <img src={isScrolled ? ScrolledLogo : DefaultLogo} alt="Logo" />
-        </Link>
+    <>
+      <header className={`header ${isScrolled ? 'headerScrolled' : ''}`}>
+        <div className="headerContainer">
+          {/* Logo */}
+          <div className="headerLogo">
+            <Link to="/" onClick={handleLogoClick} className="logoLink">
+              <img 
+                src={DefaultLogo}
+                alt="Logo" 
+                className="logoImage"
+              />
+            </Link>
+          </div>
 
-        <nav className="desktopNav">
-          <ul className="navList">
-            <li className="navItem">
-              <Link to="/about" className="navLink" onClick={closeMenu}>
-                {t("header.about")}
-              </Link>
-            </li>
-            <li className="navItem">
-              <Link to="/services" className="navLink" onClick={closeMenu}>
-                {t("header.services")}
-              </Link>
-            </li>
-            <li className="navItem">
-              <Link to="/whyus" className="navLink" onClick={closeMenu}>
-                {t("header.whyUs")}
-              </Link>
-            </li>
-            <li className="navItem">
-              <Link to="/contact" className="navLink" onClick={closeMenu}>
-                {t("header.contact")}
-              </Link>
-            </li>
-            {/* <li className="navItem">
-              <select
-                className="languageDropdown"
-                onChange={(e) => changeLanguage(e.target.value)}
-                value={i18n.language}
-              >
-                <option value="az">AZ</option>
-                <option value="en">EN</option>
-                <option value="ru">RU</option>
-              </select>
-            </li> */}
-          </ul>
-        </nav>
+          {/* Desktop Navigation */}
+          <nav className="headerNav">
+            <ul className="navList">
+              {navItems.map((item) => (
+                <li key={item.path} className="navItem">
+                  <Link 
+                    to={item.path} 
+                    className={`navLink ${location.pathname === item.path ? 'navLinkActive' : ''}`}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        <div className="mobileMenuToggle">
-          <Hamburger
-            toggled={isMenuOpen}
-            toggle={toggleMenu}
-            size={24}
-          
-            duration={0.3}
-          />
+          {/* Mobile Hamburger Button */}
+          <div className="headerMobileToggle">
+            <Hamburger
+              toggled={isMobileMenuOpen}
+              toggle={setIsMobileMenuOpen}
+              size={24}
+              color="#253f57"
+              duration={0.3}
+              rounded
+            />
+          </div>
         </div>
-      </div>
+      </header>
 
-      <div className={`mobileNav ${isMenuOpen ? "mobileNavOpen" : ""}`}>
-        <nav className="mobileNavContent">
+      {/* Mobile Menu Overlay */}
+      <div className={`mobileMenuOverlay ${isMobileMenuOpen ? 'mobileMenuOverlayOpen' : ''}`}>
+        <nav className="mobileMenuNav">
           <ul className="mobileNavList">
-            <li className="mobileNavItem">
-              <Link to="/about" className="mobileNavLink" onClick={closeMenu}>
-                {t("header.about")}
-              </Link>
-            </li>
-            <li className="mobileNavItem">
-              <Link to="/services" className="mobileNavLink" onClick={closeMenu}>
-                {t("header.services")}
-              </Link>
-            </li>
-            <li className="mobileNavItem">
-              <Link to="/whyus" className="mobileNavLink" onClick={closeMenu}>
-                {t("header.whyUs")}
-              </Link>
-            </li>
-            <li className="mobileNavItem">
-              <Link to="/contact" className="mobileNavLink" onClick={closeMenu}>
-                {t("header.contact")}
-              </Link>
-            </li>
-            {/* <li className="mobileNavItem">
-              <select
-                className="languageDropdown"
-                onChange={(e) => changeLanguage(e.target.value)}
-                value={i18n.language}
+            {navItems.map((item, index) => (
+              <li 
+                key={item.path} 
+                className="mobileNavItem"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <option value="az">AZ</option>
-                <option value="en">EN</option>
-                <option value="ru">RU</option>
-              </select>
-            </li> */}
+                <Link 
+                  to={item.path} 
+                  className={`mobileNavLink ${location.pathname === item.path ? 'mobileNavLinkActive' : ''}`}
+                  onClick={closeMobileMenu}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
-    </header>
+
+      {/* Mobile Menu Backdrop */}
+      {isMobileMenuOpen && (
+        <div 
+          className="mobileMenuBackdrop" 
+          onClick={closeMobileMenu}
+        />
+      )}
+    </>
   );
 };
 

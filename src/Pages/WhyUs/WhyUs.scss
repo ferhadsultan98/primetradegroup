@@ -4,16 +4,37 @@
 
   .containerWrapper {
     margin: 0 auto;
-    padding: 0 60px;
+    padding: 40px;
+    background: #f2f4f5;
+    border-radius: 2rem;
   }
+.sectionTitle {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #cccc;
+      margin-bottom: 70px;
+      font-weight: 700;
+      position: relative;
 
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #5d778d, #1a2b3a);
+        border-radius: 2px;
+      }
+    }
   .benefitsSection {
     padding: 60px 0;
 
     .benefitsGrid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
+      gap: 30px;
 
       .benefitCard {
         background: white;
@@ -80,28 +101,9 @@
   }
 
   .advantagesSection {
-    padding: 100px 0;
+    padding: 40px 0;
 
-    .sectionTitle {
-      text-align: center;
-      font-size: 2.8rem;
-      color: #cccc;
-      margin-bottom: 70px;
-      font-weight: 700;
-      position: relative;
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(90deg, #5d778d, #1a2b3a);
-        border-radius: 2px;
-      }
-    }
+    
 
     .advantagesGrid {
       display: grid;
@@ -180,31 +182,10 @@
     }
   }
 
-
   .trustSection {
     padding: 100px 0;
 
-    .sectionTitle {
-      text-align: center;
-      font-size: 2.8rem;
-      color: #cccc;
-      margin-bottom: 70px;
-      font-weight: 700;
-      position: relative;
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(90deg, #6990b1, #1a2b3a);
-        border-radius: 2px;
-      }
-    }
-
+   
     .trustGrid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -275,7 +256,6 @@
       }
     }
 
-  
     .trustSection {
       padding: 80px 0;
 
@@ -294,7 +274,7 @@
     }
 
     .containerWrapper {
-      padding: 0 15px;
+      padding: 15px;
     }
   }
 
@@ -319,8 +299,6 @@
       }
     }
 
-
-
     .trustSection {
       .trustCard {
         padding: 30px 20px;
@@ -332,7 +310,7 @@
     }
 
     .sectionTitle {
-      font-size: 1.8rem;
+      font-size: 1.8rem !important;
     }
   }
 }

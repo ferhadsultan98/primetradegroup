@@ -59,7 +59,7 @@
       "title": "XİDMƏTLƏR - PRIME TRADE GROUP MMC"
     },
     "section_header": {
-      "title": "Xidmətlərimiz",
+      "title": "Bizim Əhatə Etdiyimiz Sektorlar",
       "subtitle": "Müxtəlif ehtiyaclara uyğun keyfiyyətli və etibarlı həllər"
     },
     "overview": {
@@ -242,7 +242,7 @@
       },
       "address": {
         "title": "Ünvan",
-        "line1": "28 May Küçəsi, Nizami Rayonu",
+        "line1": "Bakı şəhəri, Sabunçu rayonu, Şamil Kamilov küçəsi, ev 21",
         "line2": "Bakı, Azərbaycan AZ1000"
       },
       "hours": {
@@ -315,7 +315,7 @@
     "quickLinks": "Sürətli Keçidlər",
     "home": "Ana Səhifə",
     "about": "Haqqımızda",
-    "services": "Xidmətlər",
+    "services": "Fəaliyyət Sahələrimiz",
     "products": "Məhsullar",
     "contact": "Əlaqə",
     "servicesTitle": "Məhsullar",
@@ -327,8 +327,8 @@
     "plumbing": "Santexnika Məhsulları",
     "stationery": "Kargüzarlıq və Ofis Ləvazimatları",
     "contactInfo": "Əlaqə Məlumatları",
-    "address": "Biznes Küçəsi 123, Şəhər 12345",
-    "copyright": "© 2025 Prime Trade Group. Bütün hüquqlar qorunur.",
+    "address": "Bakı şəhəri, Sabunçu rayonu, Şamil Kamilov küçəsi, ev 21,",
+    "copyright": "© 2025 PRIME TRADE GROUP MMC. Bütün hüquqlar qorunur.",
     "privacy": "Məxfilik Siyasəti",
     "terms": "Xidmət Şərtləri",
     "cookies": "Kuki Siyasəti"

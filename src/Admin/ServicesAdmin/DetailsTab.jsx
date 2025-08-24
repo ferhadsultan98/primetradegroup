@@ -75,6 +75,7 @@ const DetailsTab = ({
         description: newServiceDetail.description,
         features: newServiceDetail.features,
         image: imageUrl || "",
+        origin: newServiceDetail.origin || "",
       };
       await set(newDetailRef, detailData);
       setServiceDetails([...serviceDetails, { id: newDetailRef.key, ...detailData }]);
@@ -85,6 +86,7 @@ const DetailsTab = ({
         description: "",
         features: [],
         image: null,
+        origin: "",
       });
       setNewFeature("");
       setImageFile(null);
@@ -105,6 +107,7 @@ const DetailsTab = ({
       description: detail.description,
       features: detail.features || [],
       image: detail.image || null,
+      origin: detail.origin || "",
     });
   };
 
@@ -130,6 +133,7 @@ const DetailsTab = ({
         description: newServiceDetail.description,
         features: newServiceDetail.features,
         image: imageUrl || "",
+        origin: newServiceDetail.origin || "",
       };
       await set(detailRef, detailData);
       setServiceDetails(serviceDetails.map((d) => (d.id === editingDetail.id ? { id: editingDetail.id, ...detailData } : d)));
@@ -141,6 +145,7 @@ const DetailsTab = ({
         description: "",
         features: [],
         image: null,
+        origin: "",
       });
       setNewFeature("");
       setImageFile(null);
@@ -271,6 +276,18 @@ const DetailsTab = ({
           />
         </div>
         <div className="servicesAdminInputGroup">
+          <label htmlFor="origin" className="servicesAdminInputLabel">Mənşə Ölkə</label>
+          <input
+            type="text"
+            id="origin"
+            className="servicesAdminInputField"
+            value={newServiceDetail.origin}
+            onChange={(e) => setNewServiceDetail({ ...newServiceDetail, origin: e.target.value })}
+            placeholder="Mənşə ölkəni daxil edin"
+            disabled={isLoading}
+          />
+        </div>
+        <div className="servicesAdminInputGroup">
           <label htmlFor="description" className="servicesAdminInputLabel">Təsvir *</label>
           <textarea
             id="description"
@@ -323,6 +340,7 @@ const DetailsTab = ({
                 description: "",
                 features: [],
                 image: null,
+                origin: "",
               });
               setNewFeature("");
               setImageFile(null);
@@ -385,6 +403,9 @@ const DetailsTab = ({
                   {categories.find((c) => c.id === detail.categoryId)?.category || detail.categoryId}
                 </>
               )}
+            </p>
+            <p className="servicesAdminServiceOrigin">
+              Mənşə: {detail.origin || "Yoxdur"}
             </p>
             <div className="servicesAdminButtonGroup">
               <button
