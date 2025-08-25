@@ -126,7 +126,7 @@
           letter-spacing: 0.5px;
           margin-top: 15px;
   @media (max-width: 768px) {
-    margin-top: 5px;
+    margin-top: ;
   }
           &:hover {
             background: linear-gradient(135deg, #34495e 0%, #253f57 100%);
@@ -226,10 +226,10 @@
           }
 
           .serviceFeatures {
-            margin-bottom: 10px;
+            margin-bottom: 30px;
 
             .featureItem {
-              margin-bottom: 5px;
+              margin-bottom: 14px;
 
               .featureText {
                 font-size: 0.9rem;

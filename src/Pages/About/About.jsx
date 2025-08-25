@@ -118,12 +118,12 @@ const AboutUs = () => {
                 </div>
               </div>
 
-              <div className="serviceCard">
-                <div className="serviceIconWrapper">
-                  <Home className="serviceIcon" />
+              <div className="aboutServiceCard">
+                <div className="aboutServiceIconWrapper">
+                  <Home className="aboutServiceIcon" />
                 </div>
-                <h4 className="serviceTitle">Mebel</h4>
-                <div className="serviceFeatures">
+                <h4 className="aboutServiceTitle">Mebel</h4>
+                <div className="aboutServiceFeatures">
                   <div className="featureItem">
                     <CheckCircle className="featureIcon" />
                     <span>Ofis və məktəb mebeli</span>
@@ -138,12 +138,13 @@ const AboutUs = () => {
                   </div>
                 </div>
               </div>
-              <div className="serviceCard">
-                <div className="serviceIconWrapper">
-                  <Home className="serviceIcon" />
+
+              <div className="aboutServiceCard">
+                <div className="aboutServiceIconWrapper">
+                  <Home className="aboutServiceIcon" />
                 </div>
-                <h4 className="serviceTitle">Məişət Avadanlıqları</h4>
-                <div className="serviceFeatures">
+                <h4 className="aboutServiceTitle">Məişət Avadanlıqları</h4>
+                <div className="aboutServiceFeatures">
                   <div className="featureItem">
                     <CheckCircle className="featureIcon" />
                     <span>Mətbəx avadanlıqları</span>
@@ -159,12 +160,12 @@ const AboutUs = () => {
                 </div>
               </div>
 
-              <div className="serviceCard">
-                <div className="serviceIconWrapper">
-                  <Monitor className="serviceIcon" />
+              <div className="aboutServiceCard">
+                <div className="aboutServiceIconWrapper">
+                  <Monitor className="aboutServiceIcon" />
                 </div>
-                <h4 className="serviceTitle">IT avadanlıqları</h4>
-                <div className="serviceFeatures">
+                <h4 className="aboutServiceTitle">IT avadanlıqları</h4>
+                <div className="aboutServiceFeatures">
                   <div className="featureItem">
                     <CheckCircle className="featureIcon" />
                     <span>Kompüter texnikası</span>
@@ -180,12 +181,12 @@ const AboutUs = () => {
                 </div>
               </div>
 
-              <div className="serviceCard">
-                <div className="serviceIconWrapper">
-                  <Users className="serviceIcon" />
+              <div className="aboutServiceCard">
+                <div className="aboutServiceIconWrapper">
+                  <Users className="aboutServiceIcon" />
                 </div>
-                <h4 className="serviceTitle">Ofis ləvazimatları</h4>
-                <div className="serviceFeatures">
+                <h4 className="aboutServiceTitle">Ofis ləvazimatları</h4>
+                <div className="aboutServiceFeatures">
                   <div className="featureItem">
                     <CheckCircle className="featureIcon" />
                     <span>Kağız məhsulları</span>
@@ -201,12 +202,12 @@ const AboutUs = () => {
                 </div>
               </div>
 
-              <div className="serviceCard">
-                <div className="serviceIconWrapper">
-                  <Shirt className="serviceIcon" />
+              <div className="aboutServiceCard">
+                <div className="aboutServiceIconWrapper">
+                  <Shirt className="aboutServiceIcon" />
                 </div>
-                <h4 className="serviceTitle">İş geyimləri</h4>
-                <div className="serviceFeatures">
+                <h4 className="aboutServiceTitle">İş geyimləri</h4>
+                <div className="aboutServiceFeatures">
                   <div className="featureItem">
                     <CheckCircle className="featureIcon" />
                     <span>Təhlükəsizlik standartları</span>
@@ -222,12 +223,12 @@ const AboutUs = () => {
                 </div>
               </div>
 
-              <div className="serviceCard">
-                <div className="serviceIconWrapper">
-                  <Wrench className="serviceIcon" />
+              <div className="aboutServiceCard">
+                <div className="aboutServiceIconWrapper">
+                  <Wrench className="aboutServiceIcon" />
                 </div>
-                <h4 className="serviceTitle">Santexnika məhsulları</h4>
-                <div className="serviceFeatures">
+                <h4 className="aboutServiceTitle">Santexnika məhsulları</h4>
+                <div className="aboutServiceFeatures">
                   <div className="featureItem">
                     <CheckCircle className="featureIcon" />
                     <span>Müasir və funksional</span>

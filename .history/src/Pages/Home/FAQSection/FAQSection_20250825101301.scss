@@ -1,0 +1,172 @@
+.faqContainer {
+  line-height: 1.5;
+  color: #333;
+  background: linear-gradient(-45deg, #1a2b3a, #2c4b63, #1e3a4f, #39698e, #2a4a5c, #1a2b3a);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  border-radius: 1.5rem;
+  margin-bottom: 20px;
+    margin: 0 auto 20px auto;   /* Ortaya gətir və alt boşluq ver */
+  max-width: 900px;           /* Sağdan soldan boşluq üçün limit */
+  padding: 0 20px;            /* Kiçik ekranlarda kənarlardan nəfəs payı qalsın */
+
+  .HomeFAQcontainerWrapper {
+    margin: 0 auto;
+    padding: 30px;
+  }
+
+  .faqSection {
+    .sectionTitle {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .faqList {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .faqCard {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(37, 63, 87, 0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border-top: 3px solid #1a2b3a;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(37, 63, 87, 0.15);
+        }
+
+        &.active {
+          .faqContent {
+            max-height: 200px; /* Adjust based on content size */
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        .faqHeader {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+
+          .faqQuestion {
+            font-size: 1rem;
+            color: #253f57;
+            font-weight: 600;
+            margin: 0;
+            flex: 1;
+          }
+
+          .faqIcon {
+            width: 18px;
+            height: 18px;
+            color: #253f57;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+          }
+
+          .active & .faqIcon {
+            transform: rotate(180deg); /* Rotate icon when active */
+          }
+        }
+
+        .faqContent {
+          max-height: 0;
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+          margin-top: 10px;
+          transition: max-height 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out;
+
+          .faqAnswer {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .HomeFAQcontainerWrapper {
+      padding: 15px 10px;
+    }
+
+    .faqSection {
+      .sectionTitle {
+        font-size: 1.5rem;
+      }
+
+      .faqList {
+        gap: 8px;
+
+        .faqCard {
+          padding: 12px;
+
+          &.active {
+            .faqContent {
+              max-height: 300px; /* Increased for mobile to accommodate longer text */
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .HomeFAQcontainerWrapper {
+      padding: 10px 5px;
+    }
+
+    .faqSection {
+      .sectionTitle {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+      }
+
+      .faqList {
+        .faqCard {
+          padding: 10px;
+
+          .faqHeader {
+            .faqQuestion {
+              font-size: 0.9rem;
+            }
+          }
+
+          .faqContent {
+            .faqAnswer {
+              font-size: 0.8rem;
+            }
+          }
+
+          &.active {
+            .faqContent {
+              max-height: 400px; /* Further increased for smaller screens */
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
